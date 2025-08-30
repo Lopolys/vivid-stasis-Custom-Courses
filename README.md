@@ -9,4 +9,6 @@ They go from the easier version of each song to more difficult version by keepin
 At first, we were just keeping highscores on a sheet but we didn't have a really great way of calculating the total score and lacked a way to keep older scores properly.
 And so come the purpose of this app. To help keeping scores locally (at the moment) and having an easy way to visualize Courses, scores and older scores.
 
+It was supposed to be private but it's funny to leave it public (not that it was easier to leave it public at all)
+
 # Have fun playing these courses and using this app !

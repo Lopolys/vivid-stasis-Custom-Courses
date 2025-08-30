@@ -1,6 +1,7 @@
 package com.example.customcourses.utils;
 
 import com.example.customcourses.models.Course;
+import com.example.customcourses.models.Music;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
@@ -11,6 +12,7 @@ import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -67,9 +69,27 @@ public class CoursesSynchronizer {
             boolean sameDifficulties = haveSameDifficulties(localSection.getDifficultyLevels(), refSection.getDifficultyLevels());
 
             if (!sameMusicOrder && sameDifficulties) {
+                // Vérification changement musiques
+                boolean sameMusics = true;
+                List<String> localList = new ArrayList<String>(localSection.getMusicTitles());
+                localList.sort(Comparator.naturalOrder());
+                List<String> referenceList = new ArrayList<String>(refSection.getMusicTitles());
+                referenceList.sort(Comparator.naturalOrder());
+                for (int i = 0; i < localList.size(); i++ ){
+                    if (!localList.get(i).equals(referenceList.get(i))){
+                        sameMusics = false;
+                        break;
+                    }
+                }
+
                 // Ordre changé mais mêmes difficultés → garder score et rang
                 localSection.setMusicTitles(refSection.getMusicTitles());
                 localSection.setDifficultyLevels(refSection.getDifficultyLevels());
+                // Si musiques changées → réinitialiser score et rang
+                if (!sameMusics) {
+                    localSection.setBestScore(0);
+                    localSection.setBestRank("E");
+                }
             }
             else if (!sameDifficulties) {
                 // Difficulté changée → réinitialiser score et rang

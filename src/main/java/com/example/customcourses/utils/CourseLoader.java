@@ -17,7 +17,6 @@ public class CourseLoader {
 
     public static List<Course> loadCoursesFromFile(Path jsonFilePath) throws IOException {
         String json = Files.readString(jsonFilePath);
-        // Exemple avec Gson :
         Gson gson = new Gson();
         Course[] courses = gson.fromJson(json, Course[].class);
         return Arrays.asList(courses);

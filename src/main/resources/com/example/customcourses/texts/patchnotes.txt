@@ -1,9 +1,22 @@
+### v 0.1.1
+## Course update
+
+## Modifications made from original courses :
+• Updated calming music to sleep at night by replacing Voltage Strike by Tormented World (voted).
+
+## Overall improvements :
+• Fixed a misconception during course update where course best score could under certain condition not be reset.
+
+
+
+## __________________________________________________________________________________________________________
+
 ### v 0.1.0
 ## App release
 
 ## Description of each screen : 
 # • Courses
-	• Possibility to see courses and the music included inside them. 
+	• Possibility to see courses and the music included inside them.
 	• Possibility to see more details with "Details" button.
 	• Contains actually 11 courses of 4 musics each :
 -#		Soundscan Origins
@@ -31,7 +44,7 @@
 	• If your score is better than the highscore saved for said course and difficulty, it will become the new highscore.
 
 # • Musics
-	• Contains all of vivid/stasis musics in-game data (manually implemented, actual version of the game : v 5.1.1)
+	• Contains all of vivid/stasis musics in-game informations (manually implemented, actual version of the game : v 5.1.1)
 
 # • Course History
 	• Possibility to see past scores in Course History

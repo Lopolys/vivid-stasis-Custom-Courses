@@ -283,32 +283,32 @@
     "name": "calming music to sleep at night",
     "difficulties": {
       "EXPOSITION": {
-        "musicTitles": ["Voltage Strike", "Distorted Fate", "LORELEI", "CONVERGENCE"],
+        "musicTitles": ["Tormented World", "Distorted Fate", "LORELEI", "CONVERGENCE"],
         "difficultyLevels": ["OP", "OP", "OP", "OP"],
         "bestScore": 0,
         "bestRank": "E"
       },
       "TWIST": {
-        "musicTitles": ["Distorted Fate", "CONVERGENCE", "Voltage Strike", "LORELEI"],
+        "musicTitles": ["Distorted Fate", "CONVERGENCE", "Tormented World", "LORELEI"],
         "difficultyLevels": ["OP", "OP", "MD", "MD"],
         "bestScore": 0,
         "bestRank": "E"
       },
       "INTERLUDE": {
-        "musicTitles": ["LORELEI", "Distorted Fate", "Voltage Strike", "CONVERGENCE"],
-        "difficultyLevels": ["MD", "MD", "FN", "MD"],
+        "musicTitles": ["Tormented World", "LORELEI", "Distorted Fate", "CONVERGENCE"],
+        "difficultyLevels": ["MD", "MD", "MD", "MD"],
         "bestScore": 0,
         "bestRank": "E"
       },
       "CLIMAX": {
-        "musicTitles": ["Distorted Fate", "CONVERGENCE", "Voltage Strike", "LORELEI"],
-        "difficultyLevels": ["MD", "MD", "EC", "FN"],
+        "musicTitles": ["Distorted Fate", "CONVERGENCE", "Tormented World", "LORELEI"],
+        "difficultyLevels": ["MD", "MD", "FN", "FN"],
         "bestScore": 0,
         "bestRank": "E"
       },
       "APOTHEOSIS": {
-        "musicTitles": ["Voltage Strike", "CONVERGENCE", "Distorted Fate", "LORELEI"],
-        "difficultyLevels": ["EC", "FN", "FN", "EC"],
+        "musicTitles": ["Tormented World", "CONVERGENCE", "Distorted Fate", "LORELEI"],
+        "difficultyLevels": ["FN", "FN", "FN", "EC"],
         "bestScore": 0,
         "bestRank": "E"
       }

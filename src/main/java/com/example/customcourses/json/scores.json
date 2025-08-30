@@ -1,0 +1,21 @@
+[ {
+  "courseName" : ":3 (Legacy)",
+  "difficulty" : "TWIST",
+  "musicTitles" : [ "Yamai", ":3c", "WATAGASHI RUSH", "Perfect ConfeCute!!" ],
+  "difficultyLevels" : [ "OP", "OP", "MD", "MD" ],
+  "individualScores" : [ 200000, 400000, 600000, 800000 ],
+  "individualRanks" : [ "E", "E", "D", "C" ],
+  "totalScore" : 2000000,
+  "totalRank" : "E",
+  "date" : "2025-08-11"
+}, {
+  "courseName" : "Soundscan Origins",
+  "difficulty" : "TWIST",
+  "musicTitles" : [ "Rafflesia", "NULCTRL", "Trip Coffee", "ULTIMATE" ],
+  "difficultyLevels" : [ "OP", "MD", "MD", "MD" ],
+  "individualScores" : [ 0, 0, 0, 1 ],
+  "individualRanks" : [ "E", "E", "E", "E" ],
+  "totalScore" : 1,
+  "totalRank" : "E",
+  "date" : "2025-08-11"
+} ]

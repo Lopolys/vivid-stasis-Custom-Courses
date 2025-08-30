@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane fx:id="rootPane"
+            fx:controller="com.example.customcourses.controllers.MainController"
+            xmlns:fx="http://javafx.com/fxml"
+            prefWidth="1000" prefHeight="600">
+
+    <!-- Barre latérale gauche -->
+    <left>
+        <VBox>
+            <Label fx:id="versionLabel" text="v0.1.0"/>
+            <VBox spacing="10" prefWidth="150">
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10"/>
+                </padding>
+                <Button text="Courses" onAction="#handleCourses" maxWidth="Infinity"/>
+                <Button text="Save Scores" onAction="#handleScores" maxWidth="Infinity"/>
+                <Button text="Musics" onAction="#handleMusics" maxWidth="Infinity"/>
+                <Button text="Course History" onAction="#handleHistory" maxWidth="Infinity"/>
+                <Button text="Settings" onAction="#handleSettings" maxWidth="Infinity"/>
+                <Button text="Info" onAction="#handleInfo" maxWidth="Infinity"/>
+            </VBox>
+        </VBox>
+    </left>
+
+    <!-- Zone centrale pour le contenu dynamique -->
+    <center>
+        <StackPane fx:id="mainContent">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+        </StackPane>
+    </center>
+</BorderPane>

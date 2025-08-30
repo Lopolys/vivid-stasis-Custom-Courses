@@ -1,0 +1,27 @@
+## Bon en dessous il y a les textes qu'il y aura ici si un jour c'est dispo pour tout le monde et donc en anglais.
+
+L'appli permet pas encore de faire des trucs comme avoir des amis car il me faudrai une base de données en ligne et j'en ai pas
+Pour voir les scores des autres, on va encore utiliser la sheet qu'on utilise actuellement.
+L'app sert donc surtout pour vous de manière à avoir une interface sympa pour garder vos scores et revoir vos anciens scores.
+
+Dans les trucs que j'ai pas mis actuellement et qui viendront sûrement avec le temps il y a la présence des musiques dans les courses/legacy courses, les polices d'écriture du jeu, le système de rang qui les affichent de manière plus fidèle au jeu
+Evidemment plus d'options de personnalisation plus tard mais c'est un peu lourd quand même faudra que je refasse masse trucs.
+Si vous avez des idées bien sûr dites hein voilà si ça peut améliorer l'utilisation que vous en faites et que les autres en font aussi c'est tout bénèf.
+
+Le lien de la sheet aussi pour que vous puissiez y aller depuis l'appli :
+-#- https://docs.google.com/spreadsheets/d/1MEs9vRypV09iSG7lO9LO_0MFivyAYq5g4uzPQEuxKzA/edit?gid=1506447487#gid=1506447487
+
+Pour les patch notes, ils seront tout le temps en anglais car bah je me connaît j'aurais la flemme de les refaire en anglais donc bon.
+-#- Peut être que je devrais penser à faire un choix de langue ??? Aucune idée de comment gérer ça par contre.
+
+# Allez profitez de l'anglais qui sert pas actuellement.
+
+
+## This app is made for keeping scores locally for a thing called Custom Courses.
+
+Custom Courses takes the core principle of courses (4 musics in a row without retry in between) and adapt it with our own theme-based courses.
+You don't have the obligation to use a stamina bar since we can't keep track of the stamina you have left after one song.
+
+We actually have 11 main courses and 5 "legacy" courses (courses that were meant to be deleted) were you can enter your scores and see your improvement over time !
+
+# Have fun playing these courses and using this app !

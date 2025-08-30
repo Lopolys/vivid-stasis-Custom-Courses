@@ -1,0 +1,177 @@
+[
+  {
+    "name": ". (Legacy)",
+    "difficulties": {
+      "EXPOSITION": {
+        "musicTitles": ["micro.wav", "Synthesis.", "slic.hertz", "3.1V.C1"],
+        "difficultyLevels": ["OP", "OP", "OP", "OP"],
+        "bestScore": 4039360,
+        "bestRank": "V+"
+      },
+      "TWIST": {
+        "musicTitles": ["slic.hertz", "3.1V.C1", "Synthesis.", "micro.wav"],
+        "difficultyLevels": ["OP", "OP", "MD", "MD"],
+        "bestScore": 4036507,
+        "bestRank": "V+"
+      },
+      "INTERLUDE": {
+        "musicTitles": ["Synthesis.", "slic.hertz", "micro.wav", "3.1V.C1"],
+        "difficultyLevels": ["MD", "MD", "MD", "MD"],
+        "bestScore": 4030672,
+        "bestRank": "SS+"
+      },
+      "CLIMAX": {
+        "musicTitles": ["3.1V.C1", "slic.hertz", "micro.wav", "Synthesis."],
+        "difficultyLevels": ["MD", "FN", "FN", "FN"],
+        "bestScore": 4000513,
+        "bestRank": "SS"
+      },
+      "APOTHEOSIS": {
+        "musicTitles": ["micro.wav", "slic.hertz", "Synthesis.", "3.1V.C1"],
+        "difficultyLevels": ["FN", "EC", "EC", "FN"],
+        "bestScore": 3893692,
+        "bestRank": "AA"
+      }
+    }
+  },
+  {
+    "name": "Space (Legacy)",
+    "difficulties": {
+      "EXPOSITION": {
+        "musicTitles": ["Fixations Toward the Stars", "Cosmogyral", "QUASAR", "SUPERNOVA"],
+        "difficultyLevels": ["OP", "OP", "OP", "OP"],
+        "bestScore": 4039460,
+        "bestRank": "V+"
+      },
+      "TWIST": {
+        "musicTitles": ["Cosmogyral", "QUASAR", "SUPERNOVA", "Fixations Toward the Stars"],
+        "difficultyLevels": ["MD", "OP", "OP", "MD"],
+        "bestScore": 4038401,
+        "bestRank": "V+"
+      },
+      "INTERLUDE": {
+        "musicTitles": ["Fixations Toward the Stars", "QUASAR", "Cosmogyral", "SUPERNOVA"],
+        "difficultyLevels": ["MD", "MD", "FN", "MD"],
+        "bestScore": 4016673,
+        "bestRank": "SS+"
+      },
+      "CLIMAX": {
+        "musicTitles": ["QUASAR", "Cosmogyral", "SUPERNOVA", "Fixations Toward the Stars"],
+        "difficultyLevels": ["MD", "FN", "MD", "FN"],
+        "bestScore": 3986002,
+        "bestRank": "S+"
+      },
+      "APOTHEOSIS": {
+        "musicTitles": ["Cosmogyral", "Fixations Toward the Stars", "SUPERNOVA", "QUASAR"],
+        "difficultyLevels": ["FN", "FN", "FN", "FN"],
+        "bestScore": 3919133,
+        "bestRank": "AA"
+      }
+    }
+  },
+  {
+    "name": ":3 (Legacy)",
+    "difficulties": {
+      "EXPOSITION": {
+        "musicTitles": ["WATAGASHI RUSH", "Perfect ConfeCute!!", "Yamai", ":3c"],
+        "difficultyLevels": ["OP", "OP", "OP", "OP"],
+        "bestScore": 4039000,
+        "bestRank": "V+"
+      },
+      "TWIST": {
+        "musicTitles": ["Yamai", ":3c", "WATAGASHI RUSH", "Perfect ConfeCute!!"],
+        "difficultyLevels": ["OP", "OP", "MD", "MD"],
+        "bestScore": 4037861,
+        "bestRank": "V+"
+      },
+      "INTERLUDE": {
+        "musicTitles": ["Perfect ConfeCute!!", "Yamai", "WATAGASHI RUSH", ":3c"],
+        "difficultyLevels": ["MD", "MD", "FN", "MD"],
+        "bestScore": 4031728,
+        "bestRank": "SS+"
+      },
+      "CLIMAX": {
+        "musicTitles": ["Perfect ConfeCute!!", "WATAGASHI RUSH", "Yamai", ":3c"],
+        "difficultyLevels": ["FN", "FN", "FN", "FN"],
+        "bestScore": 3984927,
+        "bestRank": "S+"
+      },
+      "APOTHEOSIS": {
+        "musicTitles": ["Perfect ConfeCute!!", "WATAGASHI RUSH", "Yamai", ":3c"],
+        "difficultyLevels": ["FN", "EC", "EC", "EC"],
+        "bestScore": 0,
+        "bestRank": "E"
+      }
+    }
+  },
+  {
+    "name": "Elements (Legacy)",
+    "difficulties": {
+      "EXPOSITION": {
+        "musicTitles": ["final farewell -aquaregia-", "aria of ruinated winds", "crack in the earth", "PYROMANIA"],
+        "difficultyLevels": ["OP", "OP", "OP", "OP"],
+        "bestScore": 4039386,
+        "bestRank": "V+"
+      },
+      "TWIST": {
+        "musicTitles": ["crack in the earth", "PYROMANIA", "final farewell -aquaregia-", "aria of ruinated winds"],
+        "difficultyLevels": ["OP", "OP", "MD", "MD"],
+        "bestScore": 4035754,
+        "bestRank": "V"
+      },
+      "INTERLUDE": {
+        "musicTitles": ["PYROMANIA", "crack in the earth", "aria of ruinated winds", "final farewell -aquaregia-"],
+        "difficultyLevels": ["MD", "MD", "MD", "FN"],
+        "bestScore": 4025420,
+        "bestRank": "SS+"
+      },
+      "CLIMAX": {
+        "musicTitles": ["final farewell -aquaregia-", "aria of ruinated winds", "crack in the earth", "PYROMANIA"],
+        "difficultyLevels": ["FN", "FN", "FN", "FN"],
+        "bestScore": 3981855,
+        "bestRank": "S+"
+      },
+      "APOTHEOSIS": {
+        "musicTitles": ["final farewell -aquaregia-", "crack in the earth", "PYROMANIA", "aria of ruinated winds"],
+        "difficultyLevels": ["FN", "FN", "EC", "EC"],
+        "bestScore": 3916671,
+        "bestRank": "AA"
+      }
+    }
+  },
+  {
+    "name": "calming music to sleep at night (Legacy)",
+    "difficulties": {
+      "EXPOSITION": {
+        "musicTitles": ["BPM", "∀NARCHIC LIGHT", "ULTIMATE", "Distorted Fate"],
+        "difficultyLevels": ["OP", "OP", "OP", "OP"],
+        "bestScore": 4039217,
+        "bestRank": "V+"
+      },
+      "TWIST": {
+        "musicTitles": ["Distorted Fate", "BPM", "ULTIMATE", "∀NARCHIC LIGHT"],
+        "difficultyLevels": ["OP", "MD", "MD", "MD"],
+        "bestScore": 4035673,
+        "bestRank": "V"
+      },
+      "INTERLUDE": {
+        "musicTitles": ["BPM", "∀NARCHIC LIGHT", "ULTIMATE", "Distorted Fate"],
+        "difficultyLevels": ["MD", "MD", "FN", "MD"],
+        "bestScore": 0,
+        "bestRank": "E"
+      },
+      "CLIMAX": {
+        "musicTitles": ["ULTIMATE", "Distorted Fate", "BPM", "∀NARCHIC LIGHT"],
+        "difficultyLevels": ["FN", "MD", "FN", "FN"],
+        "bestScore": 4000932,
+        "bestRank": "SS"
+      },
+      "APOTHEOSIS": {
+        "musicTitles": ["BPM", "ULTIMATE", "∀NARCHIC LIGHT", "Distorted Fate"],
+        "difficultyLevels": ["FN", "EC", "EC", "FN"],
+        "bestScore": 3931757,
+        "bestRank": "S"
+      }
+    }
+  }
+]

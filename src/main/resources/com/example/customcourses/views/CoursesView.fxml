@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.customcourses.controllers.CoursesController" spacing="10">
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Courses" fx:id="loadCoursesBtn" />
+        <Button text="Legacy Courses" fx:id="loadLegacyBtn" />
+    </HBox>
+
+    <ScrollPane fx:id="coursePane" fitToWidth="true" fitToHeight="true">
+        <FlowPane fx:id="courseListContainer" hgap="20" vgap="20" />
+    </ScrollPane>
+</VBox>

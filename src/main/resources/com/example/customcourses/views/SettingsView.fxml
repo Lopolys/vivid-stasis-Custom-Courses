@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Button?>
+
+<VBox spacing="15" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.customcourses.controllers.SettingsController">
+
+    <!-- Choix du thème -->
+    <Label text="Theme" styleClass="settingsLabel"/>
+    <ComboBox fx:id="themeComboBox" styleClass="settingsBox" promptText="Choisissez un thème"/>
+
+    <!-- Choix de la police -->
+    <Label text="Font" styleClass="settingsLabel"/>
+    <ComboBox fx:id="fontComboBox" styleClass="settingsBox" promptText="Choisissez une police"/>
+
+    <!-- Bouton Export qui sert actuellement à rien-->
+    <Button text="Export data" styleClass="settingsBox" onAction="#handleExportData" />
+
+</VBox>

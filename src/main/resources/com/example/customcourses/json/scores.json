@@ -1,0 +1,11 @@
+[ {
+  "courseName" : "SAMPLE Course",
+  "difficulty" : "TWIST",
+  "musicTitles" : [ "grode", "BADSECRET", "Gauntlet", "safe_state (MANIAQ Sound Team Remix)" ],
+  "difficultyLevels" : [ "MD", "OP", "MD", "MD" ],
+  "individualScores" : [ 1008569, 998957, 1008102, 1005748 ],
+  "individualRanks" : [ "V", "S+", "V", "SS+" ],
+  "totalScore" : 4021376,
+  "totalRank" : "SS+",
+  "date" : "1000-12-12"
+} ]

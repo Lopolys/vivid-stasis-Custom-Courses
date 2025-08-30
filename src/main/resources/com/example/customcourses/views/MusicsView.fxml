@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<SplitPane xmlns:fx="http://javafx.com/fxml" fx:id="musicPane" fx:controller="com.example.customcourses.controllers.MusicsController">
+    <TableView fx:id="musicTable" layoutX="10" layoutY="10" prefHeight="950">
+        <columns>
+            <TableColumn fx:id="titleColumn" text="Title"/>
+            <TableColumn fx:id="opDiffColumn" text="Opening"/>
+            <TableColumn fx:id="mdDiffColumn" text="Middle"/>
+            <TableColumn fx:id="fnDiffColumn" text="Finale"/>
+            <TableColumn fx:id="ecDiffColumn" text="Encore"/>
+            <TableColumn fx:id="bsDiffColumn" text="Backstage"/>
+            <TableColumn fx:id="artistColumn" text="Artist"/>
+            <TableColumn fx:id="lengthColumn" text="Length"/>
+        </columns>
+    </TableView>
+
+    <ScrollPane fx:id="musicScrollPane" fitToWidth="true" fitToHeight="true">
+        <VBox fx:id="musicDetailsPane" prefWidth="300"/>
+    </ScrollPane>
+</SplitPane>

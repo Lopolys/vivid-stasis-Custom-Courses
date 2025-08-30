@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox xmlns:fx="http://javafx.com/fxml" fx:id="historyPane" fx:controller="com.example.customcourses.controllers.HistoryController">
+    <VBox>
+        <HBox fx:id="filterBox" spacing="5" alignment="CENTER">
+            <Label text="Month Filter :" styleClass="filterLabel"/>
+            <ComboBox fx:id="monthFilter" promptText="Month" />
+            <Label text="Course Filter :" styleClass="filterLabel"/>
+            <ComboBox fx:id="courseFilterBox" promptText="Course Name"/>
+        </HBox>
+        <TableView fx:id="courseHistoryTable" layoutX="10" layoutY="10" prefHeight="950">
+            <columns>
+                <TableColumn fx:id="courseNameColumn" text="Course"/>
+                <TableColumn fx:id="difficultyColumn" text="Difficulty"/>
+                <TableColumn fx:id="dateColumn" text="Date"/>
+                <TableColumn fx:id="scoreColumn" text="Total Score"/>
+                <TableColumn fx:id="rankColumn" text="Rank"/>
+                <TableColumn fx:id="detailsColumn"/>
+            </columns>
+        </TableView>
+    </VBox>
+    <ScrollPane fx:id="detailsScrollPane" id="detailsScrollPane" fitToWidth="true" fitToHeight="true" HBox.hgrow="ALWAYS">
+        <VBox fx:id="scoresDetailsPane" id="scoresDetailsPane"/>
+    </ScrollPane>
+</HBox>

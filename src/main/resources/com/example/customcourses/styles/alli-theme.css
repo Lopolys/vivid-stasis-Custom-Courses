@@ -1,0 +1,596 @@
+/* Colors List
+gray : #8CA2B7 (used for lateral Pane, Tab Header, Buttons and background of ComboBox)
+light green : #7CD8BF (used for overall background color)
+dark green : #568ABC (used for dynamic content texts/borders)
+pink : #FDBEDB (used for Buttons hovering, and text for selected TabRow)
+*/
+
+/* Main CSS Lateral Pane */
+
+#rootPane {
+    -fx-background-color: #8CA2B7;
+    -fx-text-fill: #222222;
+}
+
+.button {
+    -fx-background-color: #8CA2B7;
+    -fx-text-fill: #222222;
+}
+
+.button:hover {
+    -fx-background-color: #FDBEDB;
+}
+
+.button.settingsBox{
+    -fx-font-weight: bold;
+    -fx-text-fill: #222222;
+}
+
+#versionLabel {
+    -fx-font-size: 8;
+    -fx-text-fill: #222222;
+    -fx-alignment: bottom;
+}
+
+/* CSS Scrollbar */
+
+Region, .corner{
+    -fx-background-color: #7CD8BF;
+    -fx-border-color: transparent;
+}
+
+.scroll-bar:vertical{
+    -fx-background-color: #7CD8BF;
+}
+
+.scroll-bar:vertical .thumb{
+    -fx-background-color: #568ABC;
+    -fx-background-insets: 0;
+}
+
+.scroll-bar:horizontal{
+    -fx-background-color: #7CD8BF;
+}
+
+.scroll-bar:horizontal .thumb{
+    -fx-background-color: #568ABC;
+    -fx-background-insets: 0;
+}
+
+.scroll-bar:vertical .increment-arrow,
+.scroll-bar:vertical .decrement-arrow,
+.scroll-bar:horizontal .increment-arrow,
+.scroll-bar:horizontal .decrement-arrow {
+    -fx-background-color: #568ABC;
+}
+
+/* Main CSS Zone contenu dynamique */
+
+#mainContent {
+    -fx-background-color: #7CD8BF;
+    -fx-text-fill: #222222;
+}
+
+/* Courses CSS */
+
+#coursePane{
+    -fx-background-color: #7CD8BF;
+}
+
+#courseListContainer{
+    -fx-background-color: #7CD8BF;
+}
+
+/* Courses CSS Course Box */
+
+.courseBox {
+    -fx-border-color: #568ABC;
+    -fx-border-width: 2;
+    -fx-border-radius: 10;
+}
+
+.courseBox Label {
+    -fx-font-size: 18;
+    -fx-font-weight: bold;
+    -fx-text-fill: #568ABC;
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+}
+
+/* Courses Details CSS */
+
+#courseDetailsBox, #detailsCourseGrid, #detailsScrollPane{
+    -fx-background-color: #7CD8BF;
+}
+
+.detailsCourseTitle{
+    -fx-font-size: 24;
+    -fx-font-weight: bold;
+    -fx-text-fill: #568ABC;
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+}
+
+.detailsCourseIndicators{
+    -fx-font-size: 18;
+    -fx-font-weight: bold;
+    -fx-text-fill: #568ABC;
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+}
+
+.detailsGridPane {
+    -fx-alignment: center;
+}
+
+.detailGridCell {
+    -fx-border-color: #568ABC;
+    -fx-border-width: 2 0 0 2;
+    -fx-border-style: solid;
+}
+
+.detailRightCell {
+    -fx-border-color: #568ABC;
+    -fx-border-width: 2 2 0 2;
+    -fx-border-style: solid;
+}
+
+.topCell {
+    -fx-border-color: #568ABC;
+    -fx-border-width: 2 2 0 2;
+    -fx-border-style: solid;
+    -fx-border-radius: 10 10 0 0;
+}
+
+.bottomLeftCell {
+    -fx-border-color: #568ABC;
+    -fx-border-width: 2 0 2 2;
+    -fx-border-style: solid;
+    -fx-border-radius: 0 0 0 10;
+}
+
+.bottomRightCell {
+    -fx-font-size: 16;
+    -fx-font-weight: bold;
+    -fx-text-fill: #568ABC;
+    -fx-border-color: #568ABC;
+    -fx-border-width: 2;
+    -fx-border-style: solid;
+    -fx-border-radius: 0 0 10 0;
+}
+
+.musicTitle {
+    -fx-font-size: 16;
+    -fx-font-weight: bold;
+    -fx-text-fill: #568ABC;
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+}
+
+.detailGridCell Label, .detailRightCell Label {
+    -fx-text-fill: #568ABC;
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+}
+
+.detailScoreCell{
+    -fx-font-size: 16;
+    -fx-font-weight: bold;
+    -fx-text-fill: #568ABC;
+    -fx-border-color: #568ABC;
+    -fx-border-width: 2 0 2 2;
+    -fx-border-style: solid;
+}
+
+#detailsBackButton{
+    -fx-font-size: 16;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+}
+
+/* Save Score CSS */
+
+#saveScrollPane {
+    -fx-background-color: #7CD8BF;
+}
+
+#saveScoresPane{
+    -fx-background-color: #7CD8BF;
+}
+
+.scoreLabel {
+    -fx-text-fill: #568ABC;
+}
+
+.entryScore{
+    -fx-font-size: 16;
+    -fx-font-weight: bold;
+    -fx-text-fill: #568ABC;
+}
+
+.summaryEntryScore {
+    -fx-border-color: #568ABC;
+    -fx-border-width: 2 0 0 0;
+    -fx-font-size: 16;
+    -fx-font-weight: bold;
+    -fx-text-fill: #568ABC;
+}
+
+/* Save Scores Entry CSS */
+
+.scoresButton {
+    -fx-font-weight: bold;
+    -fx-text-fill: #222222;
+}
+
+.scoresButton:hover{
+    -fx-text-fill: #568ABC;
+}
+
+.scoresButton:hover .radio{
+    -fx-background-color: #FDBEDB;
+}
+
+.scoresButton:selected{
+    -fx-text-fill: #568ABC;
+}
+
+.scoresButton:selected .radio {
+    -fx-background-color: #FDBEDB;
+}
+
+.scoresButton:selected .radio .dot{
+    -fx-background-color: transparent;
+}
+
+.scoreEntryGrid {
+    -fx-border-color: #568ABC;
+    -fx-border-width: 2;
+    -fx-border-radius: 10;
+}
+
+.borderCell {
+    -fx-border-color: #568ABC;
+    -fx-border-width: 0 0 2 0;
+}
+
+.scoreEntryGrid .text-field {
+    -fx-background-color: #7CD8BF;
+    -fx-border-color: #568ABC;
+    -fx-border-width: 0 0 2 0;
+    -fx-font-size: 16;
+    -fx-font-weight: bold;
+    -fx-text-fill: #568ABC;
+    -fx-alignment: center;
+    -fx-prompt-text-fill: #8CA2B7;
+}
+
+/* Save Score Summary CSS */
+
+.summaryMusicCell {
+    -fx-border-color: #568ABC;
+    -fx-border-width: 2 0 0 0;
+}
+
+.summaryTitleCourse {
+    -fx-font-size: 24;
+    -fx-font-weight: bold;
+    -fx-text-fill: #568ABC;
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+}
+
+.summaryCourseIndicators{
+    -fx-font-size: 18;
+    -fx-font-weight: bold;
+    -fx-text-fill: #568ABC;
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+}
+
+/* Musics CSS */
+
+#musicPane{
+    -fx-background-color: #7CD8BF;
+}
+
+#musicPane .split-pane-divider{
+    -fx-background-color: #FDBEDB;
+}
+
+/* Musics CSS Tab */
+
+#musicTable {
+    -fx-font-weight: bold;
+    -fx-table-cell-border-color: transparent;
+    -fx-border-width: 2 0 2 2;
+    -fx-border-color: #FDBEDB;
+}
+
+#musicTable .column-header, #musicTable .column-header .label {
+    -fx-background-color: #8CA2B7;
+    -fx-text-fill: #222222;
+}
+
+#musicTable .table-row-cell {
+    -fx-background-color: #7CD8BF;
+}
+
+#musicTable .table-cell {
+    -fx-text-fill: #568ABC;
+}
+
+#musicTable .table-row-cell:selected .table-cell {
+    -fx-background-color: #568ABC;
+    -fx-border-color: #568ABC;
+    -fx-text-fill: #FDBEDB;
+}
+
+/* Musics CSS Details Grid */
+
+#musicScrollPane, #musicDetailsPane{
+    -fx-background-color: #7CD8BF;
+}
+
+.musicGridPane {
+    -fx-alignment: center;
+}
+
+.musicGridCell {
+    -fx-border-color: #568ABC;
+    -fx-border-width: 2 0 0 2;
+    -fx-border-style: solid;
+}
+
+.musicGridCellTop {
+    -fx-border-color: #568ABC;
+    -fx-border-width: 2 2 0 2;
+    -fx-border-style: solid;
+    -fx-border-radius: 10 10 0 0;
+}
+
+.musicGridCellBottom {
+    -fx-border-color: #568ABC;
+    -fx-border-width: 2 0 2 2;
+    -fx-border-style: solid;
+}
+
+.musicGridCellBottomLarge {
+    -fx-border-color: #568ABC;
+    -fx-border-width: 2;
+    -fx-border-style: solid;
+    -fx-border-radius: 0 0 10 10;
+}
+
+.musicGridCellBottomRight {
+    -fx-border-color: #568ABC;
+    -fx-border-width: 2;
+    -fx-border-style: solid;
+    -fx-border-radius: 0 0 10 0;
+}
+
+.musicGridCellBottomLeft {
+    -fx-border-color: #568ABC;
+    -fx-border-width: 2 0 2 2;
+    -fx-border-style: solid;
+    -fx-border-radius: 0 0 0 10;
+}
+
+.musicGridRightCell {
+    -fx-border-color: #568ABC;
+    -fx-border-width: 2 2 0 2;
+    -fx-border-style: solid;
+}
+
+.musicGridCell Label, .musicGridRightCell Label, .musicGridCellTop Label, .musicGridCellBottom Label, .musicGridCellBottomLarge Label, .musicGridCellBottomLeft Label, .musicGridCellBottomRight Label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #568ABC;
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+}
+
+/* History CSS */
+
+#historyPane {
+    -fx-background-color: #7CD8BF;
+}
+
+/* History CSS Tab */
+
+#courseHistoryTable {
+    -fx-background-color: #7CD8BF;
+    -fx-font-weight: bold;
+    -fx-table-cell-border-color: transparent;
+    -fx-border-width: 2;
+    -fx-border-color: #FDBEDB;
+}
+
+#courseHistoryTable .column-header, #courseHistoryTable .column-header .label {
+    -fx-background-color: #8CA2B7;
+    -fx-text-fill: #222222;
+}
+
+#courseHistoryTable .table-row-cell {
+    -fx-background-color: #7CD8BF;
+}
+
+#courseHistoryTable .table-cell {
+    -fx-text-fill: #568ABC;
+}
+
+#courseHistoryTable .table-row-cell:selected .table-cell {
+    -fx-background-color: #568ABC;
+    -fx-border-color: #568ABC;
+    -fx-text-fill: #FDBEDB;
+}
+
+/* History Details CSS */
+
+#detailsScrollPane, #scoresDetailsPane {
+    -fx-background-color: #7CD8BF;
+}
+
+.bgReapply {
+    -fx-background-color: #7CD8BF;
+}
+
+.scoresGridPane {
+    -fx-border-color: #568ABC;
+    -fx-border-width: 2;
+    -fx-border-radius: 10;
+}
+
+.historyMusicCell {
+    -fx-border-color: #568ABC;
+    -fx-border-width: 2 0 0 0;
+}
+
+.historyTitleCourse {
+    -fx-font-size: 24;
+    -fx-font-weight: bold;
+    -fx-text-fill: #568ABC;
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+}
+
+.historyCourseIndicators{
+    -fx-font-size: 18;
+    -fx-font-weight: bold;
+    -fx-text-fill: #568ABC;
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+}
+
+.historyGridPane {
+    -fx-alignment: center;
+}
+
+.historyLabel {
+    -fx-text-fill: #568ABC;
+}
+
+.historyScore{
+    -fx-font-size: 16;
+    -fx-font-weight: bold;
+    -fx-text-fill: #568ABC;
+}
+
+.filterLabel{
+    -fx-font-weight: bold;
+    -fx-text-fill: #568ABC;
+}
+
+.summaryHistoryScore{
+    -fx-font-size: 16;
+    -fx-font-weight: bold;
+    -fx-text-fill: #568ABC;
+    -fx-border-color: #568ABC;
+    -fx-border-width: 2 0 0 0;
+}
+
+/* Settings CSS */
+
+.settingsLabel{
+    -fx-font-weight: bold;
+    -fx-text-fill: #222222;
+}
+
+.combo-box .list-cell {
+    -fx-font-weight: normal;
+    -fx-background-color: #8CA2B7;
+    -fx-text-fill: #222222;
+}
+
+.combo-box .list-view .list-cell {
+    -fx-background-color: #8CA2B7;
+    -fx-text-fill: #222222;
+}
+
+.combo-box .list-view .list-cell:hover {
+    -fx-background-color: #FDBEDB;
+    -fx-text-fill: #222222;
+}
+
+.combo-box .arrow-button {
+    -fx-background-color: #8CA2B7;
+}
+
+.combo-box .arrow-button .arrow {
+    -fx-background-color: #222222;
+}
+
+.combo-box:hover, .combo-box .arrow-button:hover {
+    -fx-background-color: #FDBEDB;
+}
+
+/* Personalized Alerts CSS */
+
+.entryProblemAlert, .entrySavedAlert {
+    -fx-background-color: #FDBEDB;
+}
+
+.entryProblemAlert .label, .entrySavedAlert .label {
+    -fx-font-weight: bold;
+    -fx-font-size: 20;
+    -fx-text-fill: #8CA2B7;
+    -fx-text-alignment: center;
+}
+
+.entryProblemAlert .button, .entrySavedAlert .button {
+    -fx-background-color: #7CD8BF;
+}
+
+.entryProblemAlert .button:hover, .entrySavedAlert .button:hover {
+    -fx-background-color: #568ABC;
+}
+
+/* Info CSS */
+
+#infoScrollPane{
+    -fx-background-color: #7CD8BF;
+}
+
+#textArea {
+    -fx-background-color: #7CD8BF;
+    -fx-border-color: #568ABC;
+    -fx-border-width: 2;
+    -fx-border-radius: 10;
+}
+
+.normalLabel, .listLabel, .lienLabel, .listNoTabLabel, .titleLabel, .subTitleLabel, .versionLabel {
+    -fx-fill: #568ABC;
+}
+
+.listLabel, .lienLabel, .listNoTabLabel {
+    -fx-font-style: italic;
+}
+
+.titleLabel, .versionLabel, .subTitleLabel {
+    -fx-font-weight: bold;
+}
+
+.listLabel, .lienLabel, .listNoTabLabel {
+    -fx-font-size: 12;
+    -fx-underline: false;
+}
+
+.normalLabel {
+    -fx-font-size: 16;
+}
+
+.titleLabel {
+    -fx-font-size: 20;
+}
+
+.subTitleLabel {
+    -fx-font-size: 18;
+}
+
+.versionLabel {
+    -fx-font-size: 24;
+}
+
+.lienLabel:hover {
+    -fx-underline: true;
+    -fx-cursor: hand;
+}

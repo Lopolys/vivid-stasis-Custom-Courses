@@ -8,7 +8,9 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,21 +21,48 @@ public class ScoreStorage {
         return DataInitializer.getDataDirectory().resolve("scores.json");
     }
 
+    private static Path getHiddenScoreFilePath() throws Exception {
+        return DataInitializer.getDataDirectory().resolve("hiddenScores.json");
+    }
+
     public static void saveScores(List<ScoreEntry> scores) throws Exception {
         ensureDirectoryExists();
-        File file = getScoreFilePath().toFile();
-        mapper.writeValue(file, scores);
+        Path filePath = getScoreFilePath();
+        try (var out = Files.newOutputStream(filePath, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING)) {
+            mapper.writeValue(out, scores);
+        }
+    }
+
+    public static void saveHiddenScores(List<ScoreEntry> scores) throws Exception {
+        ensureDirectoryExists();
+        Path filePath = getHiddenScoreFilePath();
+        try (var out = Files.newOutputStream(filePath, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING)) {
+            mapper.writeValue(out, scores);
+        }
     }
 
     public static List<ScoreEntry> loadScores() throws Exception {
-        File file = getScoreFilePath().toFile();
-        if (!file.exists()) return new ArrayList<>();
-        return mapper.readValue(file, new TypeReference<>() {});
+        Path filePath = getScoreFilePath();
+        if (!Files.exists(filePath)) return new ArrayList<>();
+        try (var in = Files.newInputStream(filePath)) {
+            return mapper.readValue(in, new TypeReference<>() {});
+        }
+    }
+
+    public static List<ScoreEntry> loadHiddenScores() throws Exception {
+        Path filePath = getHiddenScoreFilePath();
+        if (!Files.exists(filePath)) return new ArrayList<>();
+        try (var in = Files.newInputStream(filePath)) {
+            return mapper.readValue(in, new TypeReference<>() {});
+        }
     }
 
     private static void ensureDirectoryExists() throws Exception {
         File file = getScoreFilePath().toFile();
+        File hidden = getHiddenScoreFilePath().toFile();
         File dir = file.getParentFile();
+        File hiddenDir = hidden.getParentFile();
         if (!dir.exists()) dir.mkdirs();
+        if (!hiddenDir.exists()) hiddenDir.mkdirs();
     }
 }

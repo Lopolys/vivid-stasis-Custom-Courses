@@ -1,6 +1,6 @@
 /* Colors List
 dark gray : #423E50 (used for lateral Pane, Tab Header, Buttons and background of ComboBox)
-light red : #DB3D56 (used for overall background color)
+light red : #D85D71 (used for overall background color)
 dark red : #7F0E2C (used for dynamic content texts/borders)
 almost black : #28263E (used for Buttons hovering)
 cyan : #00FFFC (used for text for selected TabRow)
@@ -36,12 +36,12 @@ cyan : #00FFFC (used for text for selected TabRow)
 /* CSS Scrollbar */
 
 Region, .corner{
-    -fx-background-color: #DB3D56;
+    -fx-background-color: #D85D71;
     -fx-border-color: transparent;
 }
 
 .scroll-bar:vertical{
-    -fx-background-color: #DB3D56;
+    -fx-background-color: #D85D71;
 }
 
 .scroll-bar:vertical .thumb{
@@ -50,7 +50,7 @@ Region, .corner{
 }
 
 .scroll-bar:horizontal{
-    -fx-background-color: #DB3D56;
+    -fx-background-color: #D85D71;
 }
 
 .scroll-bar:horizontal .thumb{
@@ -68,18 +68,18 @@ Region, .corner{
 /* Main CSS Zone contenu dynamique */
 
 #mainContent {
-    -fx-background-color: #DB3D56;
+    -fx-background-color: #D85D71;
     -fx-text-fill: #222222;
 }
 
 /* Courses CSS */
 
 #coursePane{
-    -fx-background-color: #DB3D56;
+    -fx-background-color: #D85D71;
 }
 
 #courseListContainer{
-    -fx-background-color: #DB3D56;
+    -fx-background-color: #D85D71;
 }
 
 /* Courses CSS Course Box */
@@ -101,7 +101,7 @@ Region, .corner{
 /* Courses Details CSS */
 
 #courseDetailsBox, #detailsCourseGrid, #detailsScrollPane{
-    -fx-background-color: #DB3D56;
+    -fx-background-color: #D85D71;
 }
 
 .detailsCourseTitle{
@@ -174,12 +174,15 @@ Region, .corner{
     -fx-alignment: center;
 }
 
-.detailScoreCell{
+.detailScoreLabel {
     -fx-font-size: 16;
     -fx-font-weight: bold;
     -fx-text-fill: #7F0E2C;
+}
+
+.detailScoreCell{
     -fx-border-color: #7F0E2C;
-    -fx-border-width: 2;
+    -fx-border-width: 2 0 2 2;
     -fx-border-style: solid;
 }
 
@@ -192,11 +195,11 @@ Region, .corner{
 /* Save Score CSS */
 
 #saveScrollPane {
-    -fx-background-color: #DB3D56;
+    -fx-background-color: #D85D71;
 }
 
 #saveScoresPane{
-    -fx-background-color: #DB3D56;
+    -fx-background-color: #D85D71;
 }
 
 .scoreLabel {
@@ -256,7 +259,7 @@ Region, .corner{
 }
 
 .scoreEntryGrid .text-field {
-    -fx-background-color: #DB3D56;
+    -fx-background-color: #D85D71;
     -fx-border-color: #7F0E2C;
     -fx-border-width: 0 0 2 0;
     -fx-font-size: 16;
@@ -300,7 +303,7 @@ Region, .corner{
 /* Musics CSS */
 
 #musicPane{
-    -fx-background-color: #DB3D56;
+    -fx-background-color: #D85D71;
 }
 
 #musicPane .split-pane-divider{
@@ -322,7 +325,7 @@ Region, .corner{
 }
 
 #musicTable .table-row-cell {
-    -fx-background-color: #DB3D56;
+    -fx-background-color: #D85D71;
 }
 
 #musicTable .table-cell {
@@ -338,7 +341,7 @@ Region, .corner{
 /* Musics CSS Details Grid */
 
 #musicScrollPane, #musicDetailsPane{
-    -fx-background-color: #DB3D56;
+    -fx-background-color: #D85D71;
 }
 
 .musicGridPane {
@@ -398,16 +401,128 @@ Region, .corner{
     -fx-alignment: center;
 }
 
+/* Random Select CSS*/
+
+#randomSelectPane, #randomSelectContent, #randomMusicContent, #randomCourseContent, #randomLegacyContent {
+    -fx-background-color: #D85D71;
+}
+
+.randomDynamicContainer {
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+}
+
+.randomTitle {
+    -fx-text-fill: #7F0E2C;
+    -fx-font-size: 24;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+}
+
+.randomOtherLabel {
+    -fx-text-fill: #7F0E2C;
+    -fx-font-size: 14;
+    -fx-alignment: center;
+}
+
+#selectButtonMusic, #selectButtonCourse, #selectButtonLegacy {
+    -fx-font-size: 24;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+}
+
+/* Random Select Spinner CSS */
+
+.spinner {
+    -fx-background-color: #D85D71;
+    -fx-border-color: #7F0E2C;
+}
+
+.spinner .text-field {
+    -fx-text-fill: #7F0E2C;
+    -fx-background-color: #D85D71;
+    -fx-border-color: #7F0E2C;
+    -fx-alignment: center;
+}
+
+.spinner .increment-arrow-button,
+.spinner .decrement-arrow-button {
+    -fx-background-color: #D85D71;
+    -fx-border-color: #7F0E2C;
+}
+
+.spinner .increment-arrow,
+.spinner .decrement-arrow {
+    -fx-background-color: #7F0E2C;
+}
+
+.spinner .increment-arrow-button:hover,
+.spinner .decrement-arrow-button:hover {
+    -fx-background-color: #7F0E2C;
+}
+
+.spinner .increment-arrow-button:hover .increment-arrow,
+.spinner .decrement-arrow-button:hover .decrement-arrow {
+    -fx-background-color: #D85D71;
+}
+
+/* Random Course/Legacy CheckBox CSS */
+
+.check-box {
+    -fx-text-fill: #222222;
+    -fx-font-weight: bold;
+}
+
+.check-box .box {
+    -fx-background-color: #D85D71;
+    -fx-border-color: #7F0E2C;
+    -fx-border-width: 2;
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+}
+
+.check-box:hover {
+    -fx-text-fill: #7F0E2C;
+}
+
+.check-box:hover .box {
+    -fx-background-color: #00FFFC;
+}
+
+.check-box:selected{
+    -fx-text-fill: #7F0E2C;
+}
+
+.check-box:selected .box {
+    -fx-background-color: #7F0E2C;
+}
+
+.check-box:selected .mark {
+    -fx-background-color: #D85D71;
+}
+
+.check-box:selected:hover{
+    -fx-text-fill: #222222;
+}
+
+.check-box:selected:hover .mark {
+    -fx-background-color: #00FFFC;
+}
+
+.check-box .text {
+    -fx-font-weight: bold;
+}
+
 /* History CSS */
 
 #historyPane {
-    -fx-background-color: #DB3D56;
+    -fx-background-color: #D85D71;
 }
 
 /* History CSS Tab */
 
 #courseHistoryTable {
-    -fx-background-color: #DB3D56;
+    -fx-background-color: #D85D71;
     -fx-font-weight: bold;
     -fx-table-cell-border-color: transparent;
     -fx-border-width: 2;
@@ -420,7 +535,7 @@ Region, .corner{
 }
 
 #courseHistoryTable .table-row-cell {
-    -fx-background-color: #DB3D56;
+    -fx-background-color: #D85D71;
 }
 
 #courseHistoryTable .table-cell {
@@ -436,11 +551,11 @@ Region, .corner{
 /* History Details CSS */
 
 #detailsScrollPane, #scoresDetailsPane {
-    -fx-background-color: #DB3D56;
+    -fx-background-color: #D85D71;
 }
 
 .bgReapply {
-    -fx-background-color: #DB3D56;
+    -fx-background-color: #D85D71;
 }
 
 .scoresGridPane {
@@ -489,12 +604,15 @@ Region, .corner{
     -fx-text-fill: #7F0E2C;
 }
 
-.summaryHistoryScore{
+.summaryHistoryScore {
+    -fx-border-color: #7F0E2C;
+    -fx-border-width: 2 0 0 0;
+}
+
+.summaryScoreLabel {
     -fx-font-size: 16;
     -fx-font-weight: bold;
     -fx-text-fill: #7F0E2C;
-    -fx-border-color: #7F0E2C;
-    -fx-border-width: 2 0 0 0;
 }
 
 /* Settings CSS */
@@ -546,7 +664,7 @@ Region, .corner{
 }
 
 .entryProblemAlert .button, .entrySavedAlert .button {
-    -fx-background-color: #DB3D56;
+    -fx-background-color: #D85D71;
 }
 
 .entryProblemAlert .button:hover, .entrySavedAlert .button:hover {
@@ -556,11 +674,11 @@ Region, .corner{
 /* Info CSS */
 
 #infoScrollPane{
-    -fx-background-color: #DB3D56;
+    -fx-background-color: #D85D71;
 }
 
 #textArea {
-    -fx-background-color: #DB3D56;
+    -fx-background-color: #D85D71;
     -fx-border-color: #7F0E2C;
     -fx-border-width: 2;
     -fx-border-radius: 10;
@@ -597,6 +715,15 @@ Region, .corner{
 
 .versionLabel {
     -fx-font-size: 24;
+}
+
+.hiddenLabel {
+    -fx-font-size: 16;
+    -fx-fill: #D85D71;
+}
+
+.hiddenLabel:hover {
+    -fx-fill: #EF4A65;
 }
 
 .lienLabel:hover {

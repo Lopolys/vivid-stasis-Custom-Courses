@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<ScrollPane fx:id="randomMusicPane" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.customcourses.controllers.RandomMusicController" fitToWidth="true" fitToHeight="true" prefWidth="600" prefHeight="600" styleClass="randomDynamicContainer">
+    <VBox fx:id="randomMusicContent" spacing="10" alignment="TOP_CENTER">
+        <!-- Titre -->
+        <Label text="Random Selection : Music" styleClass="randomTitle"/>
+
+        <!-- Filtres -->
+        <HBox spacing="10" alignment="CENTER">
+            <Label text="Pack :" minWidth="20" styleClass="randomOtherLabel"/>
+            <ComboBox fx:id="packCombo" prefWidth="200"/>
+        </HBox>
+
+        <HBox spacing="10" alignment="CENTER">
+            <Label text="Min :" minWidth="20" styleClass="randomOtherLabel"/>
+            <Spinner fx:id="minDiffSpinner" prefWidth="75" editable="true"/>
+            <Label text="Max :" minWidth="20" styleClass="randomOtherLabel"/>
+            <Spinner fx:id="maxDiffSpinner" prefWidth="75" editable="true"/>
+        </HBox>
+
+        <!-- Bouton -->
+        <Button fx:id="selectButtonMusic" text="🎲 RANDOMIZE 🎲"/>
+
+        <HBox fx:id="randomMusicSelected" spacing="10" alignment="CENTER">
+            <!-- Image de jaquette -->
+            <ImageView fx:id="coverImage" fitWidth="150" fitHeight="150" preserveRatio="true" />
+
+            <!-- Zone texte à droite -->
+            <VBox alignment="CENTER" spacing="4">
+                <Label fx:id="titleLabel" styleClass="musicTitle"/>
+                <Label fx:id="artistLabel" styleClass="randomOtherLabel"/>
+                <Label fx:id="difficultyLabel" styleClass="randomOtherLabel"/>
+            </VBox>
+        </HBox>
+    </VBox>
+</ScrollPane>

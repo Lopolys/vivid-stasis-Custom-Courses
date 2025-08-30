@@ -20,11 +20,13 @@ public class Course {
         TWIST,
         INTERLUDE,
         CLIMAX,
-        APOTHEOSIS
+        APOTHEOSIS,
+        DESTROYED,
+        EXTRA
     }
 
     public enum MusicDifficulty {
-        OP, MD, FN, EC, BS;
+        OP, MD, FN, EC, BS, SH;
 
         public double getDifficultyValue(Music music) {
             return switch (this) {
@@ -33,6 +35,7 @@ public class Course {
                 case FN -> music.getFnDiff();
                 case EC -> music.getEcDiff();
                 case BS -> music.getBsDiff();
+                case SH -> music.getShDiff();
             };
         }
     }

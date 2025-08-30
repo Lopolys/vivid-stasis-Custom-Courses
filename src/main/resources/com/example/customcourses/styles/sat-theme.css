@@ -1,7 +1,7 @@
 /* Colors List
 dark pale purple : #918BC8 (used for lateral Pane, Tab Header, Buttons and background of ComboBox)
 light pink : #F8C4DA (used for overall background color)
-dark mauve : #C27CCA(used for dynamic content texts/borders)
+dark mauve : #C27CCA (used for dynamic content texts/borders)
 dark pale blue : #5C6BAA (used for Buttons hovering)
 blue : #77BDFF (used for text for selected TabRow)
 */
@@ -174,10 +174,13 @@ Region, .corner{
     -fx-alignment: center;
 }
 
-.detailScoreCell{
+.detailScoreLabel{
     -fx-font-size: 16;
     -fx-font-weight: bold;
     -fx-text-fill: #C27CCA;
+}
+
+.detailScoreCell{
     -fx-border-color: #C27CCA;
     -fx-border-width: 2 0 2 2;
     -fx-border-style: solid;
@@ -390,6 +393,118 @@ Region, .corner{
     -fx-alignment: center;
 }
 
+/* Random Select CSS*/
+
+#randomSelectPane, #randomSelectContent, #randomMusicContent, #randomCourseContent, #randomLegacyContent {
+    -fx-background-color: #F8C4DA;
+}
+
+.randomDynamicContainer {
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+}
+
+.randomTitle {
+    -fx-text-fill: #C27CCA;
+    -fx-font-size: 24;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+}
+
+.randomOtherLabel {
+    -fx-text-fill: #C27CCA;
+    -fx-font-size: 14;
+    -fx-alignment: center;
+}
+
+#selectButtonMusic, #selectButtonCourse, #selectButtonLegacy {
+    -fx-font-size: 24;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+}
+
+/* Random Select Spinner CSS */
+
+.spinner {
+    -fx-background-color: #F8C4DA;
+    -fx-border-color: #C27CCA;
+}
+
+.spinner .text-field {
+    -fx-text-fill: #C27CCA;
+    -fx-background-color: #F8C4DA;
+    -fx-border-color: #C27CCA;
+    -fx-alignment: center;
+}
+
+.spinner .increment-arrow-button,
+.spinner .decrement-arrow-button {
+    -fx-background-color: #F8C4DA;
+    -fx-border-color: #C27CCA;
+}
+
+.spinner .increment-arrow,
+.spinner .decrement-arrow {
+    -fx-background-color: #C27CCA;
+}
+
+.spinner .increment-arrow-button:hover,
+.spinner .decrement-arrow-button:hover {
+    -fx-background-color: #C27CCA;
+}
+
+.spinner .increment-arrow-button:hover .increment-arrow,
+.spinner .decrement-arrow-button:hover .decrement-arrow {
+    -fx-background-color: #F8C4DA;
+}
+
+/* Random Course/Legacy CheckBox CSS */
+
+.check-box {
+    -fx-text-fill: #222222;
+    -fx-font-weight: bold;
+}
+
+.check-box .box {
+    -fx-background-color: #F8C4DA;
+    -fx-border-color: #C27CCA;
+    -fx-border-width: 2;
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+}
+
+.check-box:hover {
+    -fx-text-fill: #C27CCA;
+}
+
+.check-box:hover .box {
+    -fx-background-color: #918BC8;
+}
+
+.check-box:selected{
+    -fx-text-fill: #C27CCA;
+}
+
+.check-box:selected .box {
+    -fx-background-color: #C27CCA;
+}
+
+.check-box:selected .mark {
+    -fx-background-color: #F8C4DA;
+}
+
+.check-box:selected:hover{
+    -fx-text-fill: #222222;
+}
+
+.check-box:selected:hover .mark {
+    -fx-background-color: #918BC8;
+}
+
+.check-box .text {
+    -fx-font-weight: bold;
+}
+
 /* History CSS */
 
 #historyPane {
@@ -481,10 +596,13 @@ Region, .corner{
     -fx-text-fill: #C27CCA;
 }
 
-.summaryHistoryScore{
+.summaryScoreLabel{
     -fx-font-size: 16;
     -fx-font-weight: bold;
     -fx-text-fill: #C27CCA;
+}
+
+.summaryHistoryScore{
     -fx-border-color: #C27CCA;
     -fx-border-width: 2 0 0 0;
 }
@@ -591,6 +709,15 @@ Region, .corner{
 
 .versionLabel {
     -fx-font-size: 24;
+}
+
+.hiddenLabel {
+    -fx-font-size: 16;
+    -fx-fill: #F8C4DA;
+}
+
+.hiddenLabel:hover {
+    -fx-fill: #FFB7D6;
 }
 
 .lienLabel:hover {

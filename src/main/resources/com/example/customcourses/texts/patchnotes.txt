@@ -1,3 +1,37 @@
+### v 0.2.0
+## New Content
+
+## New screens :
+# • Random Selection
+	• Give different random options :
+-#		Music : Randomly select a music and a difficulty depending on the inserted min and max difficulties. Can use Packs as filters.
+-#		Course : Randomly select a course and a difficulty depending on the choosen difficulties. Can use Best Score as a max filter.
+-#		Legacy : Randomly select a Legacy course and a difficulty depending on the choosen difficulties. Can use Best Score as a max filter.
+
+# • ?????????
+	• Possibility to ?????????????????????.
+    • Contains ???????????????????????????.
+
+• Updated Musics content to 5.1.2 (basically added Some More of That Song)
+-#- smots gaming
+
+## New Courses :
+• Added New Courses to current roster :
+	•
+	•
+	•
+-#- hold on there are no new courses what the fuck am I blabbering about ?
+
+## Overall improvements
+• Updated ranks appearance to me more accurate to in-game ranks.
+• Added more fonts to the Settings.
+• Made small graphics adjustments about jacket insertion to the Musics screen.
+• Updated some theme to improve readability and fix potential misconceptions.
+
+
+#hidden# Will you break the boundary ?
+## __________________________________________________________________________________________________________
+
 ### v 0.1.1
 ## Course update
 
@@ -16,7 +50,7 @@
 
 ## Description of each screen : 
 # • Courses
-	• Possibility to see courses and the music included inside them.
+	• Possibility to see courses and the music included inside them. 
 	• Possibility to see more details with "Details" button.
 	• Contains actually 11 courses of 4 musics each :
 -#		Soundscan Origins

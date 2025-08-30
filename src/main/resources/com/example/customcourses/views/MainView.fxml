@@ -12,7 +12,7 @@
     <!-- Barre latérale gauche -->
     <left>
         <VBox>
-            <Label fx:id="versionLabel" text="v0.1.1"/>
+            <Label fx:id="versionLabel" text="v0.2.0"/>
             <VBox spacing="10" prefWidth="150">
                 <padding>
                     <Insets top="10" right="10" bottom="10" left="10"/>
@@ -20,6 +20,7 @@
                 <Button text="Courses" onAction="#handleCourses" maxWidth="Infinity"/>
                 <Button text="Save Scores" onAction="#handleScores" maxWidth="Infinity"/>
                 <Button text="Musics" onAction="#handleMusics" maxWidth="Infinity"/>
+                <Button text="Random Select" onAction="#handleRandom" maxWidth="Infinity"/>
                 <Button text="Course History" onAction="#handleHistory" maxWidth="Infinity"/>
                 <Button text="Settings" onAction="#handleSettings" maxWidth="Infinity"/>
                 <Button text="Info" onAction="#handleInfo" maxWidth="Infinity"/>

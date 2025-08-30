@@ -19,4 +19,17 @@ public class StyleUtil {
 
         scene.getRoot().setStyle("-fx-font-family: '" + prefs.getSelectedFont() + "';");
     }
+
+    public static void applyBoundaryShatter(Scene scene) throws Exception {
+        UserPreferences prefs = UserPreferences.getInstance();
+        if (scene == null || prefs == null) return;
+
+        scene.getStylesheets().removeIf(s -> s.contains("-theme.css"));
+
+        String themeCss = "/com/example/customcourses/styles/boundary-theme.css";
+
+        scene.getStylesheets().add(Objects.requireNonNull(StyleUtil.class.getResource(themeCss)).toExternalForm());
+
+        scene.getRoot().setStyle("-fx-font-family: '" + prefs.getSelectedFont() + "';");
+    }
 }

@@ -10,6 +10,8 @@ import javafx.stage.Stage;
 
 import java.io.File;
 import java.util.Objects;
+import javafx.scene.text.Font;
+import java.io.InputStream;
 
 public class SettingsController {
 
@@ -30,7 +32,7 @@ public class SettingsController {
         themeComboBox.getItems().addAll("Saturday", "Allison", "Eri", "Kotomi", "Chiyo", "Tsuki", "Dawn", "Storyteller", "Kanshi", "Tori", "Miri");
 
         // Charger les polices dans la ComboBox
-        fontComboBox.getItems().addAll("Arial", "Verdana", "Times New Roman", "Courier New");
+        fontComboBox.getItems().addAll("Arial", "Calibri", "Comic Sans MS", "Courier New", "Liberation Serif", "Times New Roman", "Verdana");
 
         // Charger les préférences sauvegardées et les appliquer dans les contrôles
         UserPreferences prefs = UserPreferences.getInstance();
@@ -146,5 +148,20 @@ public class SettingsController {
             case "miri" -> "Miri";
             default -> "Saturday";
         };
+    }
+
+    public void loadCustomFont(String fontResourcePath) {
+        InputStream fontStream = getClass().getResourceAsStream(fontResourcePath);
+        if (fontStream != null) {
+            Font font = Font.loadFont(fontStream, 14); // 14 = taille par défaut
+            if (font != null) {
+                System.out.println("Police chargée : " + font.getName());
+                fontComboBox.getItems().add(font.getName());
+            } else {
+                System.out.println("Impossible de charger la police depuis : " + fontResourcePath);
+            }
+        } else {
+            System.out.println("Fichier de police introuvable : " + fontResourcePath);
+        }
     }
 }

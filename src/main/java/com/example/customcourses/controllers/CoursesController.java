@@ -47,6 +47,7 @@ public class CoursesController {
 
         // Par défaut, charger le fichier courses.json
         Path dataDir = DataInitializer.getDataDirectory();
+
         loadCoursesFromFile(dataDir.resolve("courses.json"), false);
 
         // Attacher les actions des boutons
@@ -89,8 +90,14 @@ public class CoursesController {
 
             HBox labelWrapper = new HBox(nameLabel);
             labelWrapper.setAlignment(Pos.CENTER);
+            List<Music> musics;
 
-            List<Music> musics = course.getDifficulties().get(Course.CourseDifficulty.EXPOSITION).getMusics();
+            Course.CourseDifficultySection section = course.getDifficulties().get(Course.CourseDifficulty.EXPOSITION);
+            if (section != null) {
+                musics = section.getMusics();
+            } else {
+                musics = course.getDifficulties().get(Course.CourseDifficulty.DESTROYED).getMusics();
+            }
 
             VBox jacketRows = new VBox(10);
             HBox jacketRow = new HBox(10);

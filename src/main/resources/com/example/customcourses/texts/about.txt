@@ -25,3 +25,5 @@ You don't have the obligation to use a stamina bar since we can't keep track of 
 We actually have 11 main courses and 5 "legacy" courses (courses that were meant to be deleted) were you can enter your scores and see your improvement over time !
 
 # Have fun playing these courses and using this app !
+
+-#-Maybe there are some hidden features in the app, who knows ?

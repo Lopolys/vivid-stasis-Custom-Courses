@@ -174,10 +174,13 @@ Region, .corner{
     -fx-alignment: center;
 }
 
-.detailScoreCell{
+.detailScoreLabel{
     -fx-font-size: 16;
     -fx-font-weight: bold;
     -fx-text-fill: #0F6F8E;
+}
+
+.detailScoreCell{
     -fx-border-color: #0F6F8E;
     -fx-border-width: 2 0 2 2;
     -fx-border-style: solid;
@@ -384,6 +387,118 @@ Region, .corner{
     -fx-alignment: center;
 }
 
+/* Random Select CSS*/
+
+#randomSelectPane, #randomSelectContent, #randomMusicContent, #randomCourseContent, #randomLegacyContent {
+    -fx-background-color: #4DCCC0;
+}
+
+.randomDynamicContainer {
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+}
+
+.randomTitle {
+    -fx-text-fill: #0F6F8E;
+    -fx-font-size: 24;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+}
+
+.randomOtherLabel {
+    -fx-text-fill: #0F6F8E;
+    -fx-font-size: 14;
+    -fx-alignment: center;
+}
+
+#selectButtonMusic, #selectButtonCourse, #selectButtonLegacy {
+    -fx-font-size: 24;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+}
+
+/* Random Select Spinner CSS */
+
+.spinner {
+    -fx-background-color: #4DCCC0;
+    -fx-border-color: #0F6F8E;
+}
+
+.spinner .text-field {
+    -fx-text-fill: #0F6F8E;
+    -fx-background-color: #4DCCC0;
+    -fx-border-color: #0F6F8E;
+    -fx-alignment: center;
+}
+
+.spinner .increment-arrow-button,
+.spinner .decrement-arrow-button {
+    -fx-background-color: #4DCCC0;
+    -fx-border-color: #0F6F8E;
+}
+
+.spinner .increment-arrow,
+.spinner .decrement-arrow {
+    -fx-background-color: #0F6F8E;
+}
+
+.spinner .increment-arrow-button:hover,
+.spinner .decrement-arrow-button:hover {
+    -fx-background-color: #0F6F8E;
+}
+
+.spinner .increment-arrow-button:hover .increment-arrow,
+.spinner .decrement-arrow-button:hover .decrement-arrow {
+    -fx-background-color: #4DCCC0;
+}
+
+/* Random Course/Legacy CheckBox CSS */
+
+.check-box {
+    -fx-text-fill: #222222;
+    -fx-font-weight: bold;
+}
+
+.check-box .box {
+    -fx-background-color: #4DCCC0;
+    -fx-border-color: #0F6F8E;
+    -fx-border-width: 2;
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+}
+
+.check-box:hover {
+    -fx-text-fill: #0F6F8E;
+}
+
+.check-box:hover .box {
+    -fx-background-color: #FE0171;
+}
+
+.check-box:selected{
+    -fx-text-fill: #0F6F8E;
+}
+
+.check-box:selected .box {
+    -fx-background-color: #0F6F8E;
+}
+
+.check-box:selected .mark {
+    -fx-background-color: #4DCCC0;
+}
+
+.check-box:selected:hover{
+    -fx-text-fill: #222222;
+}
+
+.check-box:selected:hover .mark {
+    -fx-background-color: #FE0171;
+}
+
+.check-box .text {
+    -fx-font-weight: bold;
+}
+
 /* History CSS */
 
 #historyPane {
@@ -475,10 +590,13 @@ Region, .corner{
     -fx-text-fill: #0F6F8E;
 }
 
-.summaryHistoryScore{
+.summaryScoreLabel{
     -fx-font-size: 16;
     -fx-font-weight: bold;
     -fx-text-fill: #0F6F8E;
+}
+
+.summaryHistoryScore{
     -fx-border-color: #0F6F8E;
     -fx-border-width: 2 0 0 0;
 }
@@ -583,6 +701,15 @@ Region, .corner{
 
 .versionLabel {
     -fx-font-size: 24;
+}
+
+.hiddenLabel {
+    -fx-font-size: 16;
+    -fx-fill: #4DCCC0;
+}
+
+.hiddenLabel:hover {
+    -fx-fill: #74B2AC;
 }
 
 .lienLabel:hover {

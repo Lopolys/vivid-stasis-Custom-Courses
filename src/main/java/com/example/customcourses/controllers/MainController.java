@@ -1,5 +1,6 @@
 package com.example.customcourses.controllers;
 
+import com.example.customcourses.App;
 import com.example.customcourses.utils.UserPreferences;
 import com.example.customcourses.managers.CoursesManager;
 import com.example.customcourses.managers.MusicsManager;
@@ -17,6 +18,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import com.example.customcourses.utils.StyleUtil;
+import javafx.stage.Stage;
 
 public class MainController {
     private final CoursesManager coursesManager = new CoursesManager();
@@ -27,15 +29,19 @@ public class MainController {
     @FXML private BorderPane rootPane;
     @FXML private Label versionLabel;
 
+    private App app;
+
+    public void setApp(App app) {
+        this.app = app;
+    }
+
     // Cette méthode est appelée automatiquement après le chargement FXML
     @FXML
     private void initialize() throws Exception {
         applyUserPreferences();
 
-        // Charger les musiques et les cours ici
         MusicsManager.loadMusics();
         coursesManager.loadCourses(MusicsManager.getMusics());
-
         loadView("/com/example/customcourses/views/CoursesView.fxml");
     }
 
@@ -91,6 +97,11 @@ public class MainController {
         loadView("/com/example/customcourses/views/InfoView.fxml");
     }
 
+    @FXML
+    private void handleRandom(ActionEvent actionEvent) {
+        loadView("/com/example/customcourses/views/RandomSelectionView.fxml");
+    }
+
     // Méthode générique pour charger une vue FXML dans mainContent
     private void loadView(String fxmlPath) {
         try {
@@ -102,8 +113,8 @@ public class MainController {
 
             // Si c'est CoursesController, lui passer une référence à ce MainController
             if (controller instanceof CoursesController coursesController) {
-                coursesController.setCourses(new ArrayList<>(coursesManager.getAllCourses()));
                 coursesController.setMainController(this);
+                coursesController.setCourses(new ArrayList<>(coursesManager.getAllCourses()));
                 refreshCourseDetails();
             }
 
@@ -134,6 +145,8 @@ public class MainController {
             mainContent.getChildren().setAll(view);
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
     }
 

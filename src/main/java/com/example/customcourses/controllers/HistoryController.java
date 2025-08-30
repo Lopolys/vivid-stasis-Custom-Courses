@@ -4,6 +4,7 @@ import com.example.customcourses.managers.MusicsManager;
 import com.example.customcourses.models.Course;
 import com.example.customcourses.models.Music;
 import com.example.customcourses.models.ScoreEntry;
+import com.example.customcourses.utils.RankUtil;
 import com.example.customcourses.utils.ScoreStorage;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.beans.property.SimpleObjectProperty;
@@ -20,6 +21,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.*;
+import javafx.scene.text.TextAlignment;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -120,7 +122,6 @@ public class HistoryController {
         });
     }
 
-
     private <T> void centerTextCells(TableColumn<ScoreEntry, T> column) {
         column.setCellFactory(col -> new TableCell<>() {
             @Override
@@ -162,7 +163,6 @@ public class HistoryController {
         return courseNames;
     }
 
-
     private void setupFilters() {
         monthFilter.setOnAction(e -> applyFilters());
 
@@ -173,7 +173,6 @@ public class HistoryController {
 
         courseFilterBox.setOnAction(e -> applyFilters());
     }
-
 
     private void loadScoresIntoTable() {
         try {
@@ -339,6 +338,9 @@ public class HistoryController {
             musicTitleLabel.getStyleClass().add("musicTitle");
             musicTitleLabel.setMaxWidth(Double.MAX_VALUE);
             musicTitleLabel.setAlignment(Pos.CENTER);
+            musicTitleLabel.setTextAlignment(TextAlignment.CENTER);
+            StackPane musicTitleWrapper = new StackPane(musicTitleLabel);
+            musicTitleWrapper.setAlignment(Pos.CENTER);
 
             // Difficulty
             Double diffValue = switch (diff) {
@@ -347,12 +349,16 @@ public class HistoryController {
                 case FN -> music.getFnDiff();
                 case EC -> music.getEcDiff();
                 case BS -> music.getBsDiff();
+                case SH -> music.getShDiff();
             };
             Label musicDiffLabel = new Label(diff + " " + diffValue);
             musicDiffLabel.setWrapText(true);
             musicDiffLabel.getStyleClass().add("historyLabel");
             musicDiffLabel.setMaxWidth(Double.MAX_VALUE);
             musicDiffLabel.setAlignment(Pos.CENTER);
+            musicDiffLabel.setTextAlignment(TextAlignment.CENTER);
+            StackPane musicDiffWrapper = new StackPane(musicDiffLabel);
+            musicDiffWrapper.setAlignment(Pos.CENTER);
 
             // Length
             String length = switch (diff) {
@@ -364,6 +370,9 @@ public class HistoryController {
             lengthLabel.getStyleClass().add("historyLabel");
             lengthLabel.setMaxWidth(Double.MAX_VALUE);
             lengthLabel.setAlignment(Pos.CENTER);
+            lengthLabel.setTextAlignment(TextAlignment.CENTER);
+            StackPane lengthWrapper = new StackPane(lengthLabel);
+            lengthWrapper.setAlignment(Pos.CENTER);
 
             // Charter
             String charter = switch (diff) {
@@ -372,15 +381,19 @@ public class HistoryController {
                 case FN -> music.getFnCharter();
                 case EC -> music.getEcCharter();
                 case BS -> music.getBsCharter();
+                case SH -> music.getShCharter();
             };
             Label charterLabel = new Label(charter);
             charterLabel.setWrapText(true);
             charterLabel.getStyleClass().add("historyLabel");
             charterLabel.setMaxWidth(Double.MAX_VALUE);
             charterLabel.setAlignment(Pos.CENTER);
+            charterLabel.setTextAlignment(TextAlignment.CENTER);
+            StackPane charterWrapper = new StackPane(charterLabel);
+            charterWrapper.setAlignment(Pos.CENTER);
 
             VBox infoBox = new VBox();
-            infoBox.getChildren().addAll(musicTitleLabel, musicDiffLabel, charterLabel, lengthLabel);
+            infoBox.getChildren().addAll(musicTitleWrapper, musicDiffWrapper, charterWrapper, lengthWrapper);
             infoBox.getStyleClass().add("historyMusicCell");
             infoBox.setAlignment(Pos.CENTER);
             grid.add(infoBox, 1, lineIndex);
@@ -398,12 +411,12 @@ public class HistoryController {
             grid.add(borderedScoreCell, 2, lineIndex);
 
             // Colonne 3 : Rank
-            Label rankLabel = new Label(score.getIndividualRanks().get(i));
-            rankLabel.getStyleClass().add("historyScore");
-            rankLabel.setAlignment(Pos.CENTER);
+            String rank = score.getIndividualRanks().get(i);
+            ImageView rankView = new ImageView(RankUtil.getRankImage(rank));
+            rankView.setFitHeight(50);
+            rankView.setPreserveRatio(true);
 
-
-            StackPane borderedRankCell = new StackPane(rankLabel);
+            StackPane borderedRankCell = new StackPane(rankView);
             borderedRankCell.getStyleClass().add("historyMusicCell");
             borderedRankCell.setPrefSize(Region.USE_COMPUTED_SIZE, Region.USE_COMPUTED_SIZE);
 
@@ -414,16 +427,31 @@ public class HistoryController {
         // Ligne finale : score total et rang
         int lastRow = musicList.size() + 2;
 
-        Label bottomLabel = new Label("Total Score : " + score.getTotalScore() + " - " + score.getTotalRank());
+        Label bottomLabel = new Label("Total Score : " + score.getTotalScore() + " - ");
         bottomLabel.setPadding(new Insets(5));
         bottomLabel.setMaxWidth(Double.MAX_VALUE);
         bottomLabel.setMaxHeight(Double.MAX_VALUE);
-        bottomLabel.getStyleClass().add("summaryHistoryScore");
+        bottomLabel.getStyleClass().add("summaryScoreLabel");
         bottomLabel.setWrapText(true);
         bottomLabel.setAlignment(Pos.CENTER);
 
-        GridPane.setColumnSpan(bottomLabel, 4);
-        grid.add(bottomLabel, 0, lastRow);
+        String rank = score.getTotalRank();
+        ImageView rankView = new ImageView(RankUtil.getRankImage(rank));
+        rankView.setFitHeight(50);
+        rankView.setPreserveRatio(true);
+
+        StackPane borderedRankCell = new StackPane(rankView);
+        borderedRankCell.setPadding(new Insets(5, 0, 5, 0));
+        borderedRankCell.setPrefSize(Region.USE_COMPUTED_SIZE, Region.USE_COMPUTED_SIZE);
+
+        HBox bottomContent = new HBox();
+        bottomContent.getChildren().addAll(bottomLabel, borderedRankCell);
+        bottomContent.getStyleClass().add("summaryHistoryScore");
+        bottomContent.setAlignment(Pos.CENTER);
+
+        GridPane.setColumnSpan(bottomContent, 4);
+        GridPane.setHalignment(bottomContent, HPos.CENTER);
+        grid.add(bottomContent, 0, lastRow);
         grid.setMaxWidth(700);
         grid.setPrefWidth(700);
 

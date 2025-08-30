@@ -5,6 +5,7 @@ import com.example.customcourses.models.Music;
 import com.example.customcourses.models.Course.CourseDifficulty;
 import com.example.customcourses.models.Course.CourseDifficultySection;
 import com.example.customcourses.models.Course.MusicDifficulty;
+import com.example.customcourses.utils.RankUtil;
 import javafx.fxml.FXML;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
@@ -181,6 +182,7 @@ public class CoursesDetailsController {
                         case FN -> music.getFnCharter();
                         case EC -> music.getEcCharter();
                         case BS -> music.getBsCharter();
+                        case SH -> music.getShCharter();
                     };
                     Label charterLabel = new Label("Charter: " + charter);
                     charterLabel.setWrapText(true);
@@ -218,18 +220,32 @@ public class CoursesDetailsController {
             else {
                 CourseDifficulty difficulty = difficultyOrder.get(col-1);
                 CourseDifficultySection section = difficulties.get(difficulty);
-                String text = section.getBestScore() + " ( " + section.getBestRank() + " )";
-                Label scoreLabel = new Label(text);
+                Label scoreLabel = new Label(section.getBestScore() + " - ");
                 scoreLabel.setMaxWidth(Double.MAX_VALUE);
                 scoreLabel.setMaxHeight(Double.MAX_VALUE);
+                scoreLabel.getStyleClass().add("detailScoreLabel");
                 scoreLabel.setWrapText(true);
                 scoreLabel.setAlignment(Pos.CENTER);
+
+                String rank = section.getBestRank();
+                ImageView rankView = new ImageView(RankUtil.getRankImage(rank));
+                rankView.setFitHeight(50);
+                rankView.setPreserveRatio(true);
+
+                StackPane borderedRankCell = new StackPane(rankView);
+                borderedRankCell.setPadding(new Insets(5, 0, 5, 0));
+                borderedRankCell.setPrefSize(Region.USE_COMPUTED_SIZE, Region.USE_COMPUTED_SIZE);
+
+                HBox bottomContent = new HBox();
+                bottomContent.getChildren().addAll(scoreLabel, borderedRankCell);
+                bottomContent.setAlignment(Pos.CENTER);
+
                 if (col == columnCount - 1) {
-                    scoreLabel.getStyleClass().add("bottomRightCell");
+                    bottomContent.getStyleClass().add("bottomRightCell");
                 } else {
-                    scoreLabel.getStyleClass().add("detailScoreCell");
+                    bottomContent.getStyleClass().add("detailScoreCell");
                 }
-                detailsCourseGrid.add(scoreLabel, col, currentRow);
+                detailsCourseGrid.add(bottomContent, col, currentRow);
             }
         }
         currentRow++;

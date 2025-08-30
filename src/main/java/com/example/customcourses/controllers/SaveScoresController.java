@@ -201,7 +201,7 @@ public class SaveScoresController {
                 Image image = new Image(Objects.requireNonNull(getClass().getResourceAsStream(imagePath)));
                 imageView.setImage(image);
                 grid.add(imageView, 0, baseRow, 1, 2); // colspan 1, rowspan 2
-            } catch (Exception e) {
+            } catch (Exception _) {
 
             }
 
@@ -225,24 +225,23 @@ public class SaveScoresController {
             grid.add(tf, 1, baseRow + 1);
 
             // == Colonne 2, Ligne baseRow+1 : Rang ==
-            Label rankLabel = new Label("???");
-            rankLabel.getStyleClass().add("entryScore");
-            rankLabel.setPrefWidth(60);
-            rankLabel.setAlignment(Pos.CENTER);
-            rankLabels.add(rankLabel);
-            grid.add(rankLabel, 2, baseRow + 1);
+            ImageView rankView = new ImageView(new Image(Objects.requireNonNull(getClass().getResource("/images/ranks/default.png")).toExternalForm()));
+            rankView.setFitHeight(30);
+            rankView.setPreserveRatio(true);
 
-            // == Listener de rang dynamique ==
+            grid.add(rankView, 2, baseRow + 1);
+
             tf.textProperty().addListener((observable, oldValue, newValue) -> {
                 try {
                     int score = Integer.parseInt(newValue.replaceAll("[^0-9]", ""));
                     if (score < 0 || score > 1_010_000) {
-                        rankLabel.setText("???");
+                        rankView.setImage(new Image(Objects.requireNonNull(getClass().getResource("/images/ranks/default.png")).toExternalForm()));
                     } else {
-                        rankLabel.setText(RankUtil.calculateMusicRank(score));
+                        String rank = RankUtil.calculateMusicRank(score);
+                        rankView.setImage(RankUtil.getRankImage(rank));
                     }
                 } catch (NumberFormatException e) {
-                    rankLabel.setText("???");
+                    rankView.setImage(new Image(getClass().getResource("/images/ranks/default.png").toExternalForm()));
                 }
             });
         }
@@ -395,7 +394,7 @@ public class SaveScoresController {
                 Image image = new Image(Objects.requireNonNull(getClass().getResourceAsStream(imagePath)));
                 imageView.setImage(image);
                 imageContainer.getChildren().add(imageView);
-            } catch (Exception e) {
+            } catch (Exception _) {
 
             }
 
@@ -428,6 +427,7 @@ public class SaveScoresController {
                 case FN -> music.getFnDiff();
                 case EC -> music.getEcDiff();
                 case BS -> music.getBsDiff();
+                case SH -> music.getShDiff();
             };
             Label musicDiffLabel = new Label(diff + " " + diffValue);
             musicDiffLabel.setWrapText(true);
@@ -439,9 +439,16 @@ public class SaveScoresController {
             scoreLabel.getStyleClass().add("entryScore");
             scoreLabel.setAlignment(Pos.CENTER);
 
-            Label rankLabel = new Label("Rank : " + scoreRank);
-            rankLabel.getStyleClass().add("entryScore");
-            rankLabel.setAlignment(Pos.CENTER);
+            String rankTxt = scoreRank;
+            ImageView rankView = new ImageView(RankUtil.getRankImage(rankTxt));
+            rankView.setFitHeight(50);
+            rankView.setPreserveRatio(true);
+
+            StackPane borderedRankCell = new StackPane(rankView);
+            borderedRankCell.getStyleClass().add("historyMusicCell");
+            borderedRankCell.setPrefSize(Region.USE_COMPUTED_SIZE, Region.USE_COMPUTED_SIZE);
+
+            GridPane.setHalignment(borderedRankCell, HPos.CENTER);
 
             VBox infoBox = new VBox();
             infoBox.getChildren().addAll(musicTitleLabel, musicDiffLabel);
@@ -450,7 +457,7 @@ public class SaveScoresController {
             gridSummary.add(infoBox, 1, lineIndex);
 
             VBox scoreBox = new VBox();
-            scoreBox.getChildren().addAll(scoreLabel, rankLabel);
+            scoreBox.getChildren().addAll(scoreLabel, rankView);
             scoreBox.getStyleClass().add("summaryMusicCell");
             scoreBox.setAlignment(Pos.CENTER);
             gridSummary.add(scoreBox, 2, lineIndex);
@@ -459,16 +466,31 @@ public class SaveScoresController {
         // Ligne finale : score total et rang
         int lastRow = currentMusics.size() + 2;
 
-        Label bottomLabel = new Label("Total Score : " + totalScore + " - " + rank);
+        Label bottomLabel = new Label("Total Score : " + totalScore + " - ");
         bottomLabel.setPadding(new Insets(5));
         bottomLabel.setMaxWidth(Double.MAX_VALUE);
         bottomLabel.setMaxHeight(Double.MAX_VALUE);
-        bottomLabel.getStyleClass().add("summaryEntryScore");
+        bottomLabel.getStyleClass().add("summaryScoreLabel");
         bottomLabel.setWrapText(true);
         bottomLabel.setAlignment(Pos.CENTER);
 
-        GridPane.setColumnSpan(bottomLabel, 3);
-        gridSummary.add(bottomLabel, 0, lastRow);
+        String rankTxt = rank;
+        ImageView rankView = new ImageView(RankUtil.getRankImage(rankTxt));
+        rankView.setFitHeight(50);
+        rankView.setPreserveRatio(true);
+
+        StackPane borderedRankCell = new StackPane(rankView);
+        borderedRankCell.setPadding(new Insets(5, 0, 5, 0));
+        borderedRankCell.setPrefSize(Region.USE_COMPUTED_SIZE, Region.USE_COMPUTED_SIZE);
+
+        HBox bottomContent = new HBox();
+        bottomContent.getChildren().addAll(bottomLabel, borderedRankCell);
+        bottomContent.getStyleClass().add("summaryHistoryScore");
+        bottomContent.setAlignment(Pos.CENTER);
+
+        GridPane.setColumnSpan(bottomContent, 4);
+        GridPane.setHalignment(bottomContent, HPos.CENTER);
+        gridSummary.add(bottomContent, 0, lastRow);
         gridSummary.setMaxWidth(700);
         gridSummary.setPrefWidth(700);
 
@@ -484,7 +506,7 @@ public class SaveScoresController {
 
         confirm.setOnAction(e -> {
             try {
-                handleConfirm(totalScore, rank);
+                handleConfirm(totalScore, rankTxt);
             } catch (Exception ex) {
                 throw new RuntimeException(ex);
             }

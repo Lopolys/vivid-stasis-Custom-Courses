@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<ScrollPane fx:id="randomSelectPane" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.customcourses.controllers.RandomSelectionController" fitToWidth="true" fitToHeight="true">
+    <VBox fx:id="randomSelectContent" spacing="10" alignment="TOP_CENTER">
+        <!-- Barre de boutons -->
+        <HBox spacing="10" alignment="CENTER">
+            <Button text="Music" onAction="#showRandomMusic"/>
+            <Button text="Course" onAction="#showRandomCourse"/>
+            <Button text="Legacy" onAction="#showRandomLegacy"/>
+        </HBox>
+
+        <!-- Contenu dynamique -->
+        <VBox fx:id="contentPane" prefHeight="550" prefWidth="600"/>
+    </VBox>
+</ScrollPane>

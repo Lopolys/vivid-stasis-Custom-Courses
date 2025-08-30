@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.geometry.VPos;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -99,7 +100,11 @@ public class MusicsController {
             if (input == null) {
                 throw new RuntimeException("Fichier musics.json introuvable");
             }
-            return mapper.readValue(input, new TypeReference<>() {});
+
+            List<Music> allMusics = mapper.readValue(input, new TypeReference<>() {});
+
+            String excludeBoundary = "Boundary Shatter";
+            return allMusics.stream().filter(music -> music.getPack() == null || !music.getPack().equalsIgnoreCase(excludeBoundary)).toList();
         } catch (Exception e) {
             e.printStackTrace();
             return List.of(); // Liste vide si erreur
@@ -126,7 +131,6 @@ public class MusicsController {
         }
 
     }
-
 
     private void showDetails(Music music) {
         GridPane grid = new GridPane();
@@ -174,6 +178,25 @@ public class MusicsController {
             grid.getColumnConstraints().add(col);
         }
 
+        //Homogénéisation des lignes
+        for (int i = 0; i <= 4; i++) {
+            RowConstraints row = new RowConstraints();
+            if (i==0) {
+                row.setPrefHeight(30);
+                row.setMinHeight(20);
+                row.setMaxHeight(40);
+                row.setVgrow(Priority.NEVER);
+            } else {
+                row.setPrefHeight(20);
+                if (i > 1) {
+                    row.setMinHeight(20);
+                    row.setMaxHeight(40);
+                    row.setVgrow(Priority.ALWAYS);
+                }
+            }
+            grid.getRowConstraints().add(row);
+        }
+
         // Titre des musiques
         Label titleLabel = new Label(music.getTitle());
         titleLabel.setWrapText(true);
@@ -181,24 +204,14 @@ public class MusicsController {
         titleLabel.setMinHeight(20);
 
         StackPane borderedTitleCell = new StackPane(titleLabel);
-        borderedTitleCell.getStyleClass().add("musicGridCellTop");
+        borderedTitleCell.getStyleClass().addAll("musicGridCellTop", "musicTitle");
+        borderedTitleCell.setAlignment(Pos.CENTER);
         borderedTitleCell.setPrefSize(Region.USE_COMPUTED_SIZE, Region.USE_COMPUTED_SIZE);
 
         GridPane.setHalignment(borderedTitleCell, HPos.CENTER);
+        GridPane.setValignment(borderedTitleCell, VPos.CENTER);
         GridPane.setColumnSpan(borderedTitleCell, columnCount);
         grid.add(borderedTitleCell, 0, 0);
-
-        //Homogénéisation des lignes 2 à 5
-        for (int i = 1; i <= 4; i++) {
-            RowConstraints row = new RowConstraints();
-            row.setPrefHeight(20);
-            if(i > 1){
-                row.setMinHeight(20);
-                row.setMaxHeight(40);
-                row.setVgrow(Priority.ALWAYS);
-            }
-            grid.getRowConstraints().add(row);
-        }
 
         //Infos + image
         for (int i = 1; i <= data.length; i++) {
@@ -216,7 +229,7 @@ public class MusicsController {
         }
 
         StackPane coverContainer = new StackPane();
-        GridPane.setRowSpan(coverContainer, 4);
+        GridPane.setRowSpan(coverContainer, 6);
         grid.add(coverContainer, columnCount -1, 1);
 
         String[][] data2 = {
@@ -232,9 +245,7 @@ public class MusicsController {
                 label.setMinHeight(30);
 
                 StackPane borderedCell = new StackPane(label);
-                if (col == columnCount - 1) {
-                    borderedCell.getStyleClass().add("musicGridRightCell");
-                } else {
+                if (!(col == columnCount - 1)) {
                     borderedCell.getStyleClass().add("musicGridCell");
                 }
                 borderedCell.setPrefSize(Region.USE_COMPUTED_SIZE, Region.USE_COMPUTED_SIZE);
@@ -251,7 +262,6 @@ public class MusicsController {
         StackPane borderedFooterCell = new StackPane(footerLabel);
         borderedFooterCell.getStyleClass().add("musicGridCellBottomLarge");
         borderedFooterCell.setPrefSize(Region.USE_COMPUTED_SIZE, Region.USE_COMPUTED_SIZE);
-
 
         GridPane.setHalignment(borderedFooterCell, HPos.CENTER);
         GridPane.setColumnSpan(borderedFooterCell, columnCount);
@@ -286,10 +296,10 @@ public class MusicsController {
             Label bsTitleLabel = new Label(music.getBsTitle());
             bsTitleLabel.setWrapText(true);
             bsTitleLabel.setAlignment(Pos.CENTER);
-            bsTitleLabel.setMinHeight(20);
+            bsTitleLabel.setMinHeight(30);
 
             StackPane borderedBsTitleCell = new StackPane(bsTitleLabel);
-            borderedBsTitleCell.getStyleClass().add("musicGridCellTop");
+            borderedBsTitleCell.getStyleClass().addAll("musicGridCellTop", "musicTitle");
             borderedBsTitleCell.setPrefSize(Region.USE_COMPUTED_SIZE, Region.USE_COMPUTED_SIZE);
 
             GridPane.setHalignment(borderedBsTitleCell, HPos.CENTER);

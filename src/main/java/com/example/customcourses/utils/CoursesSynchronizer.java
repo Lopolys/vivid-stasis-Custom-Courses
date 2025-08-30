@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -50,7 +51,9 @@ public class CoursesSynchronizer {
             localCourses.removeIf(localCourse -> referenceCourses.stream().noneMatch(refCourse -> refCourse.getName().equalsIgnoreCase(localCourse.getName())));
 
             // Sauvegarde des modifications
-            mapper.writeValue(localFile.toFile(), localCourses);
+            try (var out = Files.newOutputStream(localFile, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING)) {
+                mapper.writeValue(out, localCourses);
+            }
         }
     }
 

@@ -1,0 +1,35 @@
+[
+  {
+    "name": "Geology Museum Incident",
+    "difficulties": {
+      "DESTROYED": {
+        "musicTitles": ["PYROMANIA", "evil pimp dracula fire beat", "Crimson Dance (vivid/stasis Edit)", "APOCALYPSE CALL"],
+        "difficultyLevels": ["EC", "SH", "BS", "EC"],
+        "bestScore": 0,
+        "bestRank": "E"
+      }
+    }
+  },
+  {
+    "name": "grode...",
+    "difficulties": {
+      "DESTROYED": {
+        "musicTitles": ["grode (Wyvren's Remix)", "grode (DJ HOE SCARER REMIX)", "grode(decoherence)", "grode (A-Saph Multigenre Remix)"],
+        "difficultyLevels": ["FN", "SH", "EC", "SH"],
+        "bestScore": 0,
+        "bestRank": "E"
+      }
+    }
+  },
+  {
+    "name": "what the Terminal 3 ?",
+    "difficulties": {
+      "DESTROYED": {
+        "musicTitles": ["Chronoexplorers", "Chronoexplorers", "Chronoexplorers", "Chronoexplorers"],
+        "difficultyLevels": ["OP", "MD", "FN", "EC"],
+        "bestScore": 0,
+        "bestRank": "E"
+      }
+    }
+  }
+]

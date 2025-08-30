@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<ScrollPane fx:id="detailsScrollPane" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.customcourses.controllers.HiddenCoursesDetailsController" fitToWidth="true" fitToHeight="true">
+    <VBox fx:id="courseDetailsBox" spacing="15">
+        <GridPane fx:id="detailsCourseGrid">
+            <!-- Rempli dynamiquement -->
+        </GridPane>
+        <HBox alignment="CENTER">
+            <Button fx:id="detailsBackButton" text="Back to Courses" onAction="#onBack"/>
+        </HBox>
+    </VBox>
+</ScrollPane>

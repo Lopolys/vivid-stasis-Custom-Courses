@@ -1,0 +1,11 @@
+[ {
+  "courseName" : "Hidden SAMPLE Course",
+  "difficulty" : "DESTROYED",
+  "musicTitles" : [ "The River", "Locked Out", "RAM (Rotating Auto-Mobiles)", "Angelstar" ],
+  "difficultyLevels" : [ "SH", "SH", "SH", "SH" ],
+  "individualScores" : [ 1010000, 1008647, 981745, 996784 ],
+  "individualRanks" : [ "VS", "V", "S", "S+" ],
+  "totalScore" : 3997176,
+  "totalRank" : "S+",
+  "date" : "1000-12-12"
+} ]

@@ -1,9 +1,9 @@
 package com.example.customcourses.models;
 
 public class Music {
-    private String title, bsTitle, artist, bsArtist, length, bsLength, image, bsImage, pack, jacketArtist, bsJacketArtist, opCharter, mdCharter, fnCharter, ecCharter, bsCharter;
-    private double opDiff, mdDiff, fnDiff, ecDiff, bsDiff, bpm, bsBpm;
-    private int opNotes, mdNotes, fnNotes, ecNotes, bsNotes;
+    private String title, bsTitle, artist, bsArtist, length, bsLength, image, bsImage, pack, jacketArtist, bsJacketArtist, opCharter, mdCharter, fnCharter, ecCharter, bsCharter, shCharter;
+    private double opDiff, mdDiff, fnDiff, ecDiff, bsDiff, shDiff, bpm, bsBpm;
+    private int opNotes, mdNotes, fnNotes, ecNotes, bsNotes, shNotes;
 
     public Music(){}
 
@@ -135,6 +135,14 @@ public class Music {
         this.bsCharter = bsCharter;
     }
 
+    public String getShCharter() {
+        return shCharter;
+    }
+
+    public void setShCharter(String shCharter) {
+        this.shCharter = shCharter;
+    }
+
     public double getOpDiff() {
         return opDiff;
     }
@@ -173,6 +181,14 @@ public class Music {
 
     public void setBsDiff(double bsDiff) {
         this.bsDiff = bsDiff;
+    }
+
+    public double getShDiff() {
+        return shDiff;
+    }
+
+    public void setShDiff(double shDiff) {
+        this.shDiff = shDiff;
     }
 
     public double getBpm() {
@@ -229,5 +245,13 @@ public class Music {
 
     public void setBsNotes(int bsNotes) {
         this.bsNotes = bsNotes;
+    }
+
+    public int getShNotes() {
+        return shNotes;
+    }
+
+    public void setShNotes(int shNotes) {
+        this.shNotes = shNotes;
     }
 }

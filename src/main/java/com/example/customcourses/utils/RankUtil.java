@@ -1,5 +1,9 @@
 package com.example.customcourses.utils;
 
+import javafx.scene.image.Image;
+
+import java.util.Objects;
+
 public class RankUtil {
 
     private static final int[] THRESHOLDS = {
@@ -58,4 +62,24 @@ public class RankUtil {
         }
         return "E";
     }
+
+    public static Image getRankImage(String rank) {
+        return switch (rank) {
+            case "E" -> new Image(Objects.requireNonNull(RankUtil.class.getResourceAsStream("/images/ranks/E.png")));
+            case "D" -> new Image(Objects.requireNonNull(RankUtil.class.getResourceAsStream("/images/ranks/D.png")));
+            case "C" -> new Image(Objects.requireNonNull(RankUtil.class.getResourceAsStream("/images/ranks/C.png")));
+            case "B" -> new Image(Objects.requireNonNull(RankUtil.class.getResourceAsStream("/images/ranks/B.png")));
+            case "A" -> new Image(Objects.requireNonNull(RankUtil.class.getResourceAsStream("/images/ranks/A.png")));
+            case "AA" -> new Image(Objects.requireNonNull(RankUtil.class.getResourceAsStream("/images/ranks/AA.png")));
+            case "S" -> new Image(Objects.requireNonNull(RankUtil.class.getResourceAsStream("/images/ranks/S.png")));
+            case "S+" -> new Image(Objects.requireNonNull(RankUtil.class.getResourceAsStream("/images/ranks/S+.png")));
+            case "SS" -> new Image(Objects.requireNonNull(RankUtil.class.getResourceAsStream("/images/ranks/SS.png")));
+            case "SS+" -> new Image(Objects.requireNonNull(RankUtil.class.getResourceAsStream("/images/ranks/SS+.png")));
+            case "V" -> new Image(Objects.requireNonNull(RankUtil.class.getResourceAsStream("/images/ranks/V.png")));
+            case "V+" -> new Image(Objects.requireNonNull(RankUtil.class.getResourceAsStream("/images/ranks/V+.png")));
+            case "VS" -> new Image(Objects.requireNonNull(RankUtil.class.getResourceAsStream("/images/ranks/VS.png")));
+            default -> throw new IllegalStateException("Unexpected value: " + rank);
+        };
+    }
+
 }

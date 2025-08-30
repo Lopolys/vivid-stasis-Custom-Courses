@@ -73,6 +73,10 @@ public class InfoController {
                     String cleanLine = line.substring(2).trim();
                     text = new Text(cleanLine + "\n");
                     text.getStyleClass().add("titleLabel");
+                } else if (line.startsWith("#hidden#")) {
+                    String cleanLine = line.substring(8).trim();
+                    text = new Text(cleanLine + "\n");
+                    text.getStyleClass().add("hiddenLabel");
                 } else if (line.startsWith("#")) {
                     String cleanLine = line.substring(1).trim();
                     text = new Text(cleanLine + "\n");

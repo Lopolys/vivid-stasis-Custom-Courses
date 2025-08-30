@@ -151,9 +151,6 @@ Region, .corner{
 }
 
 .bottomRightCell {
-    -fx-font-size: 16;
-    -fx-font-weight: bold;
-    -fx-text-fill: #2933B9;
     -fx-border-color: #2933B9;
     -fx-border-width: 2;
     -fx-border-style: solid;
@@ -174,12 +171,15 @@ Region, .corner{
     -fx-alignment: center;
 }
 
-.detailScoreCell{
+.detailScoreLabel{
     -fx-font-size: 16;
     -fx-font-weight: bold;
     -fx-text-fill: #2933B9;
+}
+
+.detailScoreCell{
     -fx-border-color: #2933B9;
-    -fx-border-width: 2;
+    -fx-border-width: 2 0 2 2;
     -fx-border-style: solid;
 }
 
@@ -390,6 +390,118 @@ Region, .corner{
     -fx-alignment: center;
 }
 
+/* Random Select CSS*/
+
+#randomSelectPane, #randomSelectContent, #randomMusicContent, #randomCourseContent, #randomLegacyContent {
+    -fx-background-color: #8594DD;
+}
+
+.randomDynamicContainer {
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+}
+
+.randomTitle {
+    -fx-text-fill: #2933B9;
+    -fx-font-size: 24;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+}
+
+.randomOtherLabel {
+    -fx-text-fill: #2933B9;
+    -fx-font-size: 14;
+    -fx-alignment: center;
+}
+
+#selectButtonMusic, #selectButtonCourse, #selectButtonLegacy {
+    -fx-font-size: 24;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+}
+
+/* Random Select Spinner CSS */
+
+.spinner {
+    -fx-background-color: #8594DD;
+    -fx-border-color: #2933B9;
+}
+
+.spinner .text-field {
+    -fx-text-fill: #2933B9;
+    -fx-background-color: #8594DD;
+    -fx-border-color: #2933B9;
+    -fx-alignment: center;
+}
+
+.spinner .increment-arrow-button,
+.spinner .decrement-arrow-button {
+    -fx-background-color: #8594DD;
+    -fx-border-color: #2933B9;
+}
+
+.spinner .increment-arrow,
+.spinner .decrement-arrow {
+    -fx-background-color: #2933B9;
+}
+
+.spinner .increment-arrow-button:hover,
+.spinner .decrement-arrow-button:hover {
+    -fx-background-color: #2933B9;
+}
+
+.spinner .increment-arrow-button:hover .increment-arrow,
+.spinner .decrement-arrow-button:hover .decrement-arrow {
+    -fx-background-color: #8594DD;
+}
+
+/* Random Course/Legacy CheckBox CSS */
+
+.check-box {
+    -fx-text-fill: #222222;
+    -fx-font-weight: bold;
+}
+
+.check-box .box {
+    -fx-background-color: #8594DD;
+    -fx-border-color: #2933B9;
+    -fx-border-width: 2;
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+}
+
+.check-box:hover {
+    -fx-text-fill: #2933B9;
+}
+
+.check-box:hover .box {
+    -fx-background-color: #E0AAC8;
+}
+
+.check-box:selected{
+    -fx-text-fill: #2933B9;
+}
+
+.check-box:selected .box {
+    -fx-background-color: #2933B9;
+}
+
+.check-box:selected .mark {
+    -fx-background-color: #8594DD;
+}
+
+.check-box:selected:hover{
+    -fx-text-fill: #222222;
+}
+
+.check-box:selected:hover .mark {
+    -fx-background-color: #E0AAC8;
+}
+
+.check-box .text {
+    -fx-font-weight: bold;
+}
+
 /* History CSS */
 
 #historyPane {
@@ -482,11 +594,14 @@ Region, .corner{
 }
 
 .summaryHistoryScore{
+    -fx-border-color: #2933B9;
+    -fx-border-width: 2 0 0 0;
+}
+
+.summaryScoreLabel{
     -fx-font-size: 16;
     -fx-font-weight: bold;
     -fx-text-fill: #2933B9;
-    -fx-border-color: #2933B9;
-    -fx-border-width: 2 0 0 0;
 }
 
 /* Settings CSS */
@@ -589,6 +704,15 @@ Region, .corner{
 
 .versionLabel {
     -fx-font-size: 24;
+}
+
+.hiddenLabel {
+    -fx-font-size: 16;
+    -fx-fill: #8594DD;
+}
+
+.hiddenLabel:hover {
+    -fx-fill: #758CF4;
 }
 
 .lienLabel:hover {

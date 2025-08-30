@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<ScrollPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.customcourses.controllers.HiddenSaveScoresController" fx:id="saveScrollPane" fitToWidth="true" fitToHeight="true">
+    <VBox fx:id="saveScoresPane" spacing="15" alignment="TOP_CENTER">
+        <HBox fx:id="courseSelectionBox" spacing="10" alignment="CENTER">
+            <Label text="Course :" styleClass="scoreLabel"/>
+            <ComboBox fx:id="courseCombo" promptText="Select course" prefWidth="200"/>
+        </HBox>
+        <VBox fx:id="mainContentBox" spacing="10" alignment="CENTER"/>
+        <HBox fx:id="buttonsBox" spacing="15" alignment="CENTER"/>
+    </VBox>
+</ScrollPane>

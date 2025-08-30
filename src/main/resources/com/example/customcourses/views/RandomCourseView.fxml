@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<ScrollPane fx:id="randomCoursePane" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.customcourses.controllers.RandomCourseController" fitToWidth="true" fitToHeight="true" prefWidth="600" prefHeight="600" styleClass="randomDynamicContainer">
+    <VBox fx:id="randomCourseContent" spacing="15" alignment="TOP_CENTER">
+
+        <!-- Titre -->
+        <Label text="Random Selection : Course" styleClass="randomTitle"/>
+
+        <!-- Cases à cocher pour les difficultés -->
+        <HBox spacing="15" alignment="CENTER">
+            <CheckBox fx:id="expBox" text="EXPOSITION"/>
+            <CheckBox fx:id="twistBox" text="TWIST"/>
+            <CheckBox fx:id="interBox" text="INTERLUDE"/>
+            <CheckBox fx:id="climaxBox" text="CLIMAX"/>
+            <CheckBox fx:id="apoBox" text="APOTHEOSIS"/>
+        </HBox>
+
+        <!-- Score max -->
+        <HBox spacing="10" alignment="CENTER">
+            <Label text="Max score :" styleClass="randomOtherLabel"/>
+            <Spinner fx:id="maxScoreSpinner" editable="true"/>
+        </HBox>
+
+        <!-- Bouton -->
+        <Button fx:id="selectButtonCourse" text="🎲 RANDOMIZE 🎲"/>
+
+        <!-- Résultats -->
+        <VBox fx:id="randomCourseSelected" spacing="5" alignment="CENTER">
+            <Label fx:id="nameLabel" styleClass="detailsCourseTitle"/>
+            <Label fx:id="difficultyLabel" styleClass="detailsCourseIndicators"/>
+            <HBox fx:id="coverPane" spacing="10" alignment="CENTER"/>
+            <Label fx:id="scoreLabel" styleClass="entryScore"/>
+        </VBox>
+    </VBox>
+</ScrollPane>

@@ -266,7 +266,7 @@ Region, .corner{
     -fx-font-weight: bold;
     -fx-text-fill: #6B1A60;
     -fx-alignment: center;
-    -fx-prompt-text-fill: #893BB7;
+    -fx-prompt-text-fill: #B54199;
 }
 
 /* Save Score Summary CSS */
@@ -431,6 +431,8 @@ Region, .corner{
 }
 
 .spinner .text-field {
+    -fx-font-size: 16;
+    -fx-font-weight: bold;
     -fx-text-fill: #6B1A60;
     -fx-background-color: #CE4EAC;
     -fx-border-color: #6B1A60;
@@ -715,7 +717,7 @@ Region, .corner{
 }
 
 .hiddenLabel:hover {
-    -fx-fill: #B24C99;
+    -fx-fill: #B54199;
 }
 
 .lienLabel:hover {

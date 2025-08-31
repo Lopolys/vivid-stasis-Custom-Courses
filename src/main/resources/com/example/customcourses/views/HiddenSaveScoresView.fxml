@@ -2,7 +2,6 @@
 
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.geometry.Insets?>
 
 <ScrollPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.customcourses.controllers.HiddenSaveScoresController" fx:id="saveScrollPane" fitToWidth="true" fitToHeight="true">
     <VBox fx:id="saveScoresPane" spacing="15" alignment="TOP_CENTER">

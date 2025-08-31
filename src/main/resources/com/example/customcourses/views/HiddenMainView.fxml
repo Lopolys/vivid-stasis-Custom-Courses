@@ -4,15 +4,12 @@
 <?import javafx.scene.control.*?>
 <?import javafx.geometry.Insets?>
 
-<BorderPane fx:id="rootPane"
-            fx:controller="com.example.customcourses.controllers.HiddenMainController"
-            xmlns:fx="http://javafx.com/fxml"
-            prefWidth="1000" prefHeight="600">
+<BorderPane fx:id="rootPane" fx:controller="com.example.customcourses.controllers.HiddenMainController" xmlns:fx="http://javafx.com/fxml" prefWidth="1000" prefHeight="600">
 
     <!-- Barre latérale gauche -->
     <left>
         <VBox>
-            <Label fx:id="versionLabel" text="v0.2.0"/>
+            <Label fx:id="versionLabel" text="v0.2.1"/>
             <VBox spacing="10" prefWidth="150">
                 <padding>
                     <Insets top="10" right="10" bottom="10" left="10"/>

@@ -1,3 +1,16 @@
+### v 0.2.1
+## Fixes
+
+• Fixed First Breath and grode (Wyvren's Remix) jacket not appearing in the app.
+• Fixed the missing Course and Legacy buttons on Save Score screen.
+• Modified Max Score Label in Random Select for Course and Legacy sections to make it more understandable.
+• Modified some colors to make some stuff more readable and/or logic.
+• Updated Info sections (aside from the patchnotes section).
+
+
+#hidden# Maybe you discovered that ? Who knows...
+## ________________________________________________________________________________
+
 ### v 0.2.0
 ## New Content
 
@@ -10,7 +23,7 @@
 
 # • ?????????
 	• Possibility to ?????????????????????.
-    • Contains ???????????????????????????.
+	• Contains ???????????????????????????.
 
 • Updated Musics content to 5.1.2 (basically added Some More of That Song)
 -#- smots gaming
@@ -30,7 +43,7 @@
 
 
 #hidden# Will you break the boundary ?
-## __________________________________________________________________________________________________________
+## ________________________________________________________________________________
 
 ### v 0.1.1
 ## Course update
@@ -43,7 +56,7 @@
 
 
 
-## __________________________________________________________________________________________________________
+## ________________________________________________________________________________
 
 ### v 0.1.0
 ## App release

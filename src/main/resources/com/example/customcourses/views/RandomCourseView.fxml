@@ -5,11 +5,9 @@
 
 <ScrollPane fx:id="randomCoursePane" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.customcourses.controllers.RandomCourseController" fitToWidth="true" fitToHeight="true" prefWidth="600" prefHeight="600" styleClass="randomDynamicContainer">
     <VBox fx:id="randomCourseContent" spacing="15" alignment="TOP_CENTER">
-
-        <!-- Titre -->
         <Label text="Random Selection : Course" styleClass="randomTitle"/>
 
-        <!-- Cases à cocher pour les difficultés -->
+        <!-- Filtres de difficulté et de score -->
         <HBox spacing="15" alignment="CENTER">
             <CheckBox fx:id="expBox" text="EXPOSITION"/>
             <CheckBox fx:id="twistBox" text="TWIST"/>
@@ -17,14 +15,11 @@
             <CheckBox fx:id="climaxBox" text="CLIMAX"/>
             <CheckBox fx:id="apoBox" text="APOTHEOSIS"/>
         </HBox>
-
-        <!-- Score max -->
         <HBox spacing="10" alignment="CENTER">
-            <Label text="Max score :" styleClass="randomOtherLabel"/>
+            <Label text="Search bellow Best Score of" styleClass="randomOtherLabel"/>
             <Spinner fx:id="maxScoreSpinner" editable="true"/>
         </HBox>
 
-        <!-- Bouton -->
         <Button fx:id="selectButtonCourse" text="🎲 RANDOMIZE 🎲"/>
 
         <!-- Résultats -->

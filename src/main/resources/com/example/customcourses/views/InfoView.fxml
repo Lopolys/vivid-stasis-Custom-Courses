@@ -4,10 +4,7 @@
 <?import javafx.scene.layout.*?>
 
 <?import javafx.scene.text.TextFlow?>
-<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.customcourses.controllers.InfoController">
-
-    <!-- Partie gauche : boutons -->
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.customcourses.controllers.InfoController">
     <left>
         <VBox spacing="10" prefWidth="200">
             <Button text="About the App" fx:id="btnInfo1" />
@@ -16,7 +13,6 @@
         </VBox>
     </left>
 
-    <!-- Partie droite : ScrollPane avec TextArea -->
     <center>
         <ScrollPane fx:id="infoScrollPane" fitToWidth="true" fitToHeight="true">
             <TextFlow fx:id="textArea"/>

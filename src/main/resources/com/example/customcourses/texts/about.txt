@@ -1,11 +1,60 @@
-## Bon en dessous il y a les textes qu'il y aura ici si un jour c'est dispo pour tout le monde et donc en anglais.
+## With some friends, we decided to create a thing called "Custom Courses" in vivid/stasis.
+Custom Courses takes the core principle of courses (4 musics in a row without retry in between) and adapt it with our own theme-based courses.
+You don't have the obligation to use a stamina bar since we can't keep track of the stamina you have left after one song.
+
+We actually have 11 main courses and 5 "legacy" courses (courses that were meant to be deleted) were you can enter your scores and see your improvement over time !
+Each courses are composed of 5 difficulties : EXPOSITION, TWIST, INTERLUDE, CLIMAX, APOTHEOSIS.
+They go from the easier version of each song to more difficult version by keeping the overall balanced to match some levelcap
+-#- or at least we tried
+
+At first, we were just keeping highscores on a sheet but we didn't have a really great way of calculating the total score and lacked a way to keep older scores properly.
+And so come the purpose of this app.
+To help keeping scores locally (at the moment) and having an easy way to visualize Courses, scores and older scores.
+
+It was supposed to be private but it's funny to leave it public
+-#- not that it was easier to leave it public at all
+
+If you have any feedback to give, please do that being for bug report, small fixes to do on the UI, some ideas for future updates or just what you think of the app. I'll take them with pleasure !
+
+# Have fun playing these courses and using this app !
+
+-#-Maybe there are some hidden features in the app, who knows ?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## There is French below and it's actually supposed to be for specific people.
+
+Ouais l'appli elle avance bien et tout j'espère que vous l'aimez bien !
 
 L'appli permet pas encore de faire des trucs comme avoir des amis car il me faudrai une base de données en ligne et j'en ai pas
 Pour voir les scores des autres, on va encore utiliser la sheet qu'on utilise actuellement.
 L'app sert donc surtout pour vous de manière à avoir une interface sympa pour garder vos scores et revoir vos anciens scores.
 
-Dans les trucs que j'ai pas mis actuellement et qui viendront sûrement avec le temps il y a la présence des musiques dans les courses/legacy courses, les polices d'écriture du jeu, le système de rang qui les affichent de manière plus fidèle au jeu
-Evidemment plus d'options de personnalisation plus tard mais c'est un peu lourd quand même faudra que je refasse masse trucs.
+Dans les trucs que j'ai pas mis actuellement et qui viendront sûrement avec le temps il y a la présence des musiques dans les courses/legacy courses, les polices d'écriture du jeu.
+Evidemment plus d'options de personnalisation et j'ai déjà quelques idées pour ça je vous dis juste pas quoi et risque de prendre un certain temps.
 Si vous avez des idées bien sûr dites hein voilà si ça peut améliorer l'utilisation que vous en faites et que les autres en font aussi c'est tout bénèf.
 
 Le lien de la sheet aussi pour que vous puissiez y aller depuis l'appli :
@@ -14,16 +63,9 @@ Le lien de la sheet aussi pour que vous puissiez y aller depuis l'appli :
 Pour les patch notes, ils seront tout le temps en anglais car bah je me connaît j'aurais la flemme de les refaire en anglais donc bon.
 -#- Peut être que je devrais penser à faire un choix de langue ??? Aucune idée de comment gérer ça par contre.
 
-# Allez profitez de l'anglais qui sert pas actuellement.
+Je vous préviens quand même si vous aviez toujours pas compris mais je vais m'amuser à cacher des trucs un peu partout maintenant que je peux/sais comment faire.
+Promis à partir d'un moment vous aurez connaissance de tous les trucs cachés qu'il y a
+-#- pour l'instant y en a pas beaucoup mais plus tard...
 
-
-## This app is made for keeping scores locally for a thing called Custom Courses.
-
-Custom Courses takes the core principle of courses (4 musics in a row without retry in between) and adapt it with our own theme-based courses.
-You don't have the obligation to use a stamina bar since we can't keep track of the stamina you have left after one song.
-
-We actually have 11 main courses and 5 "legacy" courses (courses that were meant to be deleted) were you can enter your scores and see your improvement over time !
-
-# Have fun playing these courses and using this app !
-
--#-Maybe there are some hidden features in the app, who knows ?
+# Voilà je sais pas quoi dire d'autre alors ouais bravo.
+#hidden# 12

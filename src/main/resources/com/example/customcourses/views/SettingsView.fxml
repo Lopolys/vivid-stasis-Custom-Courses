@@ -1,21 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
 
-<VBox spacing="15" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.customcourses.controllers.SettingsController">
+<HBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.customcourses.controllers.SettingsController" spacing="40">
 
-    <!-- Choix du thème -->
-    <Label text="Theme" styleClass="settingsLabel"/>
-    <ComboBox fx:id="themeComboBox" styleClass="settingsBox" promptText="Choisissez un thème"/>
+    <VBox spacing="15" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml">
 
-    <!-- Choix de la police -->
-    <Label text="Font" styleClass="settingsLabel"/>
-    <ComboBox fx:id="fontComboBox" styleClass="settingsBox" promptText="Choisissez une police"/>
+        <!-- Choix du thème -->
+        <Label text="Theme" styleClass="settingsLabel"/>
+        <ComboBox fx:id="themeComboBox" styleClass="settingsBox" promptText="Choisissez un thème"/>
 
-    <!-- Bouton Export qui sert actuellement à rien-->
-    <Button text="Export data" styleClass="settingsBox" onAction="#handleExportData" />
-</VBox>
+        <!-- Choix de la police -->
+        <Label text="Font" styleClass="settingsLabel"/>
+        <ComboBox fx:id="fontComboBox" styleClass="settingsBox" promptText="Choisissez une police"/>
+
+        <!-- Bouton Export qui sert actuellement à rien-->
+        <Button text="Export data" styleClass="settingsBox" onAction="#handleExportData" />
+    </VBox>
+    <VBox fx:id="settingsBox" spacing="15" alignment="TOP_CENTER" prefWidth="200">
+        <!-- Ajout dynamique du champ et du bouton -->
+    </VBox>
+    <VBox fx:id="titlesContainer" spacing="15" alignment="TOP_CENTER" prefWidth="500">
+        <!-- Remplie en Java par SettingsController -->
+    </VBox>
+</HBox>

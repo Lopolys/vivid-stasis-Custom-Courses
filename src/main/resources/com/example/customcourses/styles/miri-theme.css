@@ -30,7 +30,6 @@ cyan : #00FFFC (used for text for selected TabRow)
 #versionLabel {
     -fx-font-size: 8;
     -fx-text-fill: #DDDDDD;
-    -fx-alignment: bottom;
 }
 
 /* CSS Scrollbar */
@@ -41,7 +40,7 @@ Region, .corner{
 }
 
 .scroll-bar:vertical{
-    -fx-background-color: #D85D71;
+    -fx-background-color: transparent;
 }
 
 .scroll-bar:vertical .thumb{
@@ -50,7 +49,7 @@ Region, .corner{
 }
 
 .scroll-bar:horizontal{
-    -fx-background-color: #D85D71;
+    -fx-background-color: transparent;
 }
 
 .scroll-bar:horizontal .thumb{
@@ -96,6 +95,18 @@ Region, .corner{
     -fx-text-fill: #7F0E2C;
     -fx-text-alignment: center;
     -fx-alignment: center;
+}
+
+.courseScoreCell{
+    -fx-border-color: #7F0E2C;
+    -fx-border-width: 2 0 0 2;
+    -fx-border-style: solid;
+}
+
+.courseScoreLeftCell{
+    -fx-border-color: #7F0E2C;
+    -fx-border-width: 2 0 0 0;
+    -fx-border-style: solid;
 }
 
 /* Courses Details CSS */
@@ -313,6 +324,7 @@ Region, .corner{
 /* Musics CSS Tab */
 
 #musicTable {
+    -fx-background-color: #D85D71;
     -fx-font-weight: bold;
     -fx-table-cell-border-color: transparent;
     -fx-border-width: 2 0 2 2;
@@ -624,6 +636,10 @@ Region, .corner{
     -fx-text-fill: #222222;
 }
 
+.combo-box .list-view {
+    -fx-background-color: #423E50;
+}
+
 .combo-box .list-cell {
     -fx-font-weight: normal;
     -fx-background-color: #423E50;
@@ -652,25 +668,68 @@ Region, .corner{
     -fx-background-color: #28263E;
 }
 
-/* Personalized Alerts CSS */
-
-.entryProblemAlert, .entrySavedAlert {
-    -fx-background-color: #28263E;
-}
-
-.entryProblemAlert .label, .entrySavedAlert .label {
-    -fx-font-weight: bold;
-    -fx-font-size: 20;
-    -fx-text-fill: #00FFFC;
-    -fx-text-alignment: center;
-}
-
-.entryProblemAlert .button, .entrySavedAlert .button {
+.combo-box .scroll-bar:vertical .thumb{
     -fx-background-color: #D85D71;
 }
 
-.entryProblemAlert .button:hover, .entrySavedAlert .button:hover {
+.titleBox {
+    -fx-border-color: #7F0E2C;
+    -fx-border-width: 2;
+    -fx-border-radius: 10;
+}
+
+.titleBox Label {
+    -fx-text-fill: #7F0E2C;
+}
+
+.titleBoxNavButton {
+    -fx-background-color: #D85D71;
+    -fx-text-fill: #7F0E2C;
+}
+
+.titleBoxNavButton:hover {
     -fx-background-color: #7F0E2C;
+    -fx-text-fill: #D85D71;
+}
+
+.titleListPane {
+    -fx-background-color: #D85D71;
+    -fx-border-color: #7F0E2C;
+    -fx-border-width: 2;
+    -fx-border-radius: 10;
+}
+
+.titleListBox {
+    -fx-background-color: #D85D71;
+}
+
+.titleListText {
+    -fx-text-fill: #7F0E2C;
+    -fx-font-weight: bold;
+}
+
+.titleListObject {
+    -fx-background-color: #D85D71;
+}
+
+.titleListObjectSelected {
+    -fx-background-color: #7F0E2C;
+}
+
+.titleListObjectSelected .titleListText {
+    -fx-text-fill: #D85D71;
+}
+
+/* Personalized Alerts CSS */
+
+.personalizedPopup {
+    -fx-background-color: #28263E;
+}
+
+.personalizedPopup .label {
+    -fx-font-weight: bold;
+    -fx-font-size: 16;
+    -fx-text-fill: #D85D71;
 }
 
 /* Info CSS */

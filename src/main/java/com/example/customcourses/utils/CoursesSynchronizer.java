@@ -1,7 +1,6 @@
 package com.example.customcourses.utils;
 
-import com.example.customcourses.models.Course;
-import com.example.customcourses.models.Music;
+import com.example.customcourses.models.*;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
@@ -74,9 +73,9 @@ public class CoursesSynchronizer {
             if (!sameMusicOrder && sameDifficulties) {
                 // Vérification changement musiques
                 boolean sameMusics = true;
-                List<String> localList = new ArrayList<String>(localSection.getMusicTitles());
+                List<String> localList = new ArrayList<>(localSection.getMusicTitles());
                 localList.sort(Comparator.naturalOrder());
-                List<String> referenceList = new ArrayList<String>(refSection.getMusicTitles());
+                List<String> referenceList = new ArrayList<>(refSection.getMusicTitles());
                 referenceList.sort(Comparator.naturalOrder());
                 for (int i = 0; i < localList.size(); i++ ){
                     if (!localList.get(i).equals(referenceList.get(i))){

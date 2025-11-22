@@ -47,7 +47,7 @@ public class HiddenCoursesDetailsController {
         detailsScrollPane.addEventFilter(ScrollEvent.SCROLL, event -> {
             double deltaY = event.getDeltaY() * 3; // multiplier par un facteur pour accélérer le scroll
             detailsScrollPane.setVvalue(detailsScrollPane.getVvalue() - deltaY / detailsScrollPane.getContent().getBoundsInLocal().getHeight());
-            event.consume();  // Empêche le scroll normal pour appliquer le tien
+            event.consume();  // Empêche le scroll normal
         });
     }
 
@@ -153,7 +153,6 @@ public class HiddenCoursesDetailsController {
 
                     StackPane imageContainer = new StackPane();
                     String imagePath = "/covers/" + imageName;
-                    String lower = imageName.toLowerCase();
 
                     try {
                         ImageView imageView = new ImageView();
@@ -269,14 +268,7 @@ public class HiddenCoursesDetailsController {
                     mainController.showSaveScoresWithCourse(course);
                 }
             });
-
             detailsCourseGrid.add(button, col, currentRow);
-        }
-    }
-
-    public void refresh() {
-        if (this.course != null) {
-            populateGrid(); // Recharge les données
         }
     }
 

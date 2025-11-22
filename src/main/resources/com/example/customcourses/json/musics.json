@@ -409,12 +409,21 @@
     "fnDiff": 15.1,
     "fnNotes": 2199,
     "fnCharter": "Farewell to Stelli",
+    "bsTitle": "Goodbye To Your Vicious Cycles",
+    "bsDiff": 16.9,
+    "bsNotes": 2500,
+    "bsCharter": "TonyKrZa",
     "artist": "WangleLine",
+    "bsArtist": "WangleLine",
     "jacketArtist": "AriaL",
+    "bsJacketArtist": "57_dayo",
     "bpm": 202,
+    "bsBpm": 175,
     "length": "02:51",
+    "bsLength": "03:50",
     "pack": "Chapter 2",
-    "image": "Farewell to Syzygia.png"
+    "image": "Farewell to Syzygia.png",
+    "bsImage": "Goodbye To Your Vicious Cycles Backstage.png"
   },
   {
     "title": "Chronoexplorers",
@@ -1783,6 +1792,27 @@
     "length": "03:10",
     "pack": "Final Chapter",
     "image": "B3611V.png"
+  },
+  {
+    "title": "Tau",
+    "opDiff": 4.0,
+    "opNotes": 652,
+    "opCharter": "TonyKrZa",
+    "mdDiff": 9.6,
+    "mdNotes": 804,
+    "mdCharter": "TonyKrZa",
+    "fnDiff": 11.0,
+    "fnNotes": 993,
+    "fnCharter": "Subpar",
+    "ecDiff": 15.0,
+    "ecNotes": 1752,
+    "ecCharter": "StarUndrscre",
+    "artist": "Wooden",
+    "jacketArtist": "N/A",
+    "bpm": 120,
+    "length": "02:21",
+    "pack": "Chapter Alpha",
+    "image": "Tau.png"
   },
   {
     "title": "Perfect ConfeCute!!",
@@ -3168,6 +3198,42 @@
     "image": "Some More of That Song.png"
   },
   {
+    "title": "Absolution (A-Saph Remix)",
+    "opDiff": 4.0,
+    "opNotes": 803,
+    "opCharter": "Subpar",
+    "mdDiff": 11.5,
+    "mdNotes": 1325,
+    "mdCharter": "Subpar",
+    "fnDiff": 15.1,
+    "fnNotes": 1846,
+    "fnCharter": "Subpar",
+    "artist": "SpecialAgentApe",
+    "jacketArtist": "Sgt M (edit by Stelli)",
+    "bpm": 148,
+    "length": "02:54",
+    "pack": "Collaboration Collection",
+    "image": "Absolution (A-Saph Remix).png"
+  },
+  {
+    "title": "Crusader Mk.III (Stelli Edit)",
+    "opDiff": 5.0,
+    "opNotes": 476,
+    "opCharter": "Stelli",
+    "mdDiff": 9.0,
+    "mdNotes": 665,
+    "mdCharter": "Stelli",
+    "fnDiff": 12.7,
+    "fnNotes": 1107,
+    "fnCharter": "Stelli",
+    "artist": "SpecialAgentApe",
+    "jacketArtist": "Sgt M (edit by Stelli)",
+    "bpm": 160,
+    "length": "02:06",
+    "pack": "Collaboration Collection",
+    "image": "Crusader Mk.III (Stelli Edit).png"
+  },
+  {
     "title": "Luxvinore",
     "opDiff": 5.0,
     "opNotes": 897,
@@ -3523,5 +3589,17 @@
     "length": "04:05",
     "pack": "Boundary Shatter",
     "image": "Angelstar.png"
+  },
+  {
+    "title": "Angelstar / Dark Star",
+    "shDiff": 0.0,
+    "shNotes": 3200,
+    "shCharter": "Outervention",
+    "artist": "millexica",
+    "jacketArtist": "Stelli",
+    "bpm": 186,
+    "length": "05:47",
+    "pack": "Boundary Shatter",
+    "image": "Dark Star.png"
   }
 ]

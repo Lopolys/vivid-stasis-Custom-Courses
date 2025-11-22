@@ -5,32 +5,32 @@
       "EXPOSITION": {
         "musicTitles": ["NULCTRL", "Trip Coffee", "ULTIMATE", "Rafflesia"],
         "difficultyLevels": ["OP", "OP", "OP", "OP"],
-        "bestScore": 4039557,
-        "bestRank": "V+"
+        "bestScore": 0,
+        "bestRank": "E"
       },
       "TWIST": {
         "musicTitles": ["Rafflesia", "NULCTRL", "Trip Coffee", "ULTIMATE"],
         "difficultyLevels": ["OP", "MD", "MD", "MD"],
-        "bestScore": 4039335,
-        "bestRank": "V+"
+        "bestScore": 0,
+        "bestRank": "E"
       },
       "INTERLUDE": {
         "musicTitles": ["Trip Coffee", "NULCTRL", "ULTIMATE", "Rafflesia"],
         "difficultyLevels": ["MD", "FN", "FN", "MD"],
-        "bestScore": 4027934,
-        "bestRank": "SS+"
+        "bestScore": 0,
+        "bestRank": "E"
       },
       "CLIMAX": {
         "musicTitles": ["NULCTRL", "ULTIMATE", "Rafflesia", "Trip Coffee"],
         "difficultyLevels": ["EC", "FN", "MD", "FN"],
-        "bestScore": 3997503,
-        "bestRank": "S+"
+        "bestScore": 0,
+        "bestRank": "E"
       },
       "APOTHEOSIS": {
         "musicTitles": ["NULCTRL", "Trip Coffee", "ULTIMATE", "Rafflesia"],
         "difficultyLevels": ["EC", "FN", "EC", "FN"],
-        "bestScore": 3907576,
-        "bestRank": "AA"
+        "bestScore": 0,
+        "bestRank": "E"
       }
     }
   },
@@ -75,32 +75,32 @@
       "EXPOSITION": {
         "musicTitles": ["Chronomia", "Prime", "Chronoexplorers", "Rrhar'il"],
         "difficultyLevels": ["OP", "OP", "OP", "OP"],
-        "bestScore": 4039101,
-        "bestRank": "V+"
+        "bestScore": 0,
+        "bestRank": "E"
       },
       "TWIST": {
         "musicTitles": ["Chronomia", "Rrhar'il", "Prime", "Chronoexplorers"],
         "difficultyLevels": ["MD", "OP", "MD", "MD"],
-        "bestScore": 4036953,
-        "bestRank": "V+"
+        "bestScore": 0,
+        "bestRank": "E"
       },
       "INTERLUDE": {
         "musicTitles": ["Prime", "Chronomia", "Chronoexplorers", "Rrhar'il"],
         "difficultyLevels": ["MD", "FN", "MD", "MD"],
-        "bestScore": 4022812,
-        "bestRank": "SS+"
+        "bestScore": 0,
+        "bestRank": "E"
       },
       "CLIMAX": {
         "musicTitles": ["Chronomia", "Rrhar'il", "Prime", "Chronoexplorers"],
         "difficultyLevels": ["EC", "MD", "FN", "FN"],
-        "bestScore": 4001997,
-        "bestRank": "SS"
+        "bestScore": 0,
+        "bestRank": "E"
       },
       "APOTHEOSIS": {
         "musicTitles": ["Chronomia", "Prime", "Chronoexplorers", "Rrhar'il"],
         "difficultyLevels": ["EC", "FN", "EC", "FN"],
-        "bestScore": 3866321,
-        "bestRank": "AA"
+        "bestScore": 0,
+        "bestRank": "E"
       }
     }
   },
@@ -145,20 +145,20 @@
       "EXPOSITION": {
         "musicTitles": ["Angel's Window", "Seraphiel", "Revelation", "Orphen"],
         "difficultyLevels": ["OP", "OP", "OP", "OP"],
-        "bestScore": 4039545,
-        "bestRank": "V+"
+        "bestScore": 0,
+        "bestRank": "E"
       },
       "TWIST": {
         "musicTitles": ["Revelation", "Angel's Window", "Orphen", "Seraphiel"],
         "difficultyLevels": ["OP", "MD", "OP", "MD"],
-        "bestScore": 4037352,
-        "bestRank": "V+"
+        "bestScore": 0,
+        "bestRank": "E"
       },
       "INTERLUDE": {
         "musicTitles": ["Seraphiel", "Orphen", "Revelation", "Angel's Window"],
         "difficultyLevels": ["MD", "MD", "MD", "FN"],
-        "bestScore": 4016030,
-        "bestRank": "SS+"
+        "bestScore": 0,
+        "bestRank": "E"
       },
       "CLIMAX": {
         "musicTitles": ["Orphen", "Revelation", "Angel's Window", "Seraphiel"],
@@ -180,32 +180,32 @@
       "EXPOSITION": {
         "musicTitles": ["WATAGASHI RUSH", "GOODRAGE", "MVURBD", "IGNITED"],
         "difficultyLevels": ["OP", "OP", "OP", "OP"],
-        "bestScore": 4039073,
-        "bestRank": "V+"
+        "bestScore": 0,
+        "bestRank": "E"
       },
       "TWIST": {
         "musicTitles": ["IGNITED", "WATAGASHI RUSH", "GOODRAGE", "MVURBD"],
         "difficultyLevels": ["OP", "MD", "MD", "MD"],
-        "bestScore": 4036965,
-        "bestRank": "V+"
+        "bestScore": 0,
+        "bestRank": "E"
       },
       "INTERLUDE": {
         "musicTitles": ["GOODRAGE", "MVURBD", "WATAGASHI RUSH", "IGNITED"],
         "difficultyLevels": ["MD", "MD", "FN", "MD"],
-        "bestScore": 4033530,
-        "bestRank": "V"
+        "bestScore": 0,
+        "bestRank": "E"
       },
       "CLIMAX": {
         "musicTitles": ["WATAGASHI RUSH", "IGNITED", "MVURBD", "GOODRAGE"],
         "difficultyLevels": ["FN", "MD", "FN", "FN"],
-        "bestScore": 4002876,
-        "bestRank": "SS"
+        "bestScore": 0,
+        "bestRank": "E"
       },
       "APOTHEOSIS": {
         "musicTitles": ["MVURBD", "IGNITED", "WATAGASHI RUSH", "GOODRAGE"],
         "difficultyLevels": ["EC", "FN", "EC", "EC"],
-        "bestScore": 3937577,
-        "bestRank": "S"
+        "bestScore": 0,
+        "bestRank": "E"
       }
     }
   },
@@ -379,6 +379,111 @@
       "APOTHEOSIS": {
         "musicTitles": ["Faux Real (VIVID REDUX)", "Stellaria", "stardust", "Fixations Toward the Stars"],
         "difficultyLevels": ["FN", "EC", "FN", "FN"],
+        "bestScore": 0,
+        "bestRank": "E"
+      }
+    }
+  },
+  {
+    "name": "Artificial",
+    "difficulties": {
+      "EXPOSITION": {
+        "musicTitles": ["LET THE CREATION BEGIN", "Singularity", "Pictured as Perfect", "Simulated Reality"],
+        "difficultyLevels": ["OP", "OP", "OP", "OP"],
+        "bestScore": 0,
+        "bestRank": "E"
+      },
+      "TWIST": {
+        "musicTitles": ["Simulated Reality", "Pictured as Perfect", "Singularity", "LET THE CREATION BEGIN"],
+        "difficultyLevels": ["OP", "MD", "MD", "MD"],
+        "bestScore": 0,
+        "bestRank": "E"
+      },
+      "INTERLUDE": {
+        "musicTitles": ["Pictured as Perfect", "Singularity", "LET THE CREATION BEGIN", "Simulated Reality"],
+        "difficultyLevels": ["MD", "MD", "MD", "MD"],
+        "bestScore": 0,
+        "bestRank": "E"
+      },
+      "CLIMAX": {
+        "musicTitles": ["LET THE CREATION BEGIN", "Simulated Reality", "Singularity", "Pictured as Perfect"],
+        "difficultyLevels": ["MD", "MD", "FN", "FN"],
+        "bestScore": 0,
+        "bestRank": "E"
+      },
+      "APOTHEOSIS": {
+        "musicTitles": ["Singularity", "Pictured as Perfect", "Simulated Reality", "LET THE CREATION BEGIN"],
+        "difficultyLevels": ["FN", "FN", "FN", "FN"],
+        "bestScore": 0,
+        "bestRank": "E"
+      }
+    }
+  },
+  {
+    "name": "Light",
+    "difficulties": {
+      "EXPOSITION": {
+        "musicTitles": ["Luminaria", "Secret Illumination", "∀NARCHIC LIGHT", "Luminous Entities Lost Heart"],
+        "difficultyLevels": ["OP", "OP", "OP", "OP"],
+        "bestScore": 0,
+        "bestRank": "E"
+      },
+      "TWIST": {
+        "musicTitles": ["∀NARCHIC LIGHT", "Luminaria", "Luminous Entities Lost Heart", "Secret Illumination"],
+        "difficultyLevels": ["OP", "MD", "MD", "MD"],
+        "bestScore": 0,
+        "bestRank": "E"
+      },
+      "INTERLUDE": {
+        "musicTitles": ["Luminous Entities Lost Heart", "∀NARCHIC LIGHT", "Secret Illumination", "Luminaria"],
+        "difficultyLevels": ["MD", "MD", "MD", "FN"],
+        "bestScore": 0,
+        "bestRank": "E"
+      },
+      "CLIMAX": {
+        "musicTitles": ["Luminaria", "Secret Illumination", "∀NARCHIC LIGHT", "Luminous Entities Lost Heart"],
+        "difficultyLevels": ["FN", "FN", "FN", "FN"],
+        "bestScore": 0,
+        "bestRank": "E"
+      },
+      "APOTHEOSIS": {
+        "musicTitles": ["Secret Illumination", "Luminaria", "Luminous Entities Lost Heart", "∀NARCHIC LIGHT"],
+        "difficultyLevels": ["FN", "EC", "FN", "EC"],
+        "bestScore": 0,
+        "bestRank": "E"
+      }
+    }
+  },
+  {
+    "name": "Into the Unknown",
+    "difficulties": {
+      "EXPOSITION": {
+        "musicTitles": ["the more i carry on...", "lost contact", "χΩ", "Dreams From Another World"],
+        "difficultyLevels": ["OP", "OP", "OP", "OP"],
+        "bestScore": 0,
+        "bestRank": "E"
+      },
+      "TWIST": {
+        "musicTitles": ["χΩ", "Dreams From Another World", "the more i carry on...", "lost contact"],
+        "difficultyLevels": ["OP", "OP", "MD", "MD"],
+        "bestScore": 0,
+        "bestRank": "E"
+      },
+      "INTERLUDE": {
+        "musicTitles": ["the more i carry on...", "lost contact", "χΩ", "Dreams From Another World"],
+        "difficultyLevels": ["MD", "MD", "MD", "MD"],
+        "bestScore": 0,
+        "bestRank": "E"
+      },
+      "CLIMAX": {
+        "musicTitles": ["χΩ", "lost contact", "Dreams From Another World", "the more i carry on..."],
+        "difficultyLevels": ["MD", "FN", "MD", "FN"],
+        "bestScore": 0,
+        "bestRank": "E"
+      },
+      "APOTHEOSIS": {
+        "musicTitles": ["lost contact", "the more i carry on...", "χΩ", "Dreams From Another World"],
+        "difficultyLevels": ["FN", "FN", "FN", "FN"],
         "bestScore": 0,
         "bestRank": "E"
       }

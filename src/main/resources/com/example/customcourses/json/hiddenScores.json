@@ -3,9 +3,9 @@
   "difficulty" : "DESTROYED",
   "musicTitles" : [ "The River", "Locked Out", "RAM (Rotating Auto-Mobiles)", "Angelstar" ],
   "difficultyLevels" : [ "SH", "SH", "SH", "SH" ],
-  "individualScores" : [ 1010000, 1008647, 981745, 996784 ],
+  "individualScores" : [ 1010000, 1008647, 984745, 996784 ],
   "individualRanks" : [ "VS", "V", "S", "S+" ],
-  "totalScore" : 3997176,
-  "totalRank" : "S+",
+  "totalScore" : 4000176,
+  "totalRank" : "SS",
   "date" : "1000-12-12"
 } ]

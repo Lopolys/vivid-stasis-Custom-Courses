@@ -4,6 +4,7 @@ import com.example.customcourses.managers.MusicsManager;
 import com.example.customcourses.models.Course;
 import com.example.customcourses.models.Music;
 import com.example.customcourses.utils.DataInitializer;
+import com.example.customcourses.utils.RankUtil;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -13,9 +14,7 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.ScrollEvent;
-import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 
 import java.nio.file.Path;
 import java.util.List;
@@ -24,16 +23,9 @@ import java.util.Objects;
 public class HiddenCoursesController {
 
     @FXML private ScrollPane coursePane;
-    @FXML private Button loadCoursesBtn;
-    @FXML private Button loadLegacyBtn;
     @FXML private FlowPane courseListContainer;
     private HiddenMainController mainController;
     private List<Course> courses;
-    private static boolean isLegacy;
-
-    public static boolean getIsLegacy() {
-        return isLegacy;
-    }
 
     public void setCourses(List<Course> courses) {
         this.courses = courses;
@@ -56,7 +48,7 @@ public class HiddenCoursesController {
         coursePane.addEventFilter(ScrollEvent.SCROLL, event -> {
             double deltaY = event.getDeltaY() * 3; // multiplier par un facteur pour accélérer le scroll
             coursePane.setVvalue(coursePane.getVvalue() - deltaY / coursePane.getContent().getBoundsInLocal().getHeight());
-            event.consume();  // Empêche le scroll normal pour appliquer le tien
+            event.consume();  // Empêche le scroll normal
         });
     }
 
@@ -137,7 +129,38 @@ public class HiddenCoursesController {
             buttonRow.getChildren().addAll(enterScoreBtn, detailsBtn);
             buttonRow.setAlignment(Pos.CENTER);
 
-            courseBox.getChildren().addAll(labelWrapper, jacketRows, buttonRow);
+            HBox scoreRow = new HBox();
+            scoreRow.setAlignment(Pos.CENTER);
+
+            VBox diffBox = new VBox();
+            diffBox.setAlignment(Pos.CENTER);
+
+            HBox.setHgrow(diffBox, Priority.ALWAYS);
+            diffBox.setMaxWidth(Double.MAX_VALUE);
+
+            Course.CourseDifficultySection scoreSection = course.getDifficulties().get(Course.CourseDifficulty.DESTROYED);
+
+            Label scoreLabel = new Label(scoreSection.getBestScore() + "");
+            scoreLabel.setMaxWidth(Double.MAX_VALUE);
+            scoreLabel.setMaxHeight(Double.MAX_VALUE);
+            scoreLabel.getStyleClass().add("detailScoreLabel");
+            scoreLabel.setWrapText(true);
+            scoreLabel.setAlignment(Pos.CENTER);
+
+            String rank = scoreSection.getBestRank();
+            ImageView rankView = new ImageView(RankUtil.getRankImage(rank));
+            rankView.setFitHeight(40);
+            rankView.setPreserveRatio(true);
+
+            StackPane borderedRankCell = new StackPane(rankView);
+            borderedRankCell.setPadding(new Insets(5, 0, 5, 0));
+
+            diffBox.getChildren().addAll(scoreLabel, borderedRankCell);
+            diffBox.getStyleClass().add("courseScoreLeftCell");
+
+            scoreRow.getChildren().add(diffBox);
+
+            courseBox.getChildren().addAll(labelWrapper, jacketRows, buttonRow, scoreRow);
             courseBox.setAlignment(Pos.CENTER);
             courseBox.getStyleClass().add("courseBox");
             courseListContainer.getChildren().add(courseBox);

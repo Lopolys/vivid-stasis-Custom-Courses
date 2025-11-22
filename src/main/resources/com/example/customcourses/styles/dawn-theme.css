@@ -29,7 +29,6 @@ blue : #4D53F9 (used for Buttons hovering)
 #versionLabel {
     -fx-font-size: 8;
     -fx-text-fill: #DDDDDD;
-    -fx-alignment: bottom;
 }
 
 /* CSS Scrollbar */
@@ -40,7 +39,7 @@ Region, .corner{
 }
 
 .scroll-bar:vertical{
-    -fx-background-color: #E8E4F8;
+    -fx-background-color: transparent;
 }
 
 .scroll-bar:vertical .thumb{
@@ -49,7 +48,7 @@ Region, .corner{
 }
 
 .scroll-bar:horizontal{
-    -fx-background-color: #E8E4F8;
+    -fx-background-color: transparent;
 }
 
 .scroll-bar:horizontal .thumb{
@@ -95,6 +94,18 @@ Region, .corner{
     -fx-text-fill: #BD88F7;
     -fx-text-alignment: center;
     -fx-alignment: center;
+}
+
+.courseScoreCell{
+    -fx-border-color: #BD88F7;
+    -fx-border-width: 2 0 0 2;
+    -fx-border-style: solid;
+}
+
+.courseScoreLeftCell{
+    -fx-border-color: #BD88F7;
+    -fx-border-width: 2 0 0 0;
+    -fx-border-style: solid;
 }
 
 /* Courses Details CSS */
@@ -304,6 +315,7 @@ Region, .corner{
 /* Musics CSS Tab */
 
 #musicTable {
+    -fx-background-color: #E8E4F8;
     -fx-font-weight: bold;
     -fx-table-cell-border-color: transparent;
     -fx-border-width: 2 0 2 2;
@@ -615,6 +627,10 @@ Region, .corner{
     -fx-text-fill: #222222;
 }
 
+.combo-box .list-view {
+    -fx-background-color: #5B5ABF;
+}
+
 .combo-box .list-cell {
     -fx-font-weight: normal;
     -fx-background-color: #5B5ABF;
@@ -643,27 +659,64 @@ Region, .corner{
     -fx-background-color: #4D53F9;
 }
 
+.titleBox {
+    -fx-border-color: #BD88F7;
+    -fx-border-width: 2;
+    -fx-border-radius: 10;
+}
+
+.titleBox Label {
+    -fx-text-fill: #BD88F7;
+}
+
+.titleBoxNavButton {
+    -fx-background-color: #E8E4F8;
+    -fx-text-fill: #BD88F7;
+}
+
+.titleBoxNavButton:hover {
+    -fx-background-color: #BD88F7;
+    -fx-text-fill: #E8E4F8;
+}
+
+.titleListPane {
+    -fx-background-color: #E8E4F8;
+    -fx-border-color: #BD88F7;
+    -fx-border-width: 2;
+    -fx-border-radius: 10;
+}
+
+.titleListBox {
+    -fx-background-color: #E8E4F8;
+}
+
+.titleListText {
+    -fx-text-fill: #BD88F7;
+    -fx-font-weight: bold;
+}
+
+.titleListObject {
+    -fx-background-color: #E8E4F8;
+}
+
+.titleListObjectSelected {
+    -fx-background-color: #BD88F7;
+}
+
+.titleListObjectSelected .titleListText {
+    -fx-text-fill: #E8E4F8;
+}
+
 /* Personalized Alerts CSS */
 
-.entryProblemAlert, .entrySavedAlert {
+.personalizedPopup {
     -fx-background-color: #5B5ABF;
 }
 
-.entryProblemAlert .label, .entrySavedAlert .label {
+.personalizedPopup .label {
     -fx-font-weight: bold;
-    -fx-font-size: 20;
+    -fx-font-size: 16;
     -fx-text-fill: #8F8FEC;
-    -fx-text-alignment: center;
-}
-
-.entryProblemAlert .button, .entrySavedAlert .button {
-    -fx-background-color: #E8E4F8;
-    -fx-text-fill: #222222;
-}
-
-.entryProblemAlert .button:hover, .entrySavedAlert .button:hover {
-    -fx-background-color: #BD88F7;
-    -fx-text-fill: #222222;
 }
 
 /* Info CSS */

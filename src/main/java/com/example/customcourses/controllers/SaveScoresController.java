@@ -1,25 +1,21 @@
 package com.example.customcourses.controllers;
 
-import com.example.customcourses.utils.UserPreferences;
+import com.example.customcourses.App;
+import com.example.customcourses.utils.*;
 import com.example.customcourses.models.*;
 import com.example.customcourses.managers.*;
-import com.example.customcourses.utils.DataInitializer;
-import com.example.customcourses.utils.RankUtil;
-import com.example.customcourses.utils.ScoreStorage;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.fxml.FXML;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.VPos;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.*;
 import javafx.geometry.Pos;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -115,7 +111,7 @@ public class SaveScoresController {
         saveScrollPane.addEventFilter(ScrollEvent.SCROLL, event -> {
             double deltaY = event.getDeltaY() * 3; // multiplier par un facteur pour accélérer le scroll
             saveScrollPane.setVvalue(saveScrollPane.getVvalue() - deltaY / saveScrollPane.getContent().getBoundsInLocal().getHeight());
-            event.consume();  // Empêche le scroll normal pour appliquer le tien
+            event.consume();  // Empêche le scroll normal
         });
     }
 
@@ -190,9 +186,7 @@ public class SaveScoresController {
                 default -> music.getImage();
             };
 
-            StackPane imageContainer = new StackPane();
             String imagePath = "/covers/" + imageName;
-            String lower = imageName.toLowerCase();
 
             try {
                 ImageView imageView = new ImageView();
@@ -281,6 +275,7 @@ public class SaveScoresController {
     }
 
     private void handleNext() throws Exception {
+        Stage mainStage = App.getPrimaryStage();
         enteredScores.clear();
         for (TextField tf : scoreFields) {
             try {
@@ -288,7 +283,7 @@ public class SaveScoresController {
                 if (sc < 0 || sc > 1_010_000) throw new NumberFormatException();
                 enteredScores.add(sc);
             } catch (NumberFormatException ex) {
-                showAlert("Invalid score", "Scores must be integers between 0 and 1 010 000", "entryProblemAlert");
+                NotificationUtil.showToast(mainStage, "Scores must be integers between 0 and 1 010 000", "entryProblemAlert");
                 return;
             }
         }
@@ -312,8 +307,6 @@ public class SaveScoresController {
         GridPane gridSummary = new GridPane();
         gridSummary.getStyleClass().add("scoresGridPane");
         VBox.setMargin(gridSummary, new Insets(10, 0, 0, 10));
-
-        List<Music> allMusics = MusicsManager.getMusics();
 
         // Définir les colonnes
         for (int i = 0; i < 3; i++) {
@@ -385,7 +378,6 @@ public class SaveScoresController {
 
             StackPane imageContainer = new StackPane();
             String imagePath = "/covers/" + imageName;
-            String lower = imageName.toLowerCase();
 
             try {
                 ImageView imageView = new ImageView();
@@ -439,8 +431,7 @@ public class SaveScoresController {
             scoreLabel.getStyleClass().add("entryScore");
             scoreLabel.setAlignment(Pos.CENTER);
 
-            String rankTxt = scoreRank;
-            ImageView rankView = new ImageView(RankUtil.getRankImage(rankTxt));
+            ImageView rankView = new ImageView(RankUtil.getRankImage(scoreRank));
             rankView.setFitHeight(50);
             rankView.setPreserveRatio(true);
 
@@ -474,8 +465,7 @@ public class SaveScoresController {
         bottomLabel.setWrapText(true);
         bottomLabel.setAlignment(Pos.CENTER);
 
-        String rankTxt = rank;
-        ImageView rankView = new ImageView(RankUtil.getRankImage(rankTxt));
+        ImageView rankView = new ImageView(RankUtil.getRankImage(rank));
         rankView.setFitHeight(50);
         rankView.setPreserveRatio(true);
 
@@ -502,11 +492,21 @@ public class SaveScoresController {
 
         Button confirm = new Button("Confirm");
         Button redo = new Button("Modify");
-        buttonsBox.getChildren().addAll(confirm, redo);
+        Button exportButton = new Button("Export as PNG");
+
+        exportButton.setOnAction(e -> {
+            try {
+                ScoreExporter.exportScore((Stage) exportButton.getScene().getWindow(), enteredScores, currentMusics, selectedCourse, selectedDifficulty);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        });
+
+        buttonsBox.getChildren().addAll(confirm, redo, exportButton);
 
         confirm.setOnAction(e -> {
             try {
-                handleConfirm(totalScore, rankTxt);
+                handleConfirm(totalScore, rank);
             } catch (Exception ex) {
                 throw new RuntimeException(ex);
             }
@@ -516,6 +516,7 @@ public class SaveScoresController {
             difficultyRadioButtonsBox.setManaged(true);
             fileHandlerPane.setVisible(true);
             fileHandlerPane.setManaged(true);
+            TitleUnlocker.checkAndUnlockTitles();
         });
         redo.setOnAction(e -> {
             courseSelectionBox.setVisible(true);
@@ -549,27 +550,16 @@ public class SaveScoresController {
     }
 
     private void handleConfirm(int total, String rank) throws Exception {
+        Stage mainStage = App.getPrimaryStage();
         try {
             List<ScoreEntry> savedScores = ScoreStorage.loadScores();
 
             List<Music> musics = selectedCourse.getDifficulties().get(selectedDifficulty).getMusics();
             List<Course.MusicDifficulty> diffs = selectedCourse.getDifficulties().get(selectedDifficulty).getDifficultyLevels();
             List<String> musicTitles = musics.stream().map(Music::getTitle).toList();
-            List<String> individualRanks = enteredScores.stream()
-                    .map(RankUtil::calculateMusicRank)
-                    .toList();
+            List<String> individualRanks = enteredScores.stream().map(RankUtil::calculateMusicRank).toList();
 
-            ScoreEntry newEntry = new ScoreEntry(
-                    selectedCourse.getName(),
-                    selectedDifficulty,
-                    musicTitles,
-                    diffs,
-                    List.copyOf(enteredScores),
-                    individualRanks,
-                    total,
-                    rank,
-                    LocalDate.now()
-            );
+            ScoreEntry newEntry = new ScoreEntry(selectedCourse.getName(), selectedDifficulty, musicTitles, diffs, List.copyOf(enteredScores), individualRanks, total, rank, LocalDate.now());
 
             savedScores.add(newEntry);
             ScoreStorage.saveScores(savedScores);
@@ -599,10 +589,9 @@ public class SaveScoresController {
                 // Écrire les modifications dans le bon fichier
                 objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File(courseFile), courses);
             }
-
-            showAlert("Done", "Score saved!\nTotal Score : " + total + "\nRank : " + rank, "entrySavedAlert");
+            NotificationUtil.showToast(mainStage, "Score saved!\nTotal Score : " + total + "\nRank : " + rank, "entrySavedAlert");
         } catch (IOException ex) {
-            showAlert("Save Error", "Could not save score to file:\n" + ex.getMessage(), "entryProblemAlert");
+            NotificationUtil.showToast(mainStage, "Could not save score to file:\n" + ex.getMessage(), "entryProblemAlert");
             ex.printStackTrace();
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -613,66 +602,8 @@ public class SaveScoresController {
         mainController.refreshCourseDetails();
     }
 
-
-    private void showAlert(String title, String msg, String styleClass) throws Exception {
-        String theme = UserPreferences.getInstance().getTheme();
-
-        Stage alertStage = new Stage();
-        alertStage.initModality(Modality.APPLICATION_MODAL);
-        alertStage.setTitle(title);
-        alertStage.setResizable(false);
-
-        // Texte
-        Label messageLabel = new Label(msg);
-        messageLabel.getStyleClass().add("alert-message");
-        messageLabel.setWrapText(true);
-        messageLabel.setMaxWidth(400);
-
-        // Bouton centré
-        Button okButton = new Button("OK");
-        okButton.setOnAction(e -> alertStage.close());
-
-        VBox centerVBox = new VBox(20, messageLabel, okButton);
-        centerVBox.setAlignment(Pos.CENTER);
-        centerVBox.setPadding(new Insets(20));
-
-        // Image à droite (optionnelle)
-        ImageView icon = null;
-        try {
-            String imagePath = switch (styleClass) {
-                case "entryProblemAlert" -> "/images/alerts/" + theme + "Error.png";
-                case "entrySavedAlert" -> "/images/alerts/" + theme + "Saved.png";
-                default -> throw new IllegalStateException("Unexpected value: " + styleClass);
-            };
-            icon = new ImageView(new Image(Objects.requireNonNull(getClass().getResourceAsStream(imagePath))));
-            icon.setFitWidth(80);
-            icon.setFitHeight(80);
-        } catch (Exception ignored) {}
-
-        // Conteneur principal avec superposition
-        StackPane root = new StackPane();
-
-        if (icon != null) {
-            HBox iconContainer = new HBox(icon);
-            iconContainer.setAlignment(Pos.BOTTOM_RIGHT);
-            iconContainer.setPadding(new Insets(10));
-            StackPane.setAlignment(iconContainer, Pos.BOTTOM_RIGHT);
-            iconContainer.setMouseTransparent(true); // <<== permet l'interaction avec ce qui est en dessous
-            root.getChildren().add(iconContainer);
-        }
-
-        root.getStyleClass().add(styleClass);
-        root.getChildren().add(centerVBox); // bouton centré
-
-        Scene scene = new Scene(root);
-        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/com/example/customcourses/styles/" + theme + "-theme.css")).toExternalForm());
-
-        alertStage.setScene(scene);
-        alertStage.showAndWait();
-    }
-
-
-    public void setCourse(Course courseToSelect, boolean isLegacy) {
+    public void setCourse(Course courseToSelect, boolean isLegacy) throws Exception {
+        Stage mainStage = App.getPrimaryStage();
         if (isLegacy) {
             coursesManager.loadLegacyCourses(MusicsManager.getMusics());
         } else {
@@ -700,10 +631,12 @@ public class SaveScoresController {
         } else {
             // La course n'existe pas dans la liste, on peut gérer ça (ex: ajout ou message d'erreur)
             System.out.println("Course not found in ComboBox items: " + courseToSelect.getName());
+            NotificationUtil.showToast(mainStage, "Could not found in selected list", "entryProblemAlert");
         }
     }
 
-    public void setCourse(Course courseToSelect, Course.CourseDifficulty difficultyToSelect, boolean isLegacy) {
+    public void setCourse(Course courseToSelect, Course.CourseDifficulty difficultyToSelect, boolean isLegacy) throws Exception {
+        Stage mainStage = App.getPrimaryStage();
         if (isLegacy) {
             coursesManager.loadLegacyCourses(MusicsManager.getMusics());
         } else {
@@ -739,6 +672,7 @@ public class SaveScoresController {
         } else {
             // La course n'existe pas dans la liste, on peut gérer ça (ex: ajout ou message d'erreur)
             System.out.println("Course not found in ComboBox items: " + courseToSelect.getName());
+            NotificationUtil.showToast(mainStage, "Could not found in selected list", "entryProblemAlert");
         }
     }
 }

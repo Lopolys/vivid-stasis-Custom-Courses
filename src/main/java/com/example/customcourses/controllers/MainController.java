@@ -1,10 +1,10 @@
 package com.example.customcourses.controllers;
 
 import com.example.customcourses.App;
-import com.example.customcourses.utils.UserPreferences;
 import com.example.customcourses.managers.CoursesManager;
 import com.example.customcourses.managers.MusicsManager;
 import com.example.customcourses.models.Course;
+import com.example.customcourses.models.TitleUnlocker;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -16,9 +16,12 @@ import javafx.event.ActionEvent;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Set;
 
 import com.example.customcourses.utils.StyleUtil;
-import javafx.stage.Stage;
+
+import static com.example.customcourses.models.Title.loadUnlockedTitleIds;
+import static com.example.customcourses.models.Title.unlockTitle;
 
 public class MainController {
     private final CoursesManager coursesManager = new CoursesManager();
@@ -28,6 +31,7 @@ public class MainController {
     @FXML private StackPane mainContent;
     @FXML private BorderPane rootPane;
     @FXML private Label versionLabel;
+    private int versionClickCount;
 
     private App app;
 
@@ -39,10 +43,26 @@ public class MainController {
     @FXML
     private void initialize() throws Exception {
         applyUserPreferences();
+        TitleUnlocker.checkAndUnlockTitles();
 
         MusicsManager.loadMusics();
         coursesManager.loadCourses(MusicsManager.getMusics());
         loadView("/com/example/customcourses/views/CoursesView.fxml");
+
+        versionLabel.setOnMouseClicked(event -> {
+            versionClickCount++;
+
+            System.out.println("Clics sur le label : " + versionClickCount);
+            try {
+                Set<String> titlesList = loadUnlockedTitleIds();
+                if (versionClickCount == 12 && !titlesList.contains("misc12")) {
+                    unlockTitle("misc12");
+                    TitleUnlocker.checkAndUnlockTitles();
+                }
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        });
     }
 
     void applyUserPreferences() throws Exception {
@@ -60,10 +80,6 @@ public class MainController {
         } else {
             StyleUtil.applyUserPreferences(scene);
         }
-    }
-
-    private void applyStylesToScene(Scene scene, UserPreferences prefs) throws Exception {
-        StyleUtil.applyUserPreferences(scene);
     }
 
     // Méthodes appelées par les boutons (via onAction="#handleX")
@@ -139,7 +155,13 @@ public class MainController {
 
             // Si c’est SettingsController, lui passer une référence à ce MainController
             if (controller instanceof SettingsController settingsController) {
+                settingsController.refreshTitlesDisplay();
                 settingsController.setMainController(this);
+            }
+
+            // Si c’est RandomSelectionController, lui passer une référence à ce MainController
+            if (controller instanceof RandomSelectionController randomSelectController) {
+                randomSelectController.setMainController(this);
             }
 
             mainContent.getChildren().setAll(view);
@@ -202,6 +224,8 @@ public class MainController {
             mainContent.getChildren().setAll(view);
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -217,6 +241,8 @@ public class MainController {
             mainContent.getChildren().setAll(view);
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
     }
 }

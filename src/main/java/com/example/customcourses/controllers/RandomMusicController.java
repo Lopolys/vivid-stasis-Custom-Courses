@@ -2,6 +2,7 @@ package com.example.customcourses.controllers;
 
 import com.example.customcourses.managers.MusicsManager;
 import com.example.customcourses.models.Music;
+import com.example.customcourses.models.TitleUnlocker;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
@@ -10,6 +11,10 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
 import java.util.Objects;
+import java.util.Set;
+
+import static com.example.customcourses.models.Title.loadUnlockedTitleIds;
+import static com.example.customcourses.models.Title.unlockTitle;
 
 public class RandomMusicController {
 
@@ -37,9 +42,11 @@ public class RandomMusicController {
 
         packCombo.getSelectionModel().selectFirst();
 
-        minDiffSpinner.setValueFactory(new SpinnerValueFactory.DoubleSpinnerValueFactory(0, 18.1, 5, 0.1));
-        maxDiffSpinner.setValueFactory(new SpinnerValueFactory.DoubleSpinnerValueFactory(0, 18.1, 15, 0.1));
+        minDiffSpinner.setValueFactory(new SpinnerValueFactory.DoubleSpinnerValueFactory(1, 18.1, 5, 0.1));
+        maxDiffSpinner.setValueFactory(new SpinnerValueFactory.DoubleSpinnerValueFactory(1, 18.1, 15, 0.1));
 
+        minDiffSpinner.setPrefWidth(100);
+        maxDiffSpinner.setPrefWidth(100);
         selectButtonMusic.setOnAction(e -> selectRandomMusic());
     }
 
@@ -94,13 +101,22 @@ public class RandomMusicController {
                 coverImage.setImage(new Image(imagePath));
             }
 
+            if (title.equalsIgnoreCase("Random") && minDiff == 1.0 && maxDiff == 18.1 && pack == null){
+                try {
+                    Set<String> titlesList = loadUnlockedTitleIds();
+                    if (!titlesList.contains("miscGamble")) {
+                        unlockTitle("miscGamble");
+                        TitleUnlocker.checkAndUnlockTitles();
+                    }
+                }
+                catch (Exception e2){}
+            }
         } else {
             // Réinitialisation si rien trouvé
-            titleLabel.setText("Aucune musique trouvée");
+            titleLabel.setText("No music has been found");
             artistLabel.setText("");
             difficultyLabel.setText("");
             coverImage.setImage(null);
         }
     }
-
 }

@@ -4,7 +4,6 @@ import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextArea;
 import javafx.scene.input.ScrollEvent;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
@@ -46,7 +45,7 @@ public class InfoController {
         infoScrollPane.addEventFilter(ScrollEvent.SCROLL, event -> {
             double deltaY = event.getDeltaY() * 3; // multiplier par un facteur pour accélérer le scroll
             infoScrollPane.setVvalue(infoScrollPane.getVvalue() - deltaY / infoScrollPane.getContent().getBoundsInLocal().getHeight());
-            event.consume();  // Empêche le scroll normal pour appliquer le tien
+            event.consume();  // Empêche le scroll normal
         });
     }
 

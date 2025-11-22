@@ -1,6 +1,7 @@
 package com.example.customcourses.controllers;
 
 import com.example.customcourses.models.Music;
+import com.example.customcourses.models.TitleUnlocker;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -19,8 +20,11 @@ import javafx.scene.layout.*;
 
 import java.io.InputStream;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
+
+import static com.example.customcourses.models.Title.loadUnlockedTitleIds;
+import static com.example.customcourses.models.Title.unlockTitle;
 
 public class MusicsController {
 
@@ -117,7 +121,6 @@ public class MusicsController {
         if (imageName == null || imageName.isEmpty()) return;
 
         String path = "/covers/" + imageName;
-        String lower = imageName.toLowerCase();
 
         try {
             ImageView imageView = new ImageView();
@@ -127,9 +130,8 @@ public class MusicsController {
             imageView.setImage(image);
             coverContainer.getChildren().add(imageView);
         } catch (Exception e) {
-
+            // Image non récupérée
         }
-
     }
 
     private void showDetails(Music music) {
@@ -267,6 +269,40 @@ public class MusicsController {
         GridPane.setColumnSpan(borderedFooterCell, columnCount);
         grid.add(borderedFooterCell, 0, 7);
         showCover(music.getImage(), coverContainer);
+
+        if (music.getTitle().equalsIgnoreCase("thrinos;pygmalion")) {
+            Button secretButton = new Button();
+            secretButton.setOpacity(0.0); // bouton invisible
+            secretButton.setPrefSize(50, 50); // zone cliquable raisonnable
+
+            // positionne le bouton sur la jaquette
+            StackPane.setAlignment(secretButton, Pos.CENTER);
+
+            // Récupère l'image (il faut retrouver l'ImageView)
+            ImageView imageView = (ImageView) coverContainer.getChildren().getFirst();
+
+            secretButton.setOnAction(e -> {
+                // Crée une animation de rotation
+                javafx.animation.RotateTransition rotation = new javafx.animation.RotateTransition(javafx.util.Duration.seconds(2), imageView);
+                rotation.setByAngle(360);
+                rotation.setCycleCount(1);
+                rotation.setAutoReverse(false);
+                rotation.play();
+                try {
+                    Set<String> titlesList = loadUnlockedTitleIds();
+                    if (!titlesList.contains("miscWild")) {
+                        unlockTitle("miscWild");
+                        TitleUnlocker.checkAndUnlockTitles();
+                    }
+                }
+                catch (Exception e2){
+                    // Pas de vérification de titre
+                }
+            });
+
+            // Ajoute le bouton au-dessus de la jaquette
+            coverContainer.getChildren().add(secretButton);
+        }
 
         musicDetailsPane.getChildren().clear();
         musicDetailsPane.getChildren().add(grid);

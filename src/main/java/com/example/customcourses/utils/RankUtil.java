@@ -40,21 +40,14 @@ public class RankUtil {
         return "E";
     }
 
-    public static String calculateCourseRank(int score) {
-        if (score > 4_040_000) {
-            return "??"; // Score invalide pour une course (au-dessus du max possible)
-        }
-        return getRank(score, false);
-    }
-
     public static String calculateMusicRank(int score) {
         if (score > 1_010_000) {
             return "??"; // Score invalide pour une musique
         }
-        return getRank(score, true);
+        return getRank(score);
     }
 
-    private static String getRank(int score, boolean isMusic) {
+    private static String getRank(int score) {
         for (int i = THRESHOLDS.length - 1; i >= 0; i--) {
             if (score >= THRESHOLDS[i]) {
                 return RANKS[i];
@@ -82,4 +75,23 @@ public class RankUtil {
         };
     }
 
+    public static int getRankIndex(String rank) {
+        for (int i = 0; i < RANKS.length; i++) {
+            if (RANKS[i].equalsIgnoreCase(rank)) {
+                return i;
+            }
+        }
+        return -1; // inconnu
+    }
+
+    public static boolean compareRanks(String rank1, String rank2) {
+        int index1 = getRankIndex(rank1);
+        int index2 = getRankIndex(rank2);
+
+        if (index1 == -1 || index2 == -1) {
+            throw new IllegalArgumentException("Rang inconnu : " + rank1 + " ou " + rank2);
+        }
+
+        return index1 >= index2;
+    }
 }

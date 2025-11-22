@@ -29,5 +29,7 @@
             <HBox fx:id="coverPane" spacing="10" alignment="CENTER"/>
             <Label fx:id="scoreLabel" styleClass="entryScore"/>
         </VBox>
+
+        <Button fx:id="playButton" text="Play this Course"/>
     </VBox>
 </ScrollPane>

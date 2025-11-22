@@ -5,6 +5,7 @@ import com.example.customcourses.models.Course;
 import com.example.customcourses.models.Music;
 import com.example.customcourses.models.ScoreEntry;
 import com.example.customcourses.utils.RankUtil;
+import com.example.customcourses.utils.ScoreExporter;
 import com.example.customcourses.utils.ScoreStorage;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.beans.property.SimpleObjectProperty;
@@ -22,6 +23,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.*;
 import javafx.scene.text.TextAlignment;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -71,7 +73,7 @@ public class HiddenHistoryController {
         detailsScrollPane.addEventFilter(ScrollEvent.SCROLL, event -> {
             double deltaY = event.getDeltaY() * 3; // multiplier par un facteur pour accélérer le scroll
             detailsScrollPane.setVvalue(detailsScrollPane.getVvalue() - deltaY / detailsScrollPane.getContent().getBoundsInLocal().getHeight());
-            event.consume();  // Empêche le scroll normal pour appliquer le tien
+            event.consume();  // Empêche le scroll normal
         });
     }
 
@@ -304,7 +306,6 @@ public class HiddenHistoryController {
 
             StackPane imageContainer = new StackPane();
             String imagePath = "/covers/" + imageName;
-            String lower = imageName.toLowerCase();
 
             try {
                 ImageView imageView = new ImageView();
@@ -459,8 +460,25 @@ public class HiddenHistoryController {
         wrapper.setAlignment(Pos.CENTER);  // Centrage horizontal
         wrapper.setPadding(new Insets(20));
 
+        Button exportButton = new Button("Export Score");
+        List<Music> scoreMusicList = new ArrayList<>();
+        for (String title : score.getMusicTitles()) {
+            MusicsManager.getMusics().stream().filter(m -> m.getTitle().equalsIgnoreCase(title)).findFirst().ifPresent(scoreMusicList::add);
+        }
+        exportButton.setOnAction(e -> {
+            try {
+                ScoreExporter.exportScore((Stage) exportButton.getScene().getWindow(), score, scoreMusicList);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        });
+
+        VBox finalContainer = new VBox(wrapper, exportButton);
+        finalContainer.setAlignment(Pos.CENTER);
+        finalContainer.setSpacing(5);
+
         scoresDetailsPane.getChildren().clear();
-        scoresDetailsPane.getChildren().add(wrapper);
+        scoresDetailsPane.getChildren().add(finalContainer);
     }
 
     public void setMainController(HiddenMainController mainController) {

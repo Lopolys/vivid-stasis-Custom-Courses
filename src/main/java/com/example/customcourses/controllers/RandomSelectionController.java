@@ -15,6 +15,12 @@ public class RandomSelectionController {
     public VBox randomSelectContent;
     @FXML private VBox contentPane;
 
+    private MainController mainController;
+
+    public void setMainController(MainController mainController) {
+        this.mainController = mainController;
+    }
+
     @FXML
     public void initialize() {
 
@@ -37,10 +43,23 @@ public class RandomSelectionController {
 
     private void loadView(String fxmlPath) {
         try {
-            ScrollPane view = FXMLLoader.load(getClass().getResource(fxmlPath));
-            contentPane.getChildren().setAll(view);;
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
+            ScrollPane view = loader.load();
+
+            Object controller = loader.getController();
+
+            // Vérifie le type du contrôleur chargé et lui passe mainController
+            if (controller instanceof RandomCourseController rcController) {
+                rcController.setMainController(mainController);
+            } else if (controller instanceof RandomLegacyController rlController) {
+                rlController.setMainController(mainController);
+            }
+
+            contentPane.getChildren().setAll(view);
+
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
 }

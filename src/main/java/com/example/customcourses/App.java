@@ -14,19 +14,24 @@ import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 import com.example.customcourses.utils.StyleUtil;
 
-import java.io.IOException;
 import java.nio.file.Path;
 import java.util.Objects;
+import java.util.Set;
+
+import static com.example.customcourses.models.Title.loadUnlockedTitleIds;
+import static com.example.customcourses.models.Title.unlockTitle;
 
 public class App extends Application {
 
     private Scene normalScene;
-    private Scene hiddenScene;;
-    private Stage primaryStage;
+    private Scene hiddenScene;
+    private static Stage primaryStage;
+    private int count;
 
     @Override
-    public void start(Stage primaryStage) throws IOException {
-        this.primaryStage = primaryStage;
+    public void start(Stage primaryStage) {
+        App.primaryStage = primaryStage;
+        count = 0;
         try {
             // Initialise les fichiers JSON modifiables au premier lancement et les synchronise
             DataInitializer.initializeJsonFiles();
@@ -71,14 +76,24 @@ public class App extends Application {
             primaryStage.show();
 
             normalScene.setOnKeyPressed(event -> {
+                count++;
                 if (event.getCode() == KeyCode.TAB) {
                     event.consume();
-                    if (Math.random() < 0.05) {
+                    if (Math.random() < 0.05 || count >= 15) {
                         System.out.println("You broke it...");
                         primaryStage.setTitle("Boundary Shatter");
                         primaryStage.setScene(hiddenScene);
                         primaryStage.setMaximized(false);
                         primaryStage.setMaximized(true);
+                        count = 0;
+                        try {
+                            Set<String> titlesList = loadUnlockedTitleIds();
+                            if (!titlesList.contains("miscBreak")){
+                                unlockTitle("miscBreak");
+                            }
+                        } catch (Exception e) {
+                            throw new RuntimeException(e);
+                        }
                     }
                 }
             });
@@ -93,6 +108,10 @@ public class App extends Application {
         primaryStage.setScene(normalScene);
         primaryStage.setMaximized(false);
         primaryStage.setMaximized(true);
+    }
+
+    public static Stage getPrimaryStage(){
+        return primaryStage;
     }
 
     public static void main(String[] args) {

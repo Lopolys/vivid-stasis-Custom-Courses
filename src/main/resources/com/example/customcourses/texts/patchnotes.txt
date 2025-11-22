@@ -1,3 +1,44 @@
+### v 0.3.0
+## New Courses
+
+# • Added 3 new courses :
+    • Artificial Course containing LET THE CREATION BEGIN, Singularity, Pictured as Perfect and Simulated Reality.
+    • Light Course containing Luminaria, Secret Illumination, ∀NARCHIC LIGHT and Luminous Entities Lost Heart.
+    • Into the Unknown Course containing the more i carry on..., lost contact, χΩ and Dreams From Another World
+
+## New Content
+
+# • Titles
+	• Possibility to earn titles by playing courses and inserting scores.
+	• Possibility to select a title in Settings.
+	• You can also see your titles in Settings.
+	• Some titles are hidden in the app. Good luck finding them.
+-#- Some titles may be changed in the future (name or unlock method). Please don't take it on me since they will evolve at the same time as the app is evolving.
+
+# • Name
+	• You can finally have a name in your app. No one asked, but you're welcome.
+	• Maybe it can be useful to try stuff in there... just saying...
+
+# • Score Export
+	• In Courses History, when you select a score to see the details, you now have access to a new button : Export Score.
+	• This button allows you to share the result of your play in a single image with your username and selected title in it.
+
+• Updated Musics content to 5.3.0
+#hidden# Also added Angelstar/Dark Star
+
+## Overall improvements
+• Made min and max difficulty selector in Random Select Music section wider.
+• Added MARENOL to Random Select Music Section since it was not supported correctly.
+• The Course section now remembers where was your scrollbar when you left for another section.
+• You can now see your scores directly in the Course section without going to the details. Scores shown are from the easier difficulty to the harder one, just like the details one.
+• Alerts where replaced by popups in-app. Popups will also show up when you unlock a title.
+• Added "Error" and "Saved" images for Kanshi's theme.
+-#- yes there is Aoi but who cares that it isn't only Kanshi ?
+
+
+#hidden# Did you know that I loooooooove gambling between min and max values ?
+## ________________________________________________________________________________
+
 ### v 0.2.1
 ## Fixes
 
@@ -131,3 +172,5 @@
 • If you have any idea for a new feature to be added, please tell me. Maybe it will be implemented in the future
 • If you encounter a bug, do tell me as fast as you can, i'll try fixing it with a small update.
 • If you have ideas for new courses to be added, please tell and we'll consider it if it inspires us.
+
+#hidden# 0810222244

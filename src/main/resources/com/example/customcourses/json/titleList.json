@@ -1,0 +1,2553 @@
+[
+  {
+    "id": "miscIni",
+    "name": "Initiate",
+    "description": "",
+    "imagePath": "/com/example/customcourses/img/miscIni.png"
+  },
+  {
+    "id": "miscStart",
+    "name": "Starting Point",
+    "description": "Started playing Custom Courses",
+    "imagePath": "/com/example/customcourses/img/miscStart.png",
+    "condition": {
+      "type": "COURSE_PLAY",
+      "courseName": "any",
+      "count": "1"
+    }
+  },
+  {
+    "id": "miscAll",
+    "name": "All Rounder",
+    "description": "Tried each difficulty at least once",
+    "imagePath": "/com/example/customcourses/img/miscAll.png",
+    "condition": {
+      "type": "COURSE_PLAY",
+      "courseName": "any",
+      "count": "5"
+    }
+  },
+  {
+    "id": "miscZero",
+    "name": "I just missed the start...",
+    "description": "i'll get it next time for sure",
+    "imagePath": "/com/example/customcourses/img/miscZero.png",
+    "condition": {
+      "type": "COURSE_SCORE",
+      "scoreMin": "0",
+      "scoreMax": "0"
+    }
+  },
+  {
+    "id": "miscSS",
+    "name": "Steady State",
+    "description": "Achieve SS on a Course",
+    "imagePath": "/com/example/customcourses/img/miscSS.png",
+    "condition": {
+      "type": "COURSE_RANK",
+      "courseName": "any",
+      "rankMin": "SS"
+    }
+  },
+  {
+    "id": "miscSS+",
+    "name": "Surpassing Self",
+    "description": "Achieve SS+ on a Course",
+    "imagePath": "/com/example/customcourses/img/miscSS+.png",
+    "condition": {
+      "type": "COURSE_RANK",
+      "courseName": "any",
+      "rankMin": "SS+"
+    }
+  },
+  {
+    "id": "miscV",
+    "name": "Victory is Ahead",
+    "description": "Achieve V on a Course",
+    "imagePath": "/com/example/customcourses/img/miscV.png",
+    "condition": {
+      "type": "COURSE_RANK",
+      "courseName": "any",
+      "rankMin": "V"
+    }
+  },
+  {
+    "id": "miscV+",
+    "name": "Victory Reached",
+    "description": "Achieve V+ on a Course",
+    "imagePath": "/com/example/customcourses/img/miscV+.png",
+    "condition": {
+      "type": "COURSE_RANK",
+      "courseName": "any",
+      "rankMin": "V+"
+    }
+  },
+  {
+    "id": "miscVS",
+    "name": "Perfectionist",
+    "description": "Achieve max score (VS) on a Course",
+    "imagePath": "/com/example/customcourses/img/miscVS.png",
+    "condition": {
+      "type": "COURSE_RANK",
+      "courseName": "any",
+      "rankMin": "VS"
+    }
+  },
+  {
+    "id": "miscBreak",
+    "name": "You broke it...",
+    "description": "[INFORMATION REMOVED]",
+    "imagePath": "/com/example/customcourses/img/miscBreak.png"
+  },
+  {
+    "id": "miscCool",
+    "name": "cool",
+    "description": "he's just cool and chilling in there you know ?",
+    "imagePath": "/com/example/customcourses/img/miscCool.png"
+  },
+  {
+    "id": "misc12",
+    "name": "12",
+    "description": "12",
+    "imagePath": "/com/example/customcourses/img/misc12.png"
+  },
+  {
+    "id": "miscNice",
+    "name": "nice",
+    "description": "You made it on purpose. Right ?",
+    "imagePath": "/com/example/customcourses/img/miscNice.png",
+    "condition": {
+      "type": "COURSE_SCORE",
+      "scoreMin": "690000",
+      "scoreMax": "699999"
+    }
+  },
+  {
+    "id": "misc3",
+    "name": ":3",
+    "description": ":3 (have i seen this elsewhere ???)",
+    "imagePath": "/com/example/customcourses/img/misc3.png",
+    "condition": {
+      "type": "COURSE_SCORE",
+      "scoreMin": "3000000",
+      "scoreMax": "3999999"
+    }
+  },
+  {
+    "id": "cc01-FD",
+    "name": "Soundscan Origins Beginner",
+    "description": "Play \"Soundscan Origins\" on any difficulty",
+    "imagePath": "/com/example/customcourses/img/cc01-FD.png",
+    "condition": {
+      "type": "COURSE_PLAY",
+      "courseName": "Soundscan Origins",
+      "count": "1"
+    }
+  },
+  {
+    "id": "cc01-AD",
+    "name": "Soundscan Origins Enjoyer",
+    "description": "Play \"Soundscan Origins\" on every difficulty",
+    "imagePath": "/com/example/customcourses/img/cc01-AD.png",
+    "condition": {
+      "type": "COURSE_PLAY",
+      "courseName": "Soundscan Origins",
+      "count": "5"
+    }
+  },
+  {
+    "id": "cc01-FM",
+    "name": "Soundscan Origins Adept",
+    "description": "Achieve SS rank on every difficulty of \"Soundscan Origins\"",
+    "imagePath": "/com/example/customcourses/img/cc01-FM.png",
+    "condition": {
+      "type": "COURSE_MAX",
+      "courseName": "Soundscan Origins",
+      "count": "5"
+    }
+  },
+  {
+    "id": "cc01-AM",
+    "name": "Soundscan Origins Perfectionist",
+    "description": "Achieve max score on at least one difficulty of \"Soundscan Origins\"",
+    "imagePath": "/com/example/customcourses/img/cc01-AM.png",
+    "condition": {
+      "type": "COURSE_MAX",
+      "courseName": "Soundscan Origins",
+      "count": "1"
+    }
+  },
+  {
+    "id": "cc01-EP",
+    "name": "The Start of All",
+    "description": "Obtain a score of at least 4036000 on \"Soundscan Origins\" EXPOSITION difficulty",
+    "imagePath": "/com/example/customcourses/img/cc01-EP.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Soundscan Origins",
+      "diffName": "EXPOSITION",
+      "rankNeed": "V+"
+    }
+  },
+  {
+    "id": "cc01-TW",
+    "name": "Not a Frisbee Sport",
+    "description": "Obtain a score of at least 4036000 on \"Soundscan Origins\" TWIST difficulty",
+    "imagePath": "/com/example/customcourses/img/cc01-TW.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Soundscan Origins",
+      "diffName": "TWIST",
+      "rankNeed": "V+"
+    }
+  },
+  {
+    "id": "cc01-IT",
+    "name": "Stinky Corpse Lily",
+    "description": "Obtain a score of at least 4032000 on \"Soundscan Origins\" INTERLUDE difficulty",
+    "imagePath": "/com/example/customcourses/img/cc01-IT.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Soundscan Origins",
+      "diffName": "INTERLUDE",
+      "rankNeed": "V"
+    }
+  },
+  {
+    "id": "cc01-CM",
+    "name": "Great Trip Sipping",
+    "description": "Obtain a score of at least 4016000 on \"Soundscan Origins\" CLIMAX difficulty",
+    "imagePath": "/com/example/customcourses/img/cc01-CM.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Soundscan Origins",
+      "diffName": "CLIMAX",
+      "rankNeed": "SS+"
+    }
+  },
+  {
+    "id": "cc01-AP",
+    "name": "Wait, that ain't Taiko ?",
+    "description": "Obtain a score of at least 4000000 on \"Soundscan Origins\" APOTHEOSIS difficulty",
+    "imagePath": "/com/example/customcourses/img/cc01-AP.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Soundscan Origins",
+      "diffName": "APOTHEOSIS",
+      "rankNeed": "SS"
+    }
+  },
+  {
+    "id": "cc02-FD",
+    "name": "Minimalist Beginner",
+    "description": "Play \"Minimalist\" on any difficulty",
+    "imagePath": "/com/example/customcourses/img/cc02-FD.png",
+    "condition": {
+      "type": "COURSE_PLAY",
+      "courseName": "Minimalist",
+      "count": "1"
+    }
+  },
+  {
+    "id": "cc02-AD",
+    "name": "Minimalist Enjoyer",
+    "description": "Play \"Minimalist\" on every difficulty",
+    "imagePath": "/com/example/customcourses/img/cc02-AD.png",
+    "condition": {
+      "type": "COURSE_PLAY",
+      "courseName": "Minimalist",
+      "count": "5"
+    }
+  },
+  {
+    "id": "cc02-FM",
+    "name": "Minimalist Adept",
+    "description": "Achieve SS rank on every difficulty of \"Minimalist\"",
+    "imagePath": "/com/example/customcourses/img/cc02-FM.png",
+    "condition": {
+      "type": "COURSE_MAX",
+      "courseName": "Minimalist",
+      "count": "5"
+    }
+  },
+  {
+    "id": "cc02-AM",
+    "name": "Minimalist Perfectionist",
+    "description": "Achieve max score on at least one difficulty of \"Minimalist\"",
+    "imagePath": "/com/example/customcourses/img/cc02-AM.png",
+    "condition": {
+      "type": "COURSE_MAX",
+      "courseName": "Minimalist",
+      "count": "1"
+    }
+  },
+  {
+    "id": "cc02-EP",
+    "name": "Keep it Simple",
+    "description": "Obtain a score of at least 4036000 on \"Minimalist\" EXPOSITION difficulty",
+    "imagePath": "/com/example/customcourses/img/cc02-EP.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Soundscan Origins",
+      "diffName": "EXPOSITION",
+      "rankNeed": "V+"
+    }
+  },
+  {
+    "id": "cc02-TW",
+    "name": "Duskbreakers GameBoy",
+    "description": "Obtain a score of at least 4036000 on \"Minimalist\" TWIST difficulty",
+    "imagePath": "/com/example/customcourses/img/cc02-TW.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Minimalist",
+      "diffName": "TWIST",
+      "rankNeed": "V+"
+    }
+  },
+  {
+    "id": "cc02-IT",
+    "name": "You cookin' ?",
+    "description": "Obtain a score of at least 4032000 on \"Minimalist\" INTERLUDE difficulty",
+    "imagePath": "/com/example/customcourses/img/cc02-IT.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Minimalist",
+      "diffName": "INTERLUDE",
+      "rankNeed": "V"
+    }
+  },
+  {
+    "id": "cc02-CM",
+    "name": "How I Envisionned It",
+    "description": "Obtain a score of at least 4016000 on \"Minimalist\" CLIMAX difficulty",
+    "imagePath": "/com/example/customcourses/img/cc02-CM.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Minimalist",
+      "diffName": "CLIMAX",
+      "rankNeed": "SS+"
+    }
+  },
+  {
+    "id": "cc02-AP",
+    "name": "Ending Screen",
+    "description": "Obtain a score of at least 4000000 on \"Minimalist\" APOTHEOSIS difficulty",
+    "imagePath": "/com/example/customcourses/img/cc02-AP.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Minimalist",
+      "diffName": "APOTHEOSIS",
+      "rankNeed": "SS"
+    }
+  },
+  {
+    "id": "cc03-FD",
+    "name": "Time Beginner",
+    "description": "Play \"Time\" on any difficulty",
+    "imagePath": "/com/example/customcourses/img/cc03-FD.png",
+    "condition": {
+      "type": "COURSE_PLAY",
+      "courseName": "Time",
+      "count": "1"
+    }
+  },
+  {
+    "id": "cc03-AD",
+    "name": "Time Enjoyer",
+    "description": "Play \"Time\" on every difficulty",
+    "imagePath": "/com/example/customcourses/img/cc03-AD.png",
+    "condition": {
+      "type": "COURSE_PLAY",
+      "courseName": "Time",
+      "count": "5"
+    }
+  },
+  {
+    "id": "cc03-FM",
+    "name": "Time Adept",
+    "description": "Achieve SS rank on every difficulty of \"Time\"",
+    "imagePath": "/com/example/customcourses/img/cc03-FM.png",
+    "condition": {
+      "type": "COURSE_MAX",
+      "courseName": "Time",
+      "count": "5"
+    }
+  },
+  {
+    "id": "cc03-AM",
+    "name": "Time Perfectionist",
+    "description": "Achieve max score on at least one difficulty of \"Time\"",
+    "imagePath": "/com/example/customcourses/img/cc03-AM.png",
+    "condition": {
+      "type": "COURSE_MAX",
+      "courseName": "Time",
+      "count": "1"
+    }
+  },
+  {
+    "id": "cc03-EP",
+    "name": "Just on Time",
+    "description": "Obtain a score of at least 4036000 on \"Time\" EXPOSITION difficulty",
+    "imagePath": "/com/example/customcourses/img/cc03-EP.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Time",
+      "diffName": "EXPOSITION",
+      "rankNeed": "V+"
+    }
+  },
+  {
+    "id": "cc03-TW",
+    "name": "Gem of Time",
+    "description": "Obtain a score of at least 4036000 on \"Time\" TWIST difficulty",
+    "imagePath": "/com/example/customcourses/img/cc03-TW.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Time",
+      "diffName": "TWIST",
+      "rankNeed": "V+"
+    }
+  },
+  {
+    "id": "cc03-IT",
+    "name": "Unit 01",
+    "description": "Obtain a score of at least 4032000 on \"Time\" INTERLUDE difficulty",
+    "imagePath": "/com/example/customcourses/img/cc03-IT.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Time",
+      "diffName": "INTERLUDE",
+      "rankNeed": "V"
+    }
+  },
+  {
+    "id": "cc03-CM",
+    "name": "Explore Everything",
+    "description": "Obtain a score of at least 4016000 on \"Time\" CLIMAX difficulty",
+    "imagePath": "/com/example/customcourses/img/cc03-CM.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Time",
+      "diffName": "CLIMAX",
+      "rankNeed": "SS+"
+    }
+  },
+  {
+    "id": "cc03-AP",
+    "name": "Chronnection",
+    "description": "Obtain a score of at least 4000000 on \"Time\" APOTHEOSIS difficulty",
+    "imagePath": "/com/example/customcourses/img/cc03-AP.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Time",
+      "diffName": "APOTHEOSIS",
+      "rankNeed": "SS"
+    }
+  },
+  {
+    "id": "cc04-FD",
+    "name": "Space Beginner",
+    "description": "Play \"Space\" on any difficulty",
+    "imagePath": "/com/example/customcourses/img/cc04-FD.png",
+    "condition": {
+      "type": "COURSE_PLAY",
+      "courseName": "Space",
+      "count": "1"
+    }
+  },
+  {
+    "id": "cc04-AD",
+    "name": "Space Enjoyer",
+    "description": "Play \"Space\" on every difficulty",
+    "imagePath": "/com/example/customcourses/img/cc04-AD.png",
+    "condition": {
+      "type": "COURSE_PLAY",
+      "courseName": "Space",
+      "count": "5"
+    }
+  },
+  {
+    "id": "cc04-FM",
+    "name": "Space Adept",
+    "description": "Achieve SS rank on every difficulty of \"Space\"",
+    "imagePath": "/com/example/customcourses/img/cc04-FM.png",
+    "condition": {
+      "type": "COURSE_MAX",
+      "courseName": "Space",
+      "count": "5"
+    }
+  },
+  {
+    "id": "cc04-AM",
+    "name": "Space Perfectionist",
+    "description": "Achieve max score on at least one difficulty of \"Space\"",
+    "imagePath": "/com/example/customcourses/img/cc04-AM.png",
+    "condition": {
+      "type": "COURSE_MAX",
+      "courseName": "Space",
+      "count": "1"
+    }
+  },
+  {
+    "id": "cc04-EP",
+    "name": "Cosmic Learning",
+    "description": "Obtain a score of at least 4036000 on \"Space\" EXPOSITION difficulty",
+    "imagePath": "/com/example/customcourses/img/cc04-EP.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Space",
+      "diffName": "EXPOSITION",
+      "rankNeed": "V+"
+    }
+  },
+  {
+    "id": "cc04-TW",
+    "name": "Vortex of Colors",
+    "description": "Obtain a score of at least 4036000 on \"Space\" TWIST difficulty",
+    "imagePath": "/com/example/customcourses/img/cc04-TW.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Space",
+      "diffName": "TWIST",
+      "rankNeed": "V+"
+    }
+  },
+  {
+    "id": "cc04-IT",
+    "name": "Hole of Nothingness",
+    "description": "Obtain a score of at least 4032000 on \"Space\" INTERLUDE difficulty",
+    "imagePath": "/com/example/customcourses/img/cc04-IT.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Space",
+      "diffName": "INTERLUDE",
+      "rankNeed": "V"
+    }
+  },
+  {
+    "id": "cc04-CM",
+    "name": "Active Galactic Core",
+    "description": "Obtain a score of at least 4016000 on \"Space\" CLIMAX difficulty",
+    "imagePath": "/com/example/customcourses/img/cc04-CM.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Space",
+      "diffName": "CLIMAX",
+      "rankNeed": "SS+"
+    }
+  },
+  {
+    "id": "cc04-AP",
+    "name": "Big Bang",
+    "description": "Obtain a score of at least 4000000 on \"Space\" APOTHEOSIS difficulty",
+    "imagePath": "/com/example/customcourses/img/cc04-AP.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Space",
+      "diffName": "APOTHEOSIS",
+      "rankNeed": "SS"
+    }
+  },
+  {
+    "id": "cc05-FD",
+    "name": "Heaven Beginner",
+    "description": "Play \"Heaven\" on any difficulty",
+    "imagePath": "/com/example/customcourses/img/cc05-FD.png",
+    "condition": {
+      "type": "COURSE_PLAY",
+      "courseName": "Heaven",
+      "count": "1"
+    }
+  },
+  {
+    "id": "cc05-AD",
+    "name": "Heaven Enjoyer",
+    "description": "Play \"Heaven\" on every difficulty",
+    "imagePath": "/com/example/customcourses/img/cc05-AD.png",
+    "condition": {
+      "type": "COURSE_PLAY",
+      "courseName": "Heaven",
+      "count": "5"
+    }
+  },
+  {
+    "id": "cc05-FM",
+    "name": "Heaven Adept",
+    "description": "Achieve SS rank on every difficulty of \"Heaven\"",
+    "imagePath": "/com/example/customcourses/img/cc05-FM.png",
+    "condition": {
+      "type": "COURSE_MAX",
+      "courseName": "Heaven",
+      "count": "5"
+    }
+  },
+  {
+    "id": "cc05-AM",
+    "name": "Heaven Perfectionist",
+    "description": "Achieve max score on at least one difficulty of \"Heaven\"",
+    "imagePath": "/com/example/customcourses/img/cc05-AM.png",
+    "condition": {
+      "type": "COURSE_MAX",
+      "courseName": "Heaven",
+      "count": "1"
+    }
+  },
+  {
+    "id": "cc05-EP",
+    "name": "The Doors Openned",
+    "description": "Obtain a score of at least 4036000 on \"Heaven\" EXPOSITION difficulty",
+    "imagePath": "/com/example/customcourses/img/cc05-EP.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Heaven",
+      "diffName": "EXPOSITION",
+      "rankNeed": "V+"
+    }
+  },
+  {
+    "id": "cc05-TW",
+    "name": "A Curiosity to Follow",
+    "description": "Obtain a score of at least 4036000 on \"Heaven\" TWIST difficulty",
+    "imagePath": "/com/example/customcourses/img/cc05-TW.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Heaven",
+      "diffName": "TWIST",
+      "rankNeed": "V+"
+    }
+  },
+  {
+    "id": "cc05-IT",
+    "name": "Angel of Silence",
+    "description": "Obtain a score of at least 4032000 on \"Heaven\" INTERLUDE difficulty",
+    "imagePath": "/com/example/customcourses/img/cc05-IT.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Heaven",
+      "diffName": "INTERLUDE",
+      "rankNeed": "V"
+    }
+  },
+  {
+    "id": "cc05-CM",
+    "name": "BENOTAFRAID",
+    "description": "Obtain a score of at least 4016000 on \"Heaven\" CLIMAX difficulty",
+    "imagePath": "/com/example/customcourses/img/cc05-CM.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Heaven",
+      "diffName": "CLIMAX",
+      "rankNeed": "SS+"
+    }
+  },
+  {
+    "id": "cc05-AP",
+    "name": "Wings of Fear",
+    "description": "Obtain a score of at least 4000000 on \"Heaven\" APOTHEOSIS difficulty",
+    "imagePath": "/com/example/customcourses/img/cc05-AP.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Heaven",
+      "diffName": "APOTHEOSIS",
+      "rankNeed": "SS"
+    }
+  },
+  {
+    "id": "cc06-FD",
+    "name": "RUN !!!1! Beginner",
+    "description": "Play \"RUN !!!1!\" on any difficulty",
+    "imagePath": "/com/example/customcourses/img/cc06-FD.png",
+    "condition": {
+      "type": "COURSE_PLAY",
+      "courseName": "RUN !!!1!",
+      "count": "1"
+    }
+  },
+  {
+    "id": "cc06-AD",
+    "name": "RUN !!!1! Enjoyer",
+    "description": "Play \"RUN !!!1!\" on every difficulty",
+    "imagePath": "/com/example/customcourses/img/cc06-AD.png",
+    "condition": {
+      "type": "COURSE_PLAY",
+      "courseName": "RUN !!!1!",
+      "count": "5"
+    }
+  },
+  {
+    "id": "cc06-FM",
+    "name": "RUN !!!1! Adept",
+    "description": "Achieve SS rank on every difficulty of \"RUN !!!1!\"",
+    "imagePath": "/com/example/customcourses/img/cc06-FM.png",
+    "condition": {
+      "type": "COURSE_MAX",
+      "courseName": "RUN !!!1!",
+      "count": "5"
+    }
+  },
+  {
+    "id": "cc06-AM",
+    "name": "RUN !!!1! Perfectionist",
+    "description": "Achieve max score on at least one difficulty of \"RUN !!!1!\"",
+    "imagePath": "/com/example/customcourses/img/cc06-AM.png",
+    "condition": {
+      "type": "COURSE_MAX",
+      "courseName": "RUN !!!1!",
+      "count": "1"
+    }
+  },
+  {
+    "id": "cc06-EP",
+    "name": "Don't ask why there is a 1",
+    "description": "Obtain a score of at least 4036000 on \"RUN !!!1!\" EXPOSITION difficulty",
+    "imagePath": "/com/example/customcourses/img/cc06-EP.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "RUN !!!1!",
+      "diffName": "EXPOSITION",
+      "rankNeed": "V+"
+    }
+  },
+  {
+    "id": "cc06-TW",
+    "name": "Sweet Sweet Running",
+    "description": "Obtain a score of at least 4036000 on \"RUN !!!1!\" TWIST difficulty",
+    "imagePath": "/com/example/customcourses/img/cc06-TW.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "RUN !!!1!",
+      "diffName": "TWIST",
+      "rankNeed": "V+"
+    }
+  },
+  {
+    "id": "cc06-IT",
+    "name": "Ignition",
+    "description": "Obtain a score of at least 4032000 on \"RUN !!!1!\" INTERLUDE difficulty",
+    "imagePath": "/com/example/customcourses/img/cc06-IT.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "RUN !!!1!",
+      "diffName": "INTERLUDE",
+      "rankNeed": "V"
+    }
+  },
+  {
+    "id": "cc06-CM",
+    "name": "MOVE UR BODY!!!",
+    "description": "Obtain a score of at least 4016000 on \"RUN !!!1!\" CLIMAX difficulty",
+    "imagePath": "/com/example/customcourses/img/cc06-CM.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "RUN !!!1!",
+      "diffName": "CLIMAX",
+      "rankNeed": "SS+"
+    }
+  },
+  {
+    "id": "cc06-AP",
+    "name": "GOODTHROW",
+    "description": "Obtain a score of at least 4000000 on \"RUN !!!1!\" APOTHEOSIS difficulty",
+    "imagePath": "/com/example/customcourses/img/cc06-AP.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "RUN !!!1!",
+      "diffName": "APOTHEOSIS",
+      "rankNeed": "SS"
+    }
+  },
+  {
+    "id": "cc07-FD",
+    "name": ":3 Beginner",
+    "description": "Play \":3\" on any difficulty",
+    "imagePath": "/com/example/customcourses/img/cc07-FD.png",
+    "condition": {
+      "type": "COURSE_PLAY",
+      "courseName": ":3",
+      "count": "1"
+    }
+  },
+  {
+    "id": "cc07-AD",
+    "name": ":3 Enjoyer",
+    "description": "Play \":3\" on every difficulty",
+    "imagePath": "/com/example/customcourses/img/cc07-AD.png",
+    "condition": {
+      "type": "COURSE_PLAY",
+      "courseName": ":3",
+      "count": "5"
+    }
+  },
+  {
+    "id": "cc07-FM",
+    "name": ":3 Adept",
+    "description": "Achieve SS rank on every difficulty of \":3\"",
+    "imagePath": "/com/example/customcourses/img/cc07-FM.png",
+    "condition": {
+      "type": "COURSE_MAX",
+      "courseName": ":3",
+      "count": "5"
+    }
+  },
+  {
+    "id": "cc07-AM",
+    "name": ":3 Perfectionnist",
+    "description": "Achieve max score on at least one difficulty of \":3\"",
+    "imagePath": "/com/example/customcourses/img/cc07-AM.png",
+    "condition": {
+      "type": "COURSE_MAX",
+      "courseName": ":3",
+      "count": "1"
+    }
+  },
+  {
+    "id": "cc07-EP",
+    "name": "I'm a cat now :3",
+    "description": "Obtain a score of at least 4036000 on \":3\" EXPOSITION difficulty",
+    "imagePath": "/com/example/customcourses/img/cc07-EP.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": ":3",
+      "diffName": "EXPOSITION",
+      "rankNeed": "V+"
+    }
+  },
+  {
+    "id": "cc07-TW",
+    "name": "Sweet Hat :3",
+    "description": "Obtain a score of at least 4036000 on \":3\" TWIST difficulty",
+    "imagePath": "/com/example/customcourses/img/cc07-TW.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": ":3",
+      "diffName": "TWIST",
+      "rankNeed": "V+"
+    }
+  },
+  {
+    "id": "cc07-IT",
+    "name": "Hope of Health",
+    "description": "Obtain a score of at least 4032000 on \":3\" INTERLUDE difficulty",
+    "imagePath": "/com/example/customcourses/img/cc07-IT.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": ":3",
+      "diffName": "INTERLUDE",
+      "rankNeed": "V"
+    }
+  },
+  {
+    "id": "cc07-CM",
+    "name": "Allison Nyallister",
+    "description": "Obtain a score of at least 4016000 on \":3\" CLIMAX difficulty",
+    "imagePath": "/com/example/customcourses/img/cc07-CM.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": ":3",
+      "diffName": "CLIMAX",
+      "rankNeed": "SS+"
+    }
+  },
+  {
+    "id": "cc07-AP",
+    "name": "Look at this face :3",
+    "description": "Obtain a score of at least 4000000 on \":3\" APOTHEOSIS difficulty",
+    "imagePath": "/com/example/customcourses/img/cc07-AP.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": ":3",
+      "diffName": "APOTHEOSIS",
+      "rankNeed": "SS"
+    }
+  },
+  {
+    "id": "cc08-FD",
+    "name": "Elements Beginner",
+    "description": "Play \"Elements\" on any difficulty",
+    "imagePath": "/com/example/customcourses/img/cc08-FD.png",
+    "condition": {
+      "type": "COURSE_PLAY",
+      "courseName": "Elements",
+      "count": "1"
+    }
+  },
+  {
+    "id": "cc08-AD",
+    "name": "Elements Enjoyer",
+    "description": "Play \"Elements\" on every difficulty",
+    "imagePath": "/com/example/customcourses/img/cc08-AD.png",
+    "condition": {
+      "type": "COURSE_PLAY",
+      "courseName": "Elements",
+      "count": "5"
+    }
+  },
+  {
+    "id": "cc08-FM",
+    "name": "Elements Adept",
+    "description": "Achieve SS rank on every difficulty of \"Elements\"",
+    "imagePath": "/com/example/customcourses/img/cc08-FM.png",
+    "condition": {
+      "type": "COURSE_MAX",
+      "courseName": "Elements",
+      "count": "5"
+    }
+  },
+  {
+    "id": "cc08-AM",
+    "name": "Elements Perfectionist",
+    "description": "Achieve max score on at least one difficulty of \"Elements\"",
+    "imagePath": "/com/example/customcourses/img/cc08-AM.png",
+    "condition": {
+      "type": "COURSE_MAX",
+      "courseName": "Elements",
+      "count": "1"
+    }
+  },
+  {
+    "id": "cc08-EP",
+    "name": "Evil Nature",
+    "description": "Obtain a score of at least 4036000 on \"Elements\" EXPOSITION difficulty",
+    "imagePath": "/com/example/customcourses/img/cc08-EP.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Elements",
+      "diffName": "EXPOSITION",
+      "rankNeed": "V+"
+    }
+  },
+  {
+    "id": "cc08-TW",
+    "name": "Tsunami",
+    "description": "Obtain a score of at least 4036000 on \"Elements\" TWIST difficulty",
+    "imagePath": "/com/example/customcourses/img/cc08-TW.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Elements",
+      "diffName": "TWIST",
+      "rankNeed": "V+"
+    }
+  },
+  {
+    "id": "cc08-IT",
+    "name": "Earthquake",
+    "description": "Obtain a score of at least 4032000 on \"Elements\" INTERLUDE difficulty",
+    "imagePath": "/com/example/customcourses/img/cc08-IT.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Elements",
+      "diffName": "INTERLUDE",
+      "rankNeed": "V"
+    }
+  },
+  {
+    "id": "cc08-CM",
+    "name": "Tempest",
+    "description": "Obtain a score of at least 4016000 on \"Elements\" CLIMAX difficulty",
+    "imagePath": "/com/example/customcourses/img/cc08-CM.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Elements",
+      "diffName": "CLIMAX",
+      "rankNeed": "SS+"
+    }
+  },
+  {
+    "id": "cc08-AP",
+    "name": "Arson",
+    "description": "Obtain a score of at least 4000000 on \"Elements\" APOTHEOSIS difficulty",
+    "imagePath": "/com/example/customcourses/img/cc08-AP.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Elements",
+      "diffName": "APOTHEOSIS",
+      "rankNeed": "SS"
+    }
+  },
+  {
+    "id": "cc09-FD",
+    "name": "calming music to sleep at night Beginner",
+    "description": "Play \"calming music to sleep at night\" on any difficulty",
+    "imagePath": "/com/example/customcourses/img/cc09-FD.png",
+    "condition": {
+      "type": "COURSE_PLAY",
+      "courseName": "calming music to sleep at night",
+      "count": "1"
+    }
+  },
+  {
+    "id": "cc09-AD",
+    "name": "calming music to sleep at night Enjoyer",
+    "description": "Play \"calming music to sleep at night\" on every difficulty",
+    "imagePath": "/com/example/customcourses/img/cc09-AD.png",
+    "condition": {
+      "type": "COURSE_PLAY",
+      "courseName": "calming music to sleep at night",
+      "count": "5"
+    }
+  },
+  {
+    "id": "cc09-FM",
+    "name": "calming music to sleep at night Adept",
+    "description": "Achieve SS rank on every difficulty of \"calming music to sleep at night\"",
+    "imagePath": "/com/example/customcourses/img/cc09-FM.png",
+    "condition": {
+      "type": "COURSE_MAX",
+      "courseName": "calming music to sleep at night",
+      "count": "5"
+    }
+  },
+  {
+    "id": "cc09-AM",
+    "name": "calming music to sleep at night Perfectionist",
+    "description": "Achieve max score on at least one difficulty of \"calming music to sleep at night\"",
+    "imagePath": "/com/example/customcourses/img/cc09-AM.png",
+    "condition": {
+      "type": "COURSE_MAX",
+      "courseName": "calming music to sleep at night",
+      "count": "1"
+    }
+  },
+  {
+    "id": "cc09-EP",
+    "name": "Just like LoFi",
+    "description": "Obtain a score of at least 4036000 on \"calming music to sleep at night\" EXPOSITION difficulty",
+    "imagePath": "/com/example/customcourses/img/cc09-EP.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "calming music to sleep at night",
+      "diffName": "EXPOSITION",
+      "rankNeed": "V+"
+    }
+  },
+  {
+    "id": "cc09-TW",
+    "name": "A World of Problems",
+    "description": "Obtain a score of at least 4036000 on \"calming music to sleep at night\" TWIST difficulty",
+    "imagePath": "/com/example/customcourses/img/cc09-TW.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "calming music to sleep at night",
+      "diffName": "TWIST",
+      "rankNeed": "V+"
+    }
+  },
+  {
+    "id": "cc09-IT",
+    "name": "Flawless Future",
+    "description": "Obtain a score of at least 4032000 on \"calming music to sleep at night\" INTERLUDE difficulty",
+    "imagePath": "/com/example/customcourses/img/cc09-IT.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "calming music to sleep at night",
+      "diffName": "INTERLUDE",
+      "rankNeed": "V"
+    }
+  },
+  {
+    "id": "cc09-CM",
+    "name": "The Musical Rock",
+    "description": "Obtain a score of at least 4016000 on \"calming music to sleep at night\" CLIMAX difficulty",
+    "imagePath": "/com/example/customcourses/img/cc09-CM.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "calming music to sleep at night",
+      "diffName": "CLIMAX",
+      "rankNeed": "SS+"
+    }
+  },
+  {
+    "id": "cc09-AP",
+    "name": "Shining Knight in Armor",
+    "description": "Obtain a score of at least 4000000 on \"calming music to sleep at night\" APOTHEOSIS difficulty",
+    "imagePath": "/com/example/customcourses/img/cc09-AP.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "calming music to sleep at night",
+      "diffName": "APOTHEOSIS",
+      "rankNeed": "SS"
+    }
+  },
+  {
+    "id": "cc10-FD",
+    "name": "Menace Beginner",
+    "description": "Play \"Menace\" on any difficulty",
+    "imagePath": "/com/example/customcourses/img/cc10-FD.png",
+    "condition": {
+      "type": "COURSE_PLAY",
+      "courseName": "Menace",
+      "count": "1"
+    }
+  },
+  {
+    "id": "cc10-AD",
+    "name": "Menace Enjoyer",
+    "description": "Play \"Menace\" on every difficulty",
+    "imagePath": "/com/example/customcourses/img/cc10-AD.png",
+    "condition": {
+      "type": "COURSE_PLAY",
+      "courseName": "Menace",
+      "count": "5"
+    }
+  },
+  {
+    "id": "cc10-FM",
+    "name": "Menace Adept",
+    "description": "Achieve SS rank on every difficulty of \"Menace\"",
+    "imagePath": "/com/example/customcourses/img/cc10-FM.png",
+    "condition": {
+      "type": "COURSE_MAX",
+      "courseName": "Menace",
+      "count": "5"
+    }
+  },
+  {
+    "id": "cc10-AM",
+    "name": "Menace Perfectionist",
+    "description": "Achieve max score on at least one difficulty of \"Menace\"",
+    "imagePath": "/com/example/customcourses/img/cc10-AM.png",
+    "condition": {
+      "type": "COURSE_MAX",
+      "courseName": "Menace",
+      "count": "1"
+    }
+  },
+  {
+    "id": "cc10-EP",
+    "name": "Bloody Moon",
+    "description": "Obtain a score of at least 4036000 on \"Menace\" EXPOSITION difficulty",
+    "imagePath": "/com/example/customcourses/img/cc10-EP.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Menace",
+      "diffName": "EXPOSITION",
+      "rankNeed": "V+"
+    }
+  },
+  {
+    "id": "cc10-TW",
+    "name": "Chaos Vision",
+    "description": "Obtain a score of at least 4036000 on \"Menace\" TWIST difficulty",
+    "imagePath": "/com/example/customcourses/img/cc10-TW.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Menace",
+      "diffName": "TWIST",
+      "rankNeed": "V+"
+    }
+  },
+  {
+    "id": "cc10-IT",
+    "name": "Ignorant Resurrection",
+    "description": "Obtain a score of at least 4032000 on \"Menace\" INTERLUDE difficulty",
+    "imagePath": "/com/example/customcourses/img/cc10-IT.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Menace",
+      "diffName": "INTERLUDE",
+      "rankNeed": "V"
+    }
+  },
+  {
+    "id": "cc10-CM",
+    "name": "Shooting the Unknown",
+    "description": "Obtain a score of at least 4016000 on \"Menace\" CLIMAX difficulty",
+    "imagePath": "/com/example/customcourses/img/cc10-CM.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Menace",
+      "diffName": "CLIMAX",
+      "rankNeed": "SS+"
+    }
+  },
+  {
+    "id": "cc10-AP",
+    "name": "She kills you",
+    "description": "Obtain a score of at least 4000000 on \"Menace\" APOTHEOSIS difficulty",
+    "imagePath": "/com/example/customcourses/img/cc10-AP.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Menace",
+      "diffName": "APOTHEOSIS",
+      "rankNeed": "SS"
+    }
+  },
+  {
+    "id": "cc11-FD",
+    "name": "Star Beginner",
+    "description": "Play \"Star\" on any difficulty",
+    "imagePath": "/com/example/customcourses/img/cc11-FD.png",
+    "condition": {
+      "type": "COURSE_PLAY",
+      "courseName": "Star",
+      "count": "1"
+    }
+  },
+  {
+    "id": "cc11-AD",
+    "name": "Star Enjoyer",
+    "description": "Play \"Star\" on every difficulty",
+    "imagePath": "/com/example/customcourses/img/cc11-AD.png",
+    "condition": {
+      "type": "COURSE_PLAY",
+      "courseName": "Star",
+      "count": "5"
+    }
+  },
+  {
+    "id": "cc11-FM",
+    "name": "Star Adept",
+    "description": "Achieve SS rank on every difficulty of \"Star\"",
+    "imagePath": "/com/example/customcourses/img/cc11-FM.png",
+    "condition": {
+      "type": "COURSE_MAX",
+      "courseName": "Star",
+      "count": "5"
+    }
+  },
+  {
+    "id": "cc11-AM",
+    "name": "Star Perfectionist",
+    "description": "Achieve max score on at least one difficulty of \"Star\"",
+    "imagePath": "/com/example/customcourses/img/cc11-AM.png",
+    "condition": {
+      "type": "COURSE_MAX",
+      "courseName": "Star",
+      "count": "1"
+    }
+  },
+  {
+    "id": "cc11-EP",
+    "name": "Star Gazer",
+    "description": "Obtain a score of at least 4036000 on \"Star\" EXPOSITION difficulty",
+    "imagePath": "/com/example/customcourses/img/cc11-EP.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Star",
+      "diffName": "EXPOSITION",
+      "rankNeed": "V+"
+    }
+  },
+  {
+    "id": "cc11-TW",
+    "name": "Sky of Stars",
+    "description": "Obtain a score of at least 4036000 on \"Star\" TWIST difficulty",
+    "imagePath": "/com/example/customcourses/img/cc11-TW.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Star",
+      "diffName": "TWIST",
+      "rankNeed": "V+"
+    }
+  },
+  {
+    "id": "cc11-IT",
+    "name": "Is this real ...?",
+    "description": "Obtain a score of at least 4032000 on \"Star\" INTERLUDE difficulty",
+    "imagePath": "/com/example/customcourses/img/cc11-IT.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Star",
+      "diffName": "INTERLUDE",
+      "rankNeed": "V"
+    }
+  },
+  {
+    "id": "cc11-CM",
+    "name": "Glittering Dust",
+    "description": "Obtain a score of at least 4016000 on \"Star\" CLIMAX difficulty",
+    "imagePath": "/com/example/customcourses/img/cc11-CM.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Star",
+      "diffName": "CLIMAX",
+      "rankNeed": "SS+"
+    }
+  },
+  {
+    "id": "cc11-AP",
+    "name": "Stars Inside Your Eyes",
+    "description": "Obtain a score of at least 4000000 on \"Star\" APOTHEOSIS difficulty",
+    "imagePath": "/com/example/customcourses/img/cc11-AP.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Star",
+      "diffName": "APOTHEOSIS",
+      "rankNeed": "SS"
+    }
+  },
+  {
+    "id": "cc12-FD",
+    "name": "Artificial Beginner",
+    "description": "Play \"Artificial\" on any difficulty",
+    "imagePath": "/com/example/customcourses/img/cc12-FD.png",
+    "condition": {
+      "type": "COURSE_PLAY",
+      "courseName": "Artificial",
+      "count": "1"
+    }
+  },
+  {
+    "id": "cc12-AD",
+    "name": "Artificial Enjoyer",
+    "description": "Play \"Artificial\" on every difficulty",
+    "imagePath": "/com/example/customcourses/img/cc12-AD.png",
+    "condition": {
+      "type": "COURSE_PLAY",
+      "courseName": "Artificial",
+      "count": "5"
+    }
+  },
+  {
+    "id": "cc12-FM",
+    "name": "Artificial Adept",
+    "description": "Achieve SS rank on every difficulty of \"Artificial\"",
+    "imagePath": "/com/example/customcourses/img/cc12-FM.png",
+    "condition": {
+      "type": "COURSE_MAX",
+      "courseName": "Artificial",
+      "count": "5"
+    }
+  },
+  {
+    "id": "cc12-AM",
+    "name": "Artificial Perfectionist",
+    "description": "Achieve max score on at least one difficulty of \"Artificial\"",
+    "imagePath": "/com/example/customcourses/img/cc12-AM.png",
+    "condition": {
+      "type": "COURSE_MAX",
+      "courseName": "Artificial",
+      "count": "1"
+    }
+  },
+  {
+    "id": "cc12-EP",
+    "name": "1028",
+    "description": "Obtain a score of at least 4036000 on \"Artificial\" EXPOSITION difficulty",
+    "imagePath": "/com/example/customcourses/img/cc12-EP.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Artificial",
+      "diffName": "EXPOSITION",
+      "rankNeed": "V+"
+    }
+  },
+  {
+    "id": "cc12-TW",
+    "name": "Beyond Control",
+    "description": "Obtain a score of at least 4036000 on \"Artificial\" TWIST difficulty",
+    "imagePath": "/com/example/customcourses/img/cc12-TW.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Artificial",
+      "diffName": "TWIST",
+      "rankNeed": "V+"
+    }
+  },
+  {
+    "id": "cc12-IT",
+    "name": "Authentic Dream",
+    "description": "Obtain a score of at least 4032000 on \"Artificial\" INTERLUDE difficulty",
+    "imagePath": "/com/example/customcourses/img/cc12-IT.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Artificial",
+      "diffName": "INTERLUDE",
+      "rankNeed": "V"
+    }
+  },
+  {
+    "id": "cc12-CM",
+    "name": "Perfectly Shaped",
+    "description": "Obtain a score of at least 4016000 on \"Artificial\" CLIMAX difficulty",
+    "imagePath": "/com/example/customcourses/img/cc12-CM.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Artificial",
+      "diffName": "CLIMAX",
+      "rankNeed": "SS+"
+    }
+  },
+  {
+    "id": "cc12-AP",
+    "name": "CREATE ALL THE WAY",
+    "description": "Obtain a score of at least 4000000 on \"Artificial\" APOTHEOSIS difficulty",
+    "imagePath": "/com/example/customcourses/img/cc12-AP.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Artificial",
+      "diffName": "APOTHEOSIS",
+      "rankNeed": "SS"
+    }
+  },
+  {
+    "id": "cc13-FD",
+    "name": "Light Beginner",
+    "description": "Play \"Light\" on any difficulty",
+    "imagePath": "/com/example/customcourses/img/cc13-FD.png",
+    "condition": {
+      "type": "COURSE_PLAY",
+      "courseName": "Light",
+      "count": "1"
+    }
+  },
+  {
+    "id": "cc13-AD",
+    "name": "Light Enjoyer",
+    "description": "Play \"Light\" on every difficulty",
+    "imagePath": "/com/example/customcourses/img/cc13-AD.png",
+    "condition": {
+      "type": "COURSE_PLAY",
+      "courseName": "Light",
+      "count": "5"
+    }
+  },
+  {
+    "id": "cc13-FM",
+    "name": "Light Adept",
+    "description": "Achieve SS rank on every difficulty of \"Light\"",
+    "imagePath": "/com/example/customcourses/img/cc13-FM.png",
+    "condition": {
+      "type": "COURSE_MAX",
+      "courseName": "Light",
+      "count": "5"
+    }
+  },
+  {
+    "id": "cc13-AM",
+    "name": "Light Perfectionist",
+    "description": "Achieve max score on at least one difficulty of \"Light\"",
+    "imagePath": "/com/example/customcourses/img/cc13-AM.png",
+    "condition": {
+      "type": "COURSE_MAX",
+      "courseName": "Light",
+      "count": "1"
+    }
+  },
+  {
+    "id": "cc13-EP",
+    "name": "Ray of Light",
+    "description": "Obtain a score of at least 4036000 on \"Light\" EXPOSITION difficulty",
+    "imagePath": "/com/example/customcourses/img/cc13-EP.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Light",
+      "diffName": "EXPOSITION",
+      "rankNeed": "V+"
+    }
+  },
+  {
+    "id": "cc13-TW",
+    "name": "Secret of Light",
+    "description": "Obtain a score of at least 4036000 on \"Light\" TWIST difficulty",
+    "imagePath": "/com/example/customcourses/img/cc13-TW.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Light",
+      "diffName": "TWIST",
+      "rankNeed": "V+"
+    }
+  },
+  {
+    "id": "cc13-IT",
+    "name": "Sapphire Light",
+    "description": "Obtain a score of at least 4032000 on \"Light\" INTERLUDE difficulty",
+    "imagePath": "/com/example/customcourses/img/cc13-IT.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Light",
+      "diffName": "INTERLUDE",
+      "rankNeed": "V"
+    }
+  },
+  {
+    "id": "cc13-CM",
+    "name": "Heart of Light",
+    "description": "Obtain a score of at least 4016000 on \"Light\" CLIMAX difficulty",
+    "imagePath": "/com/example/customcourses/img/cc13-CM.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Light",
+      "diffName": "CLIMAX",
+      "rankNeed": "SS+"
+    }
+  },
+  {
+    "id": "cc13-AP",
+    "name": "Shining Light",
+    "description": "Obtain a score of at least 4000000 on \"Light\" APOTHEOSIS difficulty",
+    "imagePath": "/com/example/customcourses/img/cc13-AP.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Light",
+      "diffName": "APOTHEOSIS",
+      "rankNeed": "SS"
+    }
+  },
+  {
+    "id": "cc14-FD",
+    "name": "Into the Unknown Beginner",
+    "description": "Play \"Into the Unknown\" on any difficulty",
+    "imagePath": "/com/example/customcourses/img/cc14-FD.png",
+    "condition": {
+      "type": "COURSE_PLAY",
+      "courseName": "Into the Unknown",
+      "count": "1"
+    }
+  },
+  {
+    "id": "cc14-AD",
+    "name": "Into the Unknown Enjoyer",
+    "description": "Play \"Into the Unknown\" on every difficulty",
+    "imagePath": "/com/example/customcourses/img/cc14-AD.png",
+    "condition": {
+      "type": "COURSE_PLAY",
+      "courseName": "Into the Unknown",
+      "count": "5"
+    }
+  },
+  {
+    "id": "cc14-FM",
+    "name": "Into the Unknown Adept",
+    "description": "Achieve SS rank on every difficulty of \"Into the Unknown\"",
+    "imagePath": "/com/example/customcourses/img/cc14-FM.png",
+    "condition": {
+      "type": "COURSE_MAX",
+      "courseName": "Into the Unknown",
+      "count": "5"
+    }
+  },
+  {
+    "id": "cc14-AM",
+    "name": "Into the Unknown Perfectionnist",
+    "description": "Achieve max score on at least one difficulty of \"Into the Unknown\"",
+    "imagePath": "/com/example/customcourses/img/cc14-AM.png",
+    "condition": {
+      "type": "COURSE_MAX",
+      "courseName": "Into the Unknown",
+      "count": "1"
+    }
+  },
+  {
+    "id": "cc14-EP",
+    "name": "No Destination Set",
+    "description": "Obtain a score of at least 4036000 on \"Into the Unknown\" EXPOSITION difficulty",
+    "imagePath": "/com/example/customcourses/img/cc14-EP.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Into the Unknown",
+      "diffName": "EXPOSITION",
+      "rankNeed": "V+"
+    }
+  },
+  {
+    "id": "cc14-TW",
+    "name": "Attempting Reconnection",
+    "description": "Obtain a score of at least 4036000 on \"Into the Unknown\" TWIST difficulty",
+    "imagePath": "/com/example/customcourses/img/cc14-TW.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Into the Unknown",
+      "diffName": "TWIST",
+      "rankNeed": "V+"
+    }
+  },
+  {
+    "id": "cc14-IT",
+    "name": "Unknown Charge",
+    "description": "Obtain a score of at least 4032000 on \"Into the Unknown\" INTERLUDE difficulty",
+    "imagePath": "/com/example/customcourses/img/cc14-IT.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Into the Unknown",
+      "diffName": "INTERLUDE",
+      "rankNeed": "V"
+    }
+  },
+  {
+    "id": "cc14-CM",
+    "name": "Otherworldly Knowledge",
+    "description": "Obtain a score of at least 4016000 on \"Into the Unknown\" CLIMAX difficulty",
+    "imagePath": "/com/example/customcourses/img/cc14-CM.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Into the Unknown",
+      "diffName": "CLIMAX",
+      "rankNeed": "SS+"
+    }
+  },
+  {
+    "id": "cc14-AP",
+    "name": "Eternal Unknown",
+    "description": "Obtain a score of at least 4000000 on \"Into the Unknown\" APOTHEOSIS difficulty",
+    "imagePath": "/com/example/customcourses/img/cc14-AP.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Into the Unknown",
+      "diffName": "APOTHEOSIS",
+      "rankNeed": "SS"
+    }
+  },
+  {
+    "id": "lc01-FD",
+    "name": ". Newbie",
+    "description": "Play \". (Legacy)\" on any difficulty",
+    "imagePath": "/com/example/customcourses/img/lc01-FD.png",
+    "condition": {
+      "type": "COURSE_PLAY",
+      "courseName": ". (Legacy)",
+      "count": "1"
+    }
+  },
+  {
+    "id": "lc01-AD",
+    "name": ". Esteemer",
+    "description": "Play \". (Legacy)\" on every difficulty",
+    "imagePath": "/com/example/customcourses/img/lc01-AD.png",
+    "condition": {
+      "type": "COURSE_PLAY",
+      "courseName": ". (Legacy)",
+      "count": "5"
+    }
+  },
+  {
+    "id": "lc01-FM",
+    "name": ". Specialist",
+    "description": "Achieve SS rank on every difficulty of \". (Legacy)\"",
+    "imagePath": "/com/example/customcourses/img/lc01-FM.png",
+    "condition": {
+      "type": "COURSE_MAX",
+      "courseName": ". (Legacy)",
+      "count": "5"
+    }
+  },
+  {
+    "id": "lc01-AM",
+    "name": ". Precisionist",
+    "description": "Achieve max score on at least one difficulty of \". (Legacy)\"",
+    "imagePath": "/com/example/customcourses/img/lc01-AM.png",
+    "condition": {
+      "type": "COURSE_MAX",
+      "courseName": ". (Legacy)",
+      "count": "1"
+    }
+  },
+  {
+    "id": "lc01-EP",
+    "name": "-- --- .-. ... . / -.-. --- -.. . .-.-.-",
+    "description": "Obtain a score of at least 4036000 on \". (Legacy)\" EXPOSITION difficulty",
+    "imagePath": "/com/example/customcourses/img/lc01-EP.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": ". (Legacy)",
+      "diffName": "EXPOSITION",
+      "rankNeed": "V+"
+    }
+  },
+  {
+    "id": "lc01-TW",
+    "name": "Mini.aif",
+    "description": "Obtain a score of at least 4036000 on \". (Legacy)\" TWIST difficulty",
+    "imagePath": "/com/example/customcourses/img/lc01-TW.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": ". (Legacy)",
+      "diffName": "TWIST",
+      "rankNeed": "V+"
+    }
+  },
+  {
+    "id": "lc01-IT",
+    "name": "In the place to be",
+    "description": "Obtain a score of at least 4032000 on \". (Legacy)\" INTERLUDE difficulty",
+    "imagePath": "/com/example/customcourses/img/lc01-IT.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": ". (Legacy)",
+      "diffName": "INTERLUDE",
+      "rankNeed": "V"
+    }
+  },
+  {
+    "id": "lc01-CM",
+    "name": "From the Future",
+    "description": "Obtain a score of at least 4016000 on \". (Legacy)\" CLIMAX difficulty",
+    "imagePath": "/com/example/customcourses/img/lc01-CM.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": ". (Legacy)",
+      "diffName": "CLIMAX",
+      "rankNeed": "SS+"
+    }
+  },
+  {
+    "id": "lc01-AP",
+    "name": "F1.1V.15H",
+    "description": "Obtain a score of at least 4000000 on \". (Legacy)\" APOTHEOSIS difficulty",
+    "imagePath": "/com/example/customcourses/img/lc01-AP.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": ". (Legacy)",
+      "diffName": "APOTHEOSIS",
+      "rankNeed": "SS"
+    }
+  },
+  {
+    "id": "lc02-FD",
+    "name": "Space Newbie",
+    "description": "Play \"Space (Legacy)\" on any difficulty",
+    "imagePath": "/com/example/customcourses/img/lc02-FD.png",
+    "condition": {
+      "type": "COURSE_PLAY",
+      "courseName": "Space (Legacy)",
+      "count": "1"
+    }
+  },
+  {
+    "id": "lc02-AD",
+    "name": "Space Esteemer",
+    "description": "Play \"Space (Legacy)\" on every difficulty",
+    "imagePath": "/com/example/customcourses/img/lc02-AD.png",
+    "condition": {
+      "type": "COURSE_PLAY",
+      "courseName": "Space (Legacy)",
+      "count": "5"
+    }
+  },
+  {
+    "id": "lc02-FM",
+    "name": "Space Specialist",
+    "description": "Achieve SS rank on every difficulty of \"Space (Legacy)\"",
+    "imagePath": "/com/example/customcourses/img/lc02-FM.png",
+    "condition": {
+      "type": "COURSE_MAX",
+      "courseName": "Space (Legacy)",
+      "count": "5"
+    }
+  },
+  {
+    "id": "lc02-AM",
+    "name": "Space Precisionist",
+    "description": "Achieve max score on at least one difficulty of \"Space (Legacy)\"",
+    "imagePath": "/com/example/customcourses/img/lc02-AM.png",
+    "condition": {
+      "type": "COURSE_MAX",
+      "courseName": "Space (Legacy)",
+      "count": "1"
+    }
+  },
+  {
+    "id": "lc02-EP",
+    "name": "Milky Way",
+    "description": "Obtain a score of at least 4036000 on \"Space (Legacy)\" EXPOSITION difficulty",
+    "imagePath": "/com/example/customcourses/img/lc02-EP.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Space (Legacy)",
+      "diffName": "EXPOSITION",
+      "rankNeed": "V+"
+    }
+  },
+  {
+    "id": "lc02-TW",
+    "name": "Cosmic Rotation",
+    "description": "Obtain a score of at least 4036000 on \"Space (Legacy)\" TWIST difficulty",
+    "imagePath": "/com/example/customcourses/img/lc02-TW.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Space (Legacy)",
+      "diffName": "TWIST",
+      "rankNeed": "V+"
+    }
+  },
+  {
+    "id": "lc02-IT",
+    "name": "Looking at the Starlit Sky",
+    "description": "Obtain a score of at least 4032000 on \"Space (Legacy)\" INTERLUDE difficulty",
+    "imagePath": "/com/example/customcourses/img/lc02-IT.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Space (Legacy)",
+      "diffName": "INTERLUDE",
+      "rankNeed": "V"
+    }
+  },
+  {
+    "id": "lc02-CM",
+    "name": "Galactic Bulb",
+    "description": "Obtain a score of at least 4016000 on \"Space (Legacy)\" CLIMAX difficulty",
+    "imagePath": "/com/example/customcourses/img/lc02-CM.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Space (Legacy)",
+      "diffName": "CLIMAX",
+      "rankNeed": "SS+"
+    }
+  },
+  {
+    "id": "lc02-AP",
+    "name": "The Beginning of the End",
+    "description": "Obtain a score of at least 4000000 on \"Space (Legacy)\" APOTHEOSIS difficulty",
+    "imagePath": "/com/example/customcourses/img/lc02-AP.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Space (Legacy)",
+      "diffName": "APOTHEOSIS",
+      "rankNeed": "SS"
+    }
+  },
+  {
+    "id": "lc03-FD",
+    "name": ":3 Newbie",
+    "description": "Play \":3 (Legacy)\" on any difficulty",
+    "imagePath": "/com/example/customcourses/img/lc03-FD.png",
+    "condition": {
+      "type": "COURSE_PLAY",
+      "courseName": ":3 (Legacy)",
+      "count": "1"
+    }
+  },
+  {
+    "id": "lc03-AD",
+    "name": ":3 Esteemer",
+    "description": "Play \":3 (Legacy)\" on every difficulty",
+    "imagePath": "/com/example/customcourses/img/lc03-AD.png",
+    "condition": {
+      "type": "COURSE_PLAY",
+      "courseName": ":3 (Legacy)",
+      "count": "5"
+    }
+  },
+  {
+    "id": "lc03-FM",
+    "name": ":3 Specialist",
+    "description": "Achieve SS rank on every difficulty of \":3 (Legacy)\"",
+    "imagePath": "/com/example/customcourses/img/lc03-FM.png",
+    "condition": {
+      "type": "COURSE_MAX",
+      "courseName": ":3 (Legacy)",
+      "count": "5"
+    }
+  },
+  {
+    "id": "lc03-AM",
+    "name": ":3 Precisionist",
+    "description": "Achieve max score on at least one difficulty of \":3 (Legacy)\"",
+    "imagePath": "/com/example/customcourses/img/lc03-AM.png",
+    "condition": {
+      "type": "COURSE_MAX",
+      "courseName": ":3 (Legacy)",
+      "count": "1"
+    }
+  },
+  {
+    "id": "lc03-EP",
+    "name": "meow :3",
+    "description": "Obtain a score of at least 4036000 on \":3 (Legacy)\" EXPOSITION difficulty",
+    "imagePath": "/com/example/customcourses/img/lc03-EP.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": ":3 (Legacy)",
+      "diffName": "EXPOSITION",
+      "rankNeed": "V+"
+    }
+  },
+  {
+    "id": "lc03-TW",
+    "name": "Cute Kitty",
+    "description": "Obtain a score of at least 4036000 on \":3 (Legacy)\" TWIST difficulty",
+    "imagePath": "/com/example/customcourses/img/lc03-TW.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": ":3 (Legacy)",
+      "diffName": "TWIST",
+      "rankNeed": "V+"
+    }
+  },
+  {
+    "id": "lc03-IT",
+    "name": "Cotton Candy",
+    "description": "Obtain a score of at least 4032000 on \":3 (Legacy)\" INTERLUDE difficulty",
+    "imagePath": "/com/example/customcourses/img/lc03-IT.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": ":3 (Legacy)",
+      "diffName": "INTERLUDE",
+      "rankNeed": "V"
+    }
+  },
+  {
+    "id": "lc03-CM",
+    "name": "Healthy Cat",
+    "description": "Obtain a score of at least 4016000 on \":3 (Legacy)\" CLIMAX difficulty",
+    "imagePath": "/com/example/customcourses/img/lc03-CM.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": ":3 (Legacy)",
+      "diffName": "CLIMAX",
+      "rankNeed": "SS+"
+    }
+  },
+  {
+    "id": "lc03-AP",
+    "name": "Nyallison Allister",
+    "description": "Obtain a score of at least 4000000 on \":3 (Legacy)\" APOTHEOSIS difficulty",
+    "imagePath": "/com/example/customcourses/img/lc03-AP.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": ":3 (Legacy)",
+      "diffName": "APOTHEOSIS",
+      "rankNeed": "SS"
+    }
+  },
+  {
+    "id": "lc04-FD",
+    "name": "Elements Newbie",
+    "description": "Play \"Elements (Legacy)\" on any difficulty",
+    "imagePath": "/com/example/customcourses/img/lc04-FD.png",
+    "condition": {
+      "type": "COURSE_PLAY",
+      "courseName": "Elements (Legacy)",
+      "count": "1"
+    }
+  },
+  {
+    "id": "lc04-AD",
+    "name": "Elements Esteemer",
+    "description": "Play \"Elements (Legacy)\" on every difficulty",
+    "imagePath": "/com/example/customcourses/img/lc04-AD.png",
+    "condition": {
+      "type": "COURSE_PLAY",
+      "courseName": "Elements (Legacy)",
+      "count": "5"
+    }
+  },
+  {
+    "id": "lc04-FM",
+    "name": "Elements Specialist",
+    "description": "Achieve SS rank on every difficulty of \"Elements (Legacy)\"",
+    "imagePath": "/com/example/customcourses/img/lc04-FM.png",
+    "condition": {
+      "type": "COURSE_MAX",
+      "courseName": "Elements (Legacy)",
+      "count": "5"
+    }
+  },
+  {
+    "id": "lc04-AM",
+    "name": "Elements Precisionist",
+    "description": "Achieve max score on at least one difficulty of \"Elements (Legacy)\"",
+    "imagePath": "/com/example/customcourses/img/lc04-AM.png",
+    "condition": {
+      "type": "COURSE_MAX",
+      "courseName": "Elements (Legacy)",
+      "count": "1"
+    }
+  },
+  {
+    "id": "lc04-EP",
+    "name": "Nice Nature",
+    "description": "Obtain a score of at least 4036000 on \"Elements (Legacy)\" EXPOSITION difficulty",
+    "imagePath": "/com/example/customcourses/img/lc04-EP.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Elements (Legacy)",
+      "diffName": "EXPOSITION",
+      "rankNeed": "V+"
+    }
+  },
+  {
+    "id": "lc04-TW",
+    "name": "Waterfall",
+    "description": "Obtain a score of at least 4036000 on \"Elements (Legacy)\" TWIST difficulty",
+    "imagePath": "/com/example/customcourses/img/lc04-TW.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Elements (Legacy)",
+      "diffName": "TWIST",
+      "rankNeed": "V+"
+    }
+  },
+  {
+    "id": "lc04-IT",
+    "name": "Loam",
+    "description": "Obtain a score of at least 4032000 on \"Elements (Legacy)\" INTERLUDE difficulty",
+    "imagePath": "/com/example/customcourses/img/lc04-IT.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Elements (Legacy)",
+      "diffName": "INTERLUDE",
+      "rankNeed": "V"
+    }
+  },
+  {
+    "id": "lc04-CM",
+    "name": "Breeze",
+    "description": "Obtain a score of at least 4016000 on \"Elements (Legacy)\" CLIMAX difficulty",
+    "imagePath": "/com/example/customcourses/img/lc04-CM.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Elements (Legacy)",
+      "diffName": "CLIMAX",
+      "rankNeed": "SS+"
+    }
+  },
+  {
+    "id": "lc04-AP",
+    "name": "Campfire",
+    "description": "Obtain a score of at least 4000000 on \"Elements (Legacy)\" APOTHEOSIS difficulty",
+    "imagePath": "/com/example/customcourses/img/lc04-AP.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "Elements (Legacy)",
+      "diffName": "APOTHEOSIS",
+      "rankNeed": "SS"
+    }
+  },
+  {
+    "id": "lc05-FD",
+    "name": "calming music to sleep at night Newbie",
+    "description": "Play \"calming music to sleep at night (Legacy)\" on any difficulty",
+    "imagePath": "/com/example/customcourses/img/lc05-FD.png",
+    "condition": {
+      "type": "COURSE_PLAY",
+      "courseName": "calming music to sleep at night (Legacy)",
+      "count": "1"
+    }
+  },
+  {
+    "id": "lc05-AD",
+    "name": "calming music to sleep at night Esteemer",
+    "description": "Play \"calming music to sleep at night (Legacy)\" on every difficulty",
+    "imagePath": "/com/example/customcourses/img/lc05-AD.png",
+    "condition": {
+      "type": "COURSE_PLAY",
+      "courseName": "calming music to sleep at night (Legacy)",
+      "count": "5"
+    }
+  },
+  {
+    "id": "lc05-FM",
+    "name": "calming music to sleep at night Specialist",
+    "description": "Achieve SS rank on every difficulty of \"calming music to sleep at night (Legacy)\"",
+    "imagePath": "/com/example/customcourses/img/lc05-FM.png",
+    "condition": {
+      "type": "COURSE_MAX",
+      "courseName": "calming music to sleep at night (Legacy)",
+      "count": "5"
+    }
+  },
+  {
+    "id": "lc05-AM",
+    "name": "calming music to sleep at night Precisionist",
+    "description": "Achieve max score on at least one difficulty of \"calming music to sleep at night (Legacy)\"",
+    "imagePath": "/com/example/customcourses/img/lc05-AM.png",
+    "condition": {
+      "type": "COURSE_MAX",
+      "courseName": "calming music to sleep at night (Legacy)",
+      "count": "1"
+    }
+  },
+  {
+    "id": "lc05-EP",
+    "name": "Fancy a Lullaby ?",
+    "description": "Obtain a score of at least 4036000 on \"calming music to sleep at night (Legacy)\" EXPOSITION difficulty",
+    "imagePath": "/com/example/customcourses/img/lc05-EP.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "calming music to sleep at night (Legacy)",
+      "diffName": "EXPOSITION",
+      "rankNeed": "V+"
+    }
+  },
+  {
+    "id": "lc05-TW",
+    "name": "Quick Metronome",
+    "description": "Obtain a score of at least 4036000 on \"calming music to sleep at night (Legacy)\" TWIST difficulty",
+    "imagePath": "/com/example/customcourses/img/lc05-TW.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "calming music to sleep at night (Legacy)",
+      "diffName": "TWIST",
+      "rankNeed": "V+"
+    }
+  },
+  {
+    "id": "lc05-IT",
+    "name": "Utmost Pace",
+    "description": "Obtain a score of at least 4032000 on \"calming music to sleep at night (Legacy)\" INTERLUDE difficulty",
+    "imagePath": "/com/example/customcourses/img/lc05-IT.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "calming music to sleep at night (Legacy)",
+      "diffName": "INTERLUDE",
+      "rankNeed": "V"
+    }
+  },
+  {
+    "id": "lc05-CM",
+    "name": "Relentless Glow",
+    "description": "Obtain a score of at least 4016000 on \"calming music to sleep at night (Legacy)\" CLIMAX difficulty",
+    "imagePath": "/com/example/customcourses/img/lc05-CM.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "calming music to sleep at night (Legacy)",
+      "diffName": "CLIMAX",
+      "rankNeed": "SS+"
+    }
+  },
+  {
+    "id": "lc05-AP",
+    "name": "Data Patcher",
+    "description": "Obtain a score of at least 4000000 on \"calming music to sleep at night (Legacy)\" APOTHEOSIS difficulty",
+    "imagePath": "/com/example/customcourses/img/lc05-AP.png",
+    "condition": {
+      "type": "DIFFICULTY_RANK",
+      "courseName": "calming music to sleep at night (Legacy)",
+      "diffName": "APOTHEOSIS",
+      "rankNeed": "SS"
+    }
+  },
+  {
+    "id": "hc01-FP",
+    "name": "Incident Discoverer",
+    "description": "Play \"Geology Museum Incident\"",
+    "imagePath": "/com/example/customcourses/img/hc01-FP.png",
+    "condition": {
+      "type": "COURSE_PLAY",
+      "courseName": "Geology Museum Incident",
+      "count": "1"
+    }
+  },
+  {
+    "id": "hc01-S",
+    "name": "The Fire is Spreading",
+    "description": "Obtain a score of at least 3920000 on \"Geology Museum Incident\"",
+    "imagePath": "/com/example/customcourses/img/hc01-S.png",
+    "condition": {
+      "type": "COURSE_RANK",
+      "courseName": "Geology Museum Incident",
+      "rankMin": "S"
+    }
+  },
+  {
+    "id": "hc01-SS",
+    "name": "Going Through the Flames",
+    "description": "Obtain a score of at least 4000000 on \"Geology Museum Incident\"",
+    "imagePath": "/com/example/customcourses/img/hc01-SS.png",
+    "condition": {
+      "type": "COURSE_RANK",
+      "courseName": "Geology Museum Incident",
+      "rankMin": "SS"
+    }
+  },
+  {
+    "id": "hc01-V",
+    "name": "Everyone is Safe",
+    "description": "Obtain a score of at least 4032000 on \"Geology Museum Incident\"",
+    "imagePath": "/com/example/customcourses/img/hc01-V.png",
+    "condition": {
+      "type": "COURSE_RANK",
+      "courseName": "Geology Museum Incident",
+      "rankMin": "V"
+    }
+  },
+  {
+    "id": "hc01-VS",
+    "name": "I Saved the Museum",
+    "description": "Achieve max score on \"Geology Museum Incident\"",
+    "imagePath": "/com/example/customcourses/img/hc01-VS.png",
+    "condition": {
+      "type": "COURSE_RANK",
+      "courseName": "Geology Museum Incident",
+      "rankMin": "VS"
+    }
+  },
+  {
+    "id": "hc02-FP",
+    "name": "grode... Knower",
+    "description": "Play \"grode...\"",
+    "imagePath": "/com/example/customcourses/img/hc02-FP.png",
+    "condition": {
+      "type": "COURSE_PLAY",
+      "courseName": "grode...",
+      "count": "1"
+    }
+  },
+  {
+    "id": "hc02-S",
+    "name": "grode Apprehender",
+    "description": "Obtain a score of at least 3920000 on \"grode...\"",
+    "imagePath": "/com/example/customcourses/img/hc02-S.png",
+    "condition": {
+      "type": "COURSE_RANK",
+      "courseName": "grode...",
+      "rankMin": "S"
+    }
+  },
+  {
+    "id": "hc02-SS",
+    "name": "grode Expert",
+    "description": "Obtain a score of at least 4000000 on \"grode...\"",
+    "imagePath": "/com/example/customcourses/img/hc02-SS.png",
+    "condition": {
+      "type": "COURSE_RANK",
+      "courseName": "grode...",
+      "rankMin": "SS"
+    }
+  },
+  {
+    "id": "hc02-V",
+    "name": "grode Aficionado",
+    "description": "Obtain a score of at least 4032000 on \"grode...\"",
+    "imagePath": "/com/example/customcourses/img/hc02-V.png",
+    "condition": {
+      "type": "COURSE_RANK",
+      "courseName": "grode...",
+      "rankMin": "V"
+    }
+  },
+  {
+    "id": "hc02-VS",
+    "name": "grode Master",
+    "description": "Achieve max score on \"grode...\"",
+    "imagePath": "/com/example/customcourses/img/hc02-VS.png",
+    "condition": {
+      "type": "COURSE_RANK",
+      "courseName": "grode...",
+      "rankMin": "VS"
+    }
+  },
+  {
+    "id": "hc03-FP",
+    "name": "Unlock Terminal 3",
+    "description": "Play \"what the Terminal 3 ?\"",
+    "imagePath": "/com/example/customcourses/img/hc03-FP.png",
+    "condition": {
+      "type": "COURSE_PLAY",
+      "courseName": "what the Terminal 3 ?",
+      "count": "1"
+    }
+  },
+  {
+    "id": "hc03-S",
+    "name": "Opening Terminal 3",
+    "description": "Obtain a score of at least 3920000 on \"what the Terminal 3 ?\"",
+    "imagePath": "/com/example/customcourses/img/hc03-S.png",
+    "condition": {
+      "type": "COURSE_RANK",
+      "courseName": "what the Terminal 3 ?",
+      "rankMin": "S"
+    }
+  },
+  {
+    "id": "hc03-SS",
+    "name": "Exploring Terminal 3",
+    "description": "Obtain a score of at least 4000000 on \"what the Terminal 3 ?\"",
+    "imagePath": "/com/example/customcourses/img/hc03-SS.png",
+    "condition": {
+      "type": "COURSE_RANK",
+      "courseName": "what the Terminal 3 ?",
+      "rankMin": "SS"
+    }
+  },
+  {
+    "id": "hc03-V",
+    "name": "A Lot of Time in Terminal 3",
+    "description": "Obtain a score of at least 4032000 on \"what the Terminal 3 ?\"",
+    "imagePath": "/com/example/customcourses/img/hc03-V.png",
+    "condition": {
+      "type": "COURSE_RANK",
+      "courseName": "what the Terminal 3 ?",
+      "rankMin": "V"
+    }
+  },
+  {
+    "id": "hc03-VS",
+    "name": "Terminal 3 Solver",
+    "description": "Achieve max score on \"what the Terminal 3 ?\"",
+    "imagePath": "/com/example/customcourses/img/hc03-VS.png",
+    "condition": {
+      "type": "COURSE_RANK",
+      "courseName": "what the Terminal 3 ?",
+      "rankMin": "VS"
+    }
+  },
+  {
+    "id": "miscV5EP",
+    "name": "Dim the House Lights",
+    "description": "Achieve V rank or higher on 5 EXPOSITION difficulty Course",
+    "imagePath": "/com/example/customcourses/img/miscV5EP.png",
+    "condition": {
+      "type": "COURSE_COUNT",
+      "diffName": "EXPOSITION",
+      "requiredCount": 5
+    }
+  },
+  {
+    "id": "miscV5TW",
+    "name": "The Show Must Go On",
+    "description": "Achieve V rank or higher on 5 TWIST difficulty Course",
+    "imagePath": "/com/example/customcourses/img/miscV5TW.png",
+    "condition": {
+      "type": "COURSE_COUNT",
+      "diffName": "TWIST",
+      "requiredCount": 5
+    }
+  },
+  {
+    "id": "miscV5IT",
+    "name": "Out of the Scenary",
+    "description": "Achieve V rank or higher on 5 INTERLUDE difficulty Course",
+    "imagePath": "/com/example/customcourses/img/miscV5IT.png",
+    "condition": {
+      "type": "COURSE_COUNT",
+      "diffName": "INTERLUDE",
+      "requiredCount": 5
+    }
+  },
+  {
+    "id": "miscV5CM",
+    "name": "Thirst of Achievement",
+    "description": "Achieve V rank or higher on 5 CLIMAX difficulty Course",
+    "imagePath": "/com/example/customcourses/img/miscV5CM.png",
+    "condition": {
+      "type": "COURSE_COUNT",
+      "diffName": "CLIMAX",
+      "requiredCount": 5
+    }
+  },
+  {
+    "id": "miscV5AP",
+    "name": "The End of the Road",
+    "description": "Achieve V rank or higher on 5 APOTHEOSIS difficulty Course",
+    "imagePath": "/com/example/customcourses/img/miscV5AP.png",
+    "condition": {
+      "type": "COURSE_COUNT",
+      "diffName": "APOTHEOSIS",
+      "requiredCount": 5
+    }
+  },
+  {
+    "id": "miscWild",
+    "name": "Wild flower",
+    "description": "it will never be not funny",
+    "imagePath": "/com/example/customcourses/img/miscWild.png"
+  },
+  {
+    "id": "miscGamble",
+    "name": "Let's go GAMBLING !!!",
+    "description": "aw dangit",
+    "imagePath": "/com/example/customcourses/img/miscGamble.png"
+  },
+  {
+    "id": "userSat",
+    "name": "stupid fuck",
+    "description": "I mean look at her",
+    "imagePath": "/com/example/customcourses/img/userSat.png",
+    "condition": {
+      "type": "NAME_INSERTION",
+      "selectedTheme": "sat",
+      "userName": "Saturday Tasogare"
+    }
+  },
+  {
+    "id": "userAll",
+    "name": "smart shit",
+    "description": "don't look at me like that I did mothing",
+    "imagePath": "/com/example/customcourses/img/userAll.png",
+    "condition": {
+      "type": "NAME_INSERTION",
+      "selectedTheme": "alli",
+      "userName": "Allison Allister"
+    }
+  },
+  {
+    "id": "userEri",
+    "name": "ough... kity",
+    "description": "not an obsession I swear",
+    "imagePath": "/com/example/customcourses/img/userEri.png",
+    "condition": {
+      "type": "NAME_INSERTION",
+      "selectedTheme": "eri",
+      "userName": "Eri Nichibotsu"
+    }
+  },
+  {
+    "id": "userKot",
+    "name": "gamer girl",
+    "description": "Fortnite for the win",
+    "imagePath": "/com/example/customcourses/img/userKot.png",
+    "condition": {
+      "type": "NAME_INSERTION",
+      "selectedTheme": "kotomi",
+      "userName": "Kotomi Nichibotsu"
+    }
+  },
+  {
+    "id": "userChi",
+    "name": "Schrödinger car licence",
+    "description": "like how is her licence working ? Is every cycle a gacha for her licence or what ?",
+    "imagePath": "/com/example/customcourses/img/userChi.png",
+    "condition": {
+      "type": "NAME_INSERTION",
+      "selectedTheme": "chiyo",
+      "userName": "Chiyo Sakamura"
+    }
+  },
+  {
+    "id": "userTsu",
+    "name": "dedge",
+    "description": "just like me fr",
+    "imagePath": "/com/example/customcourses/img/userTsu.png",
+    "condition": {
+      "type": "NAME_INSERTION",
+      "selectedTheme": "tsuki",
+      "userName": "Tsuki Tasogare"
+    }
+  },
+  {
+    "id": "userDaw",
+    "name": "what the fuck",
+    "description": "there's too many to choose so I chose none",
+    "imagePath": "/com/example/customcourses/img/userDaw.png",
+    "condition": {
+      "type": "NAME_INSERTION",
+      "selectedTheme": "dawn",
+      "userName": "Dawn Hisomeru"
+    }
+  },
+  {
+    "id": "userSto",
+    "name": "This too could be yuri",
+    "description": "in some other timeline",
+    "imagePath": "/com/example/customcourses/img/userSto.png",
+    "condition": {
+      "type": "NAME_INSERTION",
+      "selectedTheme": "story",
+      "userName": "Storyteller"
+    }
+  },
+  {
+    "id": "userKan",
+    "name": "wrong axis",
+    "description": "she'll be in an other narrative so don't worry",
+    "imagePath": "/com/example/customcourses/img/userKan.png",
+    "condition": {
+      "type": "NAME_INSERTION",
+      "selectedTheme": "kanshi",
+      "userName": "Kanshi Nichibotsu"
+    }
+  },
+  {
+    "id": "userTor",
+    "name": "weh",
+    "description": "everyone's favorite shopkeeper and weh-er",
+    "imagePath": "/com/example/customcourses/img/userTor.png",
+    "condition": {
+      "type": "NAME_INSERTION",
+      "selectedTheme": "tori",
+      "userName": "Tori Eitai"
+    }
+  },
+  {
+    "id": "userMir",
+    "name": "the core",
+    "description": "she deserves the world but restrain herself with Yoko. luv is beautiful",
+    "imagePath": "/com/example/customcourses/img/userMir.png",
+    "condition": {
+      "type": "NAME_INSERTION",
+      "selectedTheme": "miri",
+      "userName": "Miri Karasu"
+    }
+  },
+  {
+    "id": "userEas",
+    "name": "Instruction Followed",
+    "description": "you followed the instruction. litterally. like why would you do something else than entering what is displayed as a surname ? am i dumb ?",
+    "imagePath": "/com/example/customcourses/img/userEas.png",
+    "condition": {
+      "type": "NAME_INSERTION",
+      "selectedTheme": "any",
+      "userName": "Enter a surname"
+    }
+  },
+  {
+    "id": "spe01",
+    "name": "App Maker",
+    "description": "hey that's me... wait how tf did you get that ? oh well, ggs i guess ?",
+    "imagePath": "/com/example/customcourses/img/spe01.png",
+    "condition": {
+      "type": "NAME_INSERTION",
+      "selectedTheme": "any",
+      "userName": "Lopospolos simultiop"
+    }
+  },
+  {
+    "id": "spe02",
+    "name": "Concept Maker",
+    "description": "the girl who created the concept. oh yeah and a tryharder",
+    "imagePath": "/com/example/customcourses/img/spe02.png",
+    "condition": {
+      "type": "NAME_INSERTION",
+      "selectedTheme": "any",
+      "userName": "Ekklassistante DRO_4K"
+    }
+  },
+  {
+    "id": "spe03",
+    "name": "BOOM !!!",
+    "description": "what if Kotomi had a Fortnite skin ? well he would buy it at least once, maybe more",
+    "imagePath": "/com/example/customcourses/img/spe03.png",
+    "condition": {
+      "type": "NAME_INSERTION",
+      "selectedTheme": "any",
+      "userName": "leBeauCarlos.0"
+    }
+  },
+  {
+    "id": "spe04",
+    "name": "Transconne",
+    "description": "yeah trans ref in an app where there is lesbians and trans finally",
+    "imagePath": "/com/example/customcourses/img/spe04.png",
+    "condition": {
+      "type": "NAME_INSERTION",
+      "selectedTheme": "any",
+      "userName": "Yatrez"
+    }
+  },
+  {
+    "id": "spe05",
+    "name": "Game Maker",
+    "description": "ok so i made this title as a joke so if it happens to be real then WAIT WHAT HOW COULD THAT BE REAL",
+    "imagePath": "/com/example/customcourses/img/spe05.png",
+    "condition": {
+      "type": "NAME_INSERTION",
+      "selectedTheme": "any",
+      "userName": "kouneygami"
+    }
+  },
+  {
+    "id": "speTeto",
+    "name": "smots gamed",
+    "description": "IT'S TETO OMG LIKE THE REAL ONE TETO I CAN'T BELIEVE IT AND IT'S SMOTS TOO THAT'S TOO MUCH FOR ME",
+    "imagePath": "/com/example/customcourses/img/speTeto.png",
+    "condition": {
+      "type": "NAME_INSERTION",
+      "selectedTheme": "any",
+      "userName": "Kasane Teto"
+    }
+  },
+  {
+    "id": "speProb",
+    "name": "Start the Problems",
+    "description": "8th of October 2022. 22:44 or 10:44 PM UTC+1. In fact it started way before that but oh well. It's at this moment that real stuff started.",
+    "imagePath": "/com/example/customcourses/img/speProb.png",
+    "condition": {
+      "type": "NAME_INSERTION",
+      "selectedTheme": "any",
+      "userName": "0810222244"
+    }
+  }
+]

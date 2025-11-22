@@ -1,14 +1,13 @@
 package com.example.customcourses.controllers;
 
+import com.example.customcourses.App;
 import com.example.customcourses.managers.CoursesManager;
 import com.example.customcourses.managers.MusicsManager;
 import com.example.customcourses.models.Course;
 import com.example.customcourses.models.Music;
 import com.example.customcourses.models.ScoreEntry;
-import com.example.customcourses.utils.DataInitializer;
-import com.example.customcourses.utils.RankUtil;
-import com.example.customcourses.utils.ScoreStorage;
-import com.example.customcourses.utils.UserPreferences;
+import com.example.customcourses.models.TitleUnlocker;
+import com.example.customcourses.utils.*;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.fxml.FXML;
@@ -16,16 +15,13 @@ import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.geometry.VPos;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.*;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -47,7 +43,7 @@ public class HiddenSaveScoresController {
     private HiddenMainController mainController;
     private final CoursesManager coursesManager = new CoursesManager();
     private Course selectedCourse;
-    private Course.CourseDifficulty selectedDifficulty = Course.CourseDifficulty.DESTROYED;
+    private final Course.CourseDifficulty selectedDifficulty = Course.CourseDifficulty.DESTROYED;
 
     private final List<TextField> scoreFields = new ArrayList<>();
     private final List<Label> rankLabels = new ArrayList<>();
@@ -116,7 +112,7 @@ public class HiddenSaveScoresController {
         mainContentBox.getChildren().clear();
         buttonsBox.getChildren().clear();
 
-        if (selectedDifficulty != null && selectedCourse != null) {
+        if (selectedCourse != null) {
             currentMusics = selectedCourse.getDifficulties().get(selectedDifficulty).getMusics();
             createScoreInputs();
         }
@@ -157,10 +153,7 @@ public class HiddenSaveScoresController {
                 default -> music.getImage();
             };
 
-            StackPane imageContainer = new StackPane();
             String imagePath = "/covers/" + imageName;
-            String lower = imageName.toLowerCase();
-
             try {
                 ImageView imageView = new ImageView();
                 imageView.setPreserveRatio(true);
@@ -208,7 +201,7 @@ public class HiddenSaveScoresController {
                         rankView.setImage(RankUtil.getRankImage(rank));
                     }
                 } catch (NumberFormatException e) {
-                    rankView.setImage(new Image(getClass().getResource("/images/ranks/default.png").toExternalForm()));
+                    rankView.setImage(new Image(Objects.requireNonNull(getClass().getResource("/images/ranks/default.png")).toExternalForm()));
                 }
             });
         }
@@ -248,6 +241,7 @@ public class HiddenSaveScoresController {
     }
 
     private void handleNext() throws Exception {
+        Stage mainStage = App.getPrimaryStage();
         enteredScores.clear();
         for (TextField tf : scoreFields) {
             try {
@@ -255,7 +249,7 @@ public class HiddenSaveScoresController {
                 if (sc < 0 || sc > 1_010_000) throw new NumberFormatException();
                 enteredScores.add(sc);
             } catch (NumberFormatException ex) {
-                showAlert("Invalid score", "Scores must be integers between 0 and 1 010 000", "entryProblemAlert");
+                NotificationUtil.showToast(mainStage, "Scores must be integers between 0 and 1 010 000", "entryProblemAlert");
                 return;
             }
         }
@@ -275,8 +269,6 @@ public class HiddenSaveScoresController {
         GridPane gridSummary = new GridPane();
         gridSummary.getStyleClass().add("scoresGridPane");
         VBox.setMargin(gridSummary, new Insets(10, 0, 0, 10));
-
-        List<Music> allMusics = MusicsManager.getMusics();
 
         // Définir les colonnes
         for (int i = 0; i < 3; i++) {
@@ -348,7 +340,6 @@ public class HiddenSaveScoresController {
 
             StackPane imageContainer = new StackPane();
             String imagePath = "/covers/" + imageName;
-            String lower = imageName.toLowerCase();
 
             try {
                 ImageView imageView = new ImageView();
@@ -402,8 +393,7 @@ public class HiddenSaveScoresController {
             scoreLabel.getStyleClass().add("entryScore");
             scoreLabel.setAlignment(Pos.CENTER);
 
-            String rankTxt = scoreRank;
-            ImageView rankView = new ImageView(RankUtil.getRankImage(rankTxt));
+            ImageView rankView = new ImageView(RankUtil.getRankImage(scoreRank));
             rankView.setFitHeight(50);
             rankView.setPreserveRatio(true);
 
@@ -437,8 +427,7 @@ public class HiddenSaveScoresController {
         bottomLabel.setWrapText(true);
         bottomLabel.setAlignment(Pos.CENTER);
 
-        String rankTxt = rank;
-        ImageView rankView = new ImageView(RankUtil.getRankImage(rankTxt));
+        ImageView rankView = new ImageView(RankUtil.getRankImage(rank));
         rankView.setFitHeight(50);
         rankView.setPreserveRatio(true);
 
@@ -465,16 +454,27 @@ public class HiddenSaveScoresController {
 
         Button confirm = new Button("Confirm");
         Button redo = new Button("Modify");
-        buttonsBox.getChildren().addAll(confirm, redo);
+        Button exportButton = new Button("Export as PNG");
+
+        exportButton.setOnAction(e -> {
+            try {
+                ScoreExporter.exportScore((Stage) exportButton.getScene().getWindow(), enteredScores, currentMusics, selectedCourse, selectedDifficulty);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        });
+
+        buttonsBox.getChildren().addAll(confirm, redo, exportButton);
 
         confirm.setOnAction(e -> {
             try {
-                handleConfirm(totalScore, rankTxt);
+                handleConfirm(totalScore, rank);
             } catch (Exception ex) {
                 throw new RuntimeException(ex);
             }
             courseSelectionBox.setVisible(true);
             courseSelectionBox.setManaged(true);
+            TitleUnlocker.checkAndUnlockTitles();
         });
         redo.setOnAction(e -> {
             courseSelectionBox.setVisible(true);
@@ -489,21 +489,8 @@ public class HiddenSaveScoresController {
         });
     }
 
-    private boolean isCourseInFile(String courseName, String filename) {
-        try {
-            List<Course> courses = objectMapper.readValue(new File(filename), new TypeReference<List<Course>>() {});
-            for (Course course : courses) {
-                if (course.getName().equals(courseName)) {
-                    return true;
-                }
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return false;
-    }
-
     private void handleConfirm(int total, String rank) throws Exception {
+        Stage mainStage = App.getPrimaryStage();
         try {
             List<ScoreEntry> savedScores = ScoreStorage.loadHiddenScores();
 
@@ -537,8 +524,6 @@ public class HiddenSaveScoresController {
                 Path dataDir = DataInitializer.getDataDirectory();
                 Path coursesPath = dataDir.resolve("hiddenCourses.json");
 
-                String courseFile = coursesPath.toString();
-
                 List<Course> courses;
                 try (var in = Files.newInputStream(coursesPath)) {
                     courses = objectMapper.readValue(in, new TypeReference<List<Course>>() {});
@@ -557,10 +542,9 @@ public class HiddenSaveScoresController {
                     objectMapper.writerWithDefaultPrettyPrinter().writeValue(out, courses);
                 }
             }
-
-            showAlert("Done", "Score saved!\nTotal Score : " + total + "\nRank : " + rank, "entrySavedAlert");
+            NotificationUtil.showToast(mainStage, "Score saved!\nTotal Score : " + total + "\nRank : " + rank, "entrySavedAlert");
         } catch (IOException ex) {
-            showAlert("Save Error", "Could not save score to file:\n" + ex.getMessage(), "entryProblemAlert");
+            NotificationUtil.showToast(mainStage, "Could not save score to file:\n" + ex.getMessage(), "entryProblemAlert");
             ex.printStackTrace();
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -569,63 +553,6 @@ public class HiddenSaveScoresController {
         onCourseSelected();
         mainController.refreshCourseDetails();
     }
-
-
-    private void showAlert(String title, String msg, String styleClass) throws Exception {
-        Stage alertStage = new Stage();
-        alertStage.initModality(Modality.APPLICATION_MODAL);
-        alertStage.setTitle(title);
-        alertStage.setResizable(false);
-
-        // Texte
-        Label messageLabel = new Label(msg);
-        messageLabel.getStyleClass().add("alert-message");
-        messageLabel.setWrapText(true);
-        messageLabel.setMaxWidth(400);
-
-        // Bouton centré
-        Button okButton = new Button("OK");
-        okButton.setOnAction(e -> alertStage.close());
-
-        VBox centerVBox = new VBox(20, messageLabel, okButton);
-        centerVBox.setAlignment(Pos.CENTER);
-        centerVBox.setPadding(new Insets(20));
-
-        // Image à droite (optionnelle)
-        ImageView icon = null;
-        try {
-            String imagePath = switch (styleClass) {
-                case "entryProblemAlert" -> "/images/alerts/boundaryError.png";
-                case "entrySavedAlert" -> "/images/alerts/boundarySaved.png";
-                default -> throw new IllegalStateException("Unexpected value: " + styleClass);
-            };
-            icon = new ImageView(new Image(Objects.requireNonNull(getClass().getResourceAsStream(imagePath))));
-            icon.setFitWidth(80);
-            icon.setFitHeight(80);
-        } catch (Exception ignored) {}
-
-        // Conteneur principal avec superposition
-        StackPane root = new StackPane();
-
-        if (icon != null) {
-            HBox iconContainer = new HBox(icon);
-            iconContainer.setAlignment(Pos.BOTTOM_RIGHT);
-            iconContainer.setPadding(new Insets(10));
-            StackPane.setAlignment(iconContainer, Pos.BOTTOM_RIGHT);
-            iconContainer.setMouseTransparent(true); // <<== permet l'interaction avec ce qui est en dessous
-            root.getChildren().add(iconContainer);
-        }
-
-        root.getStyleClass().add(styleClass);
-        root.getChildren().add(centerVBox); // bouton centré
-
-        Scene scene = new Scene(root);
-        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/com/example/customcourses/styles/boundary-theme.css")).toExternalForm());
-
-        alertStage.setScene(scene);
-        alertStage.showAndWait();
-    }
-
 
     public void setCourse(Course courseToSelect) {
         coursesManager.loadHiddenCourses(MusicsManager.getMusics());

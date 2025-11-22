@@ -30,7 +30,6 @@ dark pink : #E0B1C4 (used for Buttons hovering)
 #versionLabel {
     -fx-font-size: 8;
     -fx-text-fill: #222222;
-    -fx-alignment: bottom;
 }
 
 /* CSS Scrollbar */
@@ -41,7 +40,7 @@ Region, .corner{
 }
 
 .scroll-bar:vertical{
-    -fx-background-color: #FFE293;
+    -fx-background-color: transparent;
 }
 
 .scroll-bar:vertical .thumb{
@@ -50,7 +49,7 @@ Region, .corner{
 }
 
 .scroll-bar:horizontal{
-    -fx-background-color: #FFE293;
+    -fx-background-color: transparent;
 }
 
 .scroll-bar:horizontal .thumb{
@@ -96,6 +95,18 @@ Region, .corner{
     -fx-text-fill: #BB7330;
     -fx-text-alignment: center;
     -fx-alignment: center;
+}
+
+.courseScoreCell{
+    -fx-border-color: #BB7330;
+    -fx-border-width: 2 0 0 2;
+    -fx-border-style: solid;
+}
+
+.courseScoreLeftCell{
+    -fx-border-color: #BB7330;
+    -fx-border-width: 2 0 0 0;
+    -fx-border-style: solid;
 }
 
 /* Courses Details CSS */
@@ -305,6 +316,7 @@ Region, .corner{
 /* Musics CSS Tab */
 
 #musicTable {
+    -fx-background-color: #FFE293;
     -fx-font-weight: bold;
     -fx-table-cell-border-color: transparent;
     -fx-border-width: 2 0 2 2;
@@ -616,6 +628,10 @@ Region, .corner{
     -fx-text-fill: #222222;
 }
 
+.combo-box .list-view {
+    -fx-background-color: #FFDDD1;
+}
+
 .combo-box .list-cell {
     -fx-font-weight: normal;
     -fx-background-color: #FFDDD1;
@@ -644,25 +660,64 @@ Region, .corner{
     -fx-background-color: #E0B1C4;
 }
 
-/* Personalized Alerts CSS */
-
-.entryProblemAlert, .entrySavedAlert {
-    -fx-background-color: #E0B1C4;
+.titleBox {
+    -fx-border-color: #BB7330;
+    -fx-border-width: 2;
+    -fx-border-radius: 10;
 }
 
-.entryProblemAlert .label, .entrySavedAlert .label {
-    -fx-font-weight: bold;
-    -fx-font-size: 20;
-    -fx-text-fill: #FFDDD1;
-    -fx-text-alignment: center;
+.titleBox Label {
+    -fx-text-fill: #BB7330;
 }
 
-.entryProblemAlert .button, .entrySavedAlert .button {
+.titleBoxNavButton {
+    -fx-background-color: #FFE293;
+    -fx-text-fill: #BB7330;
+}
+
+.titleBoxNavButton:hover {
+    -fx-background-color: #BB7330;
+    -fx-text-fill: #FFE293;
+}
+
+.titleListPane {
+    -fx-background-color: #FFE293;
+    -fx-border-color: #BB7330;
+    -fx-border-width: 2;
+    -fx-border-radius: 10;
+}
+
+.titleListBox {
     -fx-background-color: #FFE293;
 }
 
-.entryProblemAlert .button:hover, .entrySavedAlert .button:hover {
+.titleListText {
+    -fx-text-fill: #BB7330;
+    -fx-font-weight: bold;
+}
+
+.titleListObject {
+    -fx-background-color: #FFE293;
+}
+
+.titleListObjectSelected {
     -fx-background-color: #BB7330;
+}
+
+.titleListObjectSelected .titleListText {
+    -fx-text-fill: #FFE293;
+}
+
+/* Personalized Alerts CSS */
+
+.personalizedPopup {
+    -fx-background-color: #FFDDD1;
+}
+
+.personalizedPopup .label {
+    -fx-font-weight: bold;
+    -fx-font-size: 16;
+    -fx-text-fill: #BB7330;
 }
 
 /* Info CSS */

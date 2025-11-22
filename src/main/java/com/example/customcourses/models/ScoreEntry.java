@@ -1,9 +1,6 @@
 package com.example.customcourses.models;
 
-import com.example.customcourses.managers.MusicsManager;
-
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
 public class ScoreEntry {
@@ -16,7 +13,6 @@ public class ScoreEntry {
     private int totalScore;
     private String totalRank;
     private LocalDate date;
-    private final List<Music> allMusics = MusicsManager.getMusics();
 
 
     public ScoreEntry() {
@@ -106,13 +102,5 @@ public class ScoreEntry {
 
     public void setDate(LocalDate date) {
         this.date = date;
-    }
-
-    public List<Music> resolveMusicsFromScoreEntry(ScoreEntry entry) {
-        List<Music> resolved = new ArrayList<>();
-        for (String title : entry.getMusicTitles()) {
-            allMusics.stream().filter(m -> m.getTitle().equalsIgnoreCase(title)).findFirst().ifPresent(resolved::add);
-        }
-        return resolved;
     }
 }

@@ -6,14 +6,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.control.Label;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
 import java.io.IOException;
 import java.util.ArrayList;
 
 import com.example.customcourses.models.Course;
-import com.example.customcourses.utils.DataInitializer;
+import com.example.customcourses.models.TitleUnlocker;
 import com.example.customcourses.managers.CoursesManager;
 
 public class HiddenMainController {
@@ -24,11 +22,8 @@ public class HiddenMainController {
     private Course lastCourseShown;
 
     @FXML private StackPane hiddenMainContent;
-    @FXML private BorderPane rootPane;
-    @FXML private Label versionLabel;
 
     private App app;
-    private final CoursesManager hiddenCoursesManager = new CoursesManager();
 
     public void setApp(App app) {
         this.app = app;
@@ -36,6 +31,8 @@ public class HiddenMainController {
 
     @FXML
     private void initialize() throws Exception {
+        TitleUnlocker.checkAndUnlockTitles();
+
         MusicsManager.loadMusics();
         coursesManager.loadHiddenCourses(MusicsManager.getMusics());
         loadView("/com/example/customcourses/views/HiddenCoursesView.fxml");

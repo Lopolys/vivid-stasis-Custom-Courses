@@ -71,7 +71,7 @@ public class HiddenMusicsController {
         musicScrollPane.addEventFilter(ScrollEvent.SCROLL, event -> {
             double deltaY = event.getDeltaY() * 3; // multiplier par un facteur pour accélérer le scroll
             musicScrollPane.setVvalue(musicScrollPane.getVvalue() - deltaY / musicScrollPane.getContent().getBoundsInLocal().getHeight());
-            event.consume();  // Empêche le scroll normal pour appliquer le tien
+            event.consume();  // Empêche le scroll normal
         });
     }
 
@@ -91,27 +91,6 @@ public class HiddenMusicsController {
             e.printStackTrace();
             return List.of(); // Liste vide si erreur
         }
-    }
-
-    private void showCover(String imageName, StackPane coverContainer) {
-        coverContainer.getChildren().clear();
-
-        if (imageName == null || imageName.isEmpty()) return;
-
-        String path = "/covers/" + imageName;
-        String lower = imageName.toLowerCase();
-
-        try {
-            ImageView imageView = new ImageView();
-            imageView.setPreserveRatio(true);
-            imageView.setFitWidth(200);
-            Image image = new Image(Objects.requireNonNull(getClass().getResourceAsStream(path)));
-            imageView.setImage(image);
-            coverContainer.getChildren().add(imageView);
-        } catch (Exception e) {
-
-        }
-
     }
 
     private void showDetails(Music music) {

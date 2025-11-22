@@ -41,7 +41,7 @@ public class DataInitializer {
     public static void initializeJsonFiles() throws Exception {
         Path dataDir = getDataDirectory();
 
-        String[] fichiers = {"courses.json", "coursesLegacy.json", "hiddenCourses.json", "scores.json", "hiddenScores.json", "userprefs.json", "README.txt"};
+        String[] fichiers = {"courses.json", "coursesLegacy.json", "hiddenCourses.json", "scores.json", "hiddenScores.json", "userprefs.json", "README.txt", "titles.json"};
         String[] hiddenFiles = {"hiddenCourses.json", "hiddenScores.json"};
 
         String os = System.getProperty("os.name").toLowerCase();
@@ -66,7 +66,6 @@ public class DataInitializer {
                     // Linux / macOS : renommer avec un point au début
                     Path hiddenDest = dest.resolveSibling("." + dest.getFileName().toString());
                     Files.move(dest, hiddenDest, StandardCopyOption.REPLACE_EXISTING);
-                    dest = hiddenDest; // met à jour la référence si besoin après renommage
                 }
             }
         }

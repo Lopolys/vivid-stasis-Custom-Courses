@@ -30,7 +30,6 @@ blue : #77BDFF (used for text for selected TabRow)
 #versionLabel {
     -fx-font-size: 8;
     -fx-text-fill: #DDDDDD;
-    -fx-alignment: bottom;
 }
 
 /* CSS Scrollbar */
@@ -41,7 +40,7 @@ Region, .corner{
 }
 
 .scroll-bar:vertical{
-    -fx-background-color: #F8C4DA;
+    -fx-background-color: transparent;
 }
 
 .scroll-bar:vertical .thumb{
@@ -50,7 +49,7 @@ Region, .corner{
 }
 
 .scroll-bar:horizontal{
-    -fx-background-color: #F8C4DA;
+    -fx-background-color: transparent;
 }
 
 .scroll-bar:horizontal .thumb{
@@ -96,6 +95,18 @@ Region, .corner{
     -fx-text-fill: #C27CCA;
     -fx-text-alignment: center;
     -fx-alignment: center;
+}
+
+.courseScoreCell{
+    -fx-border-color: #C27CCA;
+    -fx-border-width: 2 0 0 2;
+    -fx-border-style: solid;
+}
+
+.courseScoreLeftCell{
+    -fx-border-color: #C27CCA;
+    -fx-border-width: 2 0 0 0;
+    -fx-border-style: solid;
 }
 
 /* Courses Details CSS */
@@ -305,6 +316,7 @@ Region, .corner{
 /* Musics CSS Tab */
 
 #musicTable {
+    -fx-background-color: #F8C4DA;
     -fx-font-weight: bold;
     -fx-table-cell-border-color: transparent;
     -fx-border-width: 2 0 2 2;
@@ -616,6 +628,10 @@ Region, .corner{
     -fx-text-fill: #222222;
 }
 
+.combo-box .list-view {
+    -fx-background-color: #918BC8;
+}
+
 .combo-box .list-cell {
     -fx-font-weight: normal;
     -fx-background-color: #918BC8;
@@ -644,27 +660,68 @@ Region, .corner{
     -fx-background-color: #5C6BAA;
 }
 
+.combo-box .scroll-bar:vertical .thumb{
+    -fx-background-color: #F8C4DA;
+}
+
+.titleBox {
+    -fx-border-color: #C27CCA;
+    -fx-border-width: 2;
+    -fx-border-radius: 10;
+}
+
+.titleBox Label {
+    -fx-text-fill: #C27CCA;
+}
+
+.titleBoxNavButton {
+    -fx-background-color: #F8C4DA;
+    -fx-text-fill: #C27CCA;
+}
+
+.titleBoxNavButton:hover {
+    -fx-background-color: #C27CCA;
+    -fx-text-fill: #F8C4DA;
+}
+
+.titleListPane {
+    -fx-background-color: #F8C4DA;
+    -fx-border-color: #C27CCA;
+    -fx-border-width: 2;
+    -fx-border-radius: 10;
+}
+
+.titleListBox {
+    -fx-background-color: #F8C4DA;
+}
+
+.titleListText {
+    -fx-text-fill: #C27CCA;
+    -fx-font-weight: bold;
+}
+
+.titleListObject {
+    -fx-background-color: #F8C4DA;
+}
+
+.titleListObjectSelected {
+    -fx-background-color: #C27CCA;
+}
+
+.titleListObjectSelected .titleListText {
+    -fx-text-fill: #F8C4DA;
+}
+
 /* Personalized Alerts CSS */
 
-.entryProblemAlert, .entrySavedAlert {
+.personalizedPopup {
     -fx-background-color: #5C6BAA;
 }
 
-.entryProblemAlert .label, .entrySavedAlert .label {
+.personalizedPopup .label {
     -fx-font-weight: bold;
-    -fx-font-size: 20;
+    -fx-font-size: 16;
     -fx-text-fill: #77BDFF;
-    -fx-text-alignment: center;
-}
-
-.entryProblemAlert .button, .entrySavedAlert .button {
-    -fx-background-color: #F8C4DA;
-    -fx-text-fill: #222222;
-}
-
-.entryProblemAlert .button:hover, .entrySavedAlert .button:hover {
-    -fx-background-color: #C27CCA;
-    -fx-text-fill: #222222;
 }
 
 /* Info CSS */

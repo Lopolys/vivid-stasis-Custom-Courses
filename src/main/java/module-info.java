@@ -16,6 +16,7 @@ module com.example.customcourses {
     requires java.desktop;
     requires javafx.swing;
     requires com.google.gson;
+    requires annotations;
 
     opens com.example.customcourses to javafx.fxml;
     exports com.example.customcourses;
@@ -24,4 +25,5 @@ module com.example.customcourses {
     exports com.example.customcourses.utils;
     opens com.example.customcourses.utils to javafx.fxml;
     opens com.example.customcourses.models to com.fasterxml.jackson.databind, com.google.gson;
+    opens com.example.customcourses.models.conditions to com.fasterxml.jackson.databind;
 }

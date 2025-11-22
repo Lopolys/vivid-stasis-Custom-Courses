@@ -147,7 +147,6 @@ public class CoursesDetailsController {
 
                     StackPane imageContainer = new StackPane();
                     String imagePath = "/covers/" + imageName;
-                    String lower = imageName.toLowerCase();
 
                     try {
                         ImageView imageView = new ImageView();
@@ -266,12 +265,6 @@ public class CoursesDetailsController {
             });
 
             detailsCourseGrid.add(button, col, currentRow);
-        }
-    }
-
-    public void refresh() {
-        if (this.course != null) {
-            populateGrid(); // Recharge les données
         }
     }
 

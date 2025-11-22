@@ -8,8 +8,10 @@ import java.nio.file.Path;
 
 public class UserPreferences {private static UserPreferences instance;
 
-    private String theme = "light"; // "light" ou "dark"
+    private String theme = "sat";
     private String selectedFont = "Arial";
+    private String userName = "";
+    private String selectedTitle = "miscIni";
 
     public static UserPreferences getInstance() throws Exception {
         if (instance == null) {
@@ -25,18 +27,20 @@ public class UserPreferences {private static UserPreferences instance;
     public String getTheme() {
         return theme;
     }
-
     public String getSelectedFont() {
         return selectedFont;
     }
+    public String getUserName() { return userName; }
+    public String getSelectedTitle() { return selectedTitle; }
 
     public void setTheme(String theme) {
         this.theme = theme;
     }
-
     public void setSelectedFont(String selectedFont) {
         this.selectedFont = selectedFont;
     }
+    public void setUserName(String userName) { this.userName = userName; }
+    public void setSelectedTitle(String selectedTitle) { this.selectedTitle = selectedTitle; }
 
     public void saveToFile() throws Exception {
         ObjectMapper mapper = new ObjectMapper();

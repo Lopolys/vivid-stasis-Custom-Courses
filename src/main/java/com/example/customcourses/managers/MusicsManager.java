@@ -25,18 +25,6 @@ public class MusicsManager {
         }
     }
 
-    public static void loadHiddenMusics() {
-        try {
-            ObjectMapper mapper = new ObjectMapper();
-            InputStream input = MusicsManager.class.getResourceAsStream("/com/example/customcourses/json/hiddenMusics.json");
-            List<Music> loaded = mapper.readValue(input, new TypeReference<>() {});
-            musics.clear();
-            musics.addAll(loaded);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
     public static MusicSelection getRandomMusic(String pack, double minDiff, double maxDiff) {
         List<MusicSelection> candidates = new ArrayList<>();
 
@@ -59,6 +47,12 @@ public class MusicsManager {
             // Backstage seulement si bsDiff != null
             if (m.getBsDiff() > 0 && isInRange(m.getBsDiff(), minDiff, maxDiff))
                 candidates.add(new MusicSelection(m, "Backstage", m.getBsDiff()));
+
+            if (m.getTitle().equals("MARENOL")){
+                candidates.add(new MusicSelection(m, "Opening", m.getBsDiff()));
+                candidates.add(new MusicSelection(m, "Middle", m.getBsDiff()));
+                candidates.add(new MusicSelection(m, "Finale", m.getBsDiff()));
+            }
         }
 
         if (candidates.isEmpty()) return null;

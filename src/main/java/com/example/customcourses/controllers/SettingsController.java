@@ -256,7 +256,21 @@ public class SettingsController {
             titlesContainer.getChildren().clear();
 
             titles = Title.loadDisplayableTitles();
-            currentTitleIndex = 0;
+            Title t = getSelectedTitle();
+
+            int id = 0;
+            for (int j = 0; j < titles.size(); j++) {
+                try{
+                    if (t.getName() != null){
+                        if (titles.get(j).getName().equals(t.getName())) {
+                            id = j;
+                            break;
+                        }
+                    }
+                } catch (NullPointerException _){
+                }
+            }
+            currentTitleIndex = id;
             setupTitlesSection();
         } catch (Exception e) {
             e.printStackTrace();

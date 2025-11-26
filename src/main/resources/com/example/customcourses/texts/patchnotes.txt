@@ -1,3 +1,15 @@
+### v 0.3.1
+## Fixes
+
+• Made some small CSS adjustments.
+• Fixed title display to display the selected title instead of the first one of the list (being Initiate).
+• Fixed custom font missing some characters for Score Export.
+• Made small adjustment on title order to keep things logic.
+
+
+#hidden# Maybe you understood that there where hidden messages ??? But for how long has it been the case...
+## ________________________________________________________________________________
+
 ### v 0.3.0
 ## New Courses
 

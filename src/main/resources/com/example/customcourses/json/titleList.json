@@ -106,12 +106,6 @@
     "imagePath": "/com/example/customcourses/img/miscCool.png"
   },
   {
-    "id": "misc12",
-    "name": "12",
-    "description": "12",
-    "imagePath": "/com/example/customcourses/img/misc12.png"
-  },
-  {
     "id": "miscNice",
     "name": "nice",
     "description": "You made it on purpose. Right ?",
@@ -121,6 +115,12 @@
       "scoreMin": "690000",
       "scoreMax": "699999"
     }
+  },
+  {
+    "id": "misc12",
+    "name": "12",
+    "description": "12",
+    "imagePath": "/com/example/customcourses/img/misc12.png"
   },
   {
     "id": "misc3",
@@ -2514,7 +2514,7 @@
     "condition": {
       "type": "NAME_INSERTION",
       "selectedTheme": "any",
-      "userName": "Yatrez"
+      "userName": "transconnejambonfromagevirguledouze"
     }
   },
   {

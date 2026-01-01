@@ -100,7 +100,15 @@ public class SaveScoresController {
         difficultyToggleGroup.selectedToggleProperty().addListener((obs, oldToggle, newToggle) -> {
             if (newToggle != null) {
                 RadioButton selectedRadio = (RadioButton) newToggle;
-                selectedDifficulty = Course.CourseDifficulty.valueOf(selectedRadio.getText().toUpperCase());
+                Course.CourseDifficulty diff = Course.CourseDifficulty.valueOf(selectedRadio.getText());
+                Course.CourseDifficultySection section = selectedCourse.getDifficulties().get(diff);
+
+                if (section != null && section.isHidden()) {
+                    difficultyToggleGroup.selectToggle(null);
+                    return;
+                }
+
+                selectedDifficulty = diff;
                 onDifficultySelected();
             } else {
                 selectedDifficulty = null;
@@ -129,7 +137,15 @@ public class SaveScoresController {
 
         if (selectedCourse != null) {
             // Créer les RadioButtons pour chaque difficulté disponible dans la course
-            for (Course.CourseDifficulty diff : selectedCourse.getDifficulties().keySet()) {
+            for (Map.Entry<Course.CourseDifficulty, Course.CourseDifficultySection> entry : selectedCourse.getDifficulties().entrySet()) {
+                Course.CourseDifficulty diff = entry.getKey();
+                Course.CourseDifficultySection section = entry.getValue();
+
+                // ➜ Ne pas afficher EXTRA si hidden == true
+                if (diff == Course.CourseDifficulty.EXTRA && section.isHidden()) {
+                    continue;
+                }
+
                 RadioButton rb = new RadioButton(diff.name());
                 rb.getStyleClass().add("scoresButton");
                 rb.setToggleGroup(difficultyToggleGroup);

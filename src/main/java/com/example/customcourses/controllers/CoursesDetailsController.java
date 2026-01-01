@@ -1,11 +1,13 @@
 package com.example.customcourses.controllers;
 
+import com.example.customcourses.managers.ExtraUnlockManager;
 import com.example.customcourses.models.Course;
 import com.example.customcourses.models.Music;
 import com.example.customcourses.models.Course.CourseDifficulty;
 import com.example.customcourses.models.Course.CourseDifficultySection;
 import com.example.customcourses.models.Course.MusicDifficulty;
 import com.example.customcourses.utils.RankUtil;
+import com.example.customcourses.utils.UnlockCondition;
 import javafx.fxml.FXML;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
@@ -22,6 +24,8 @@ public class CoursesDetailsController {
     public VBox courseDetailsBox;
     public ScrollPane detailsScrollPane;
     public Button detailsBackButton;
+    public VBox detailsBox;
+    public HBox unlockBoxIndicator;
     @FXML private GridPane detailsCourseGrid;
 
     private Course course;
@@ -52,7 +56,20 @@ public class CoursesDetailsController {
         detailsCourseGrid.getStyleClass().add("detailsGridPane");
 
         Map<CourseDifficulty, CourseDifficultySection> difficulties = course.getDifficulties();
-        List<CourseDifficulty> difficultyOrder = new ArrayList<>(difficulties.keySet());
+        List<Course.CourseDifficulty> difficultyOrder = difficulties.entrySet().stream()
+                .filter(entry -> {
+                    Course.CourseDifficulty diff = entry.getKey();
+
+                    // Toutes les difficultés sauf EXTRA
+                    if (diff != Course.CourseDifficulty.EXTRA) {
+                        return true;
+                    }
+
+                    // EXTRA → seulement si pas hidden
+                    return !entry.getValue().isHidden();
+                })
+                .map(Map.Entry::getKey)
+                .toList();
         int columnCount = difficultyOrder.size()+1;
 
         // Fixer la largeur de la première colonne
@@ -265,6 +282,21 @@ public class CoursesDetailsController {
             });
 
             detailsCourseGrid.add(button, col, currentRow);
+        }
+
+        if (course.hasExtra()) {
+            List<UnlockCondition> conditions = ExtraUnlockManager.getConditions(course.getName());
+
+            for (UnlockCondition condition : conditions) {
+                Label dot = new Label("●");
+                dot.getStyleClass().add("extraHintDot");
+
+                if (condition.isUnlocked(course)) {
+                    dot.getStyleClass().add("unlocked");
+                }
+
+                unlockBoxIndicator.getChildren().add(dot);
+            }
         }
     }
 

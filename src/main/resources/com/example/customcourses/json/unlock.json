@@ -1,0 +1,38 @@
+{
+  "extraUnlocks": {
+    "Soundscan Origins": {
+      "conditions": [
+        {
+          "id": "OP_4039K",
+          "type": "SCORE_AT_LEAST",
+          "difficulty": "EXPOSITION",
+          "value": 4039000
+        },
+        {
+          "id": "TWIST_4036K",
+          "type": "SCORE_AT_LEAST",
+          "difficulty": "TWIST",
+          "value": 4036000
+        },
+        {
+          "id": "INTER_4032K",
+          "type": "SCORE_AT_LEAST",
+          "difficulty": "INTERLUDE",
+          "value": 4032000
+        },
+        {
+          "id": "CLIMAX_4016K",
+          "type": "SCORE_AT_LEAST",
+          "difficulty": "CLIMAX",
+          "value": 4016000
+        },
+        {
+          "id": "APO_4000K",
+          "type": "SCORE_AT_LEAST",
+          "difficulty": "APOTHEOSIS",
+          "value": 4000000
+        }
+      ]
+    }
+  }
+}

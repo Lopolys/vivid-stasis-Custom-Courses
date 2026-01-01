@@ -79,6 +79,10 @@ public class RandomCourseController {
         });
     }
 
+    private boolean isExtraUnlocked() {
+        return coursesManager.getAllCourses().stream().anyMatch(course -> course.hasExtra() && !course.isExtraHidden());
+    }
+
     private void selectRandomCourse() {
         int maxScore = maxScoreSpinner.getValue();
 
@@ -88,6 +92,10 @@ public class RandomCourseController {
         if (interBox.isSelected()) allowedDiffs.add(Course.CourseDifficulty.INTERLUDE);
         if (climaxBox.isSelected()) allowedDiffs.add(Course.CourseDifficulty.CLIMAX);
         if (apoBox.isSelected()) allowedDiffs.add(Course.CourseDifficulty.APOTHEOSIS);
+
+        if (!isExtraUnlocked()) {
+            allowedDiffs.remove(Course.CourseDifficulty.EXTRA);
+        }
 
         CoursesManager.CourseSelection selection = coursesManager.getRandomCourse(allowedDiffs, maxScore);
 
@@ -107,6 +115,15 @@ public class RandomCourseController {
 
         Course.CourseDifficulty diff = Course.CourseDifficulty.valueOf(selection.getDifficulty());
         Course.CourseDifficultySection section = selection.getCourse().getDifficulties().get(diff);
+
+        if (diff == Course.CourseDifficulty.EXTRA && section.isHidden()) {
+            playButton.setVisible(false);
+            nameLabel.setText("It seems there has been a problem with the randomization...");
+            difficultyLabel.setText("");
+            scoreLabel.setText("");
+            coverPane.getChildren().clear();
+            return;
+        }
 
         actualSelectedCourse = selection.getCourse();
         actualSelectedDifficulty = diff;

@@ -89,7 +89,20 @@ public class CoursesController {
 
         for (Course course : courses) {
             Map<Course.CourseDifficulty, Course.CourseDifficultySection> difficulties = course.getDifficulties();
-            List<Course.CourseDifficulty> difficultyOrder = new ArrayList<>(difficulties.keySet());
+            List<Course.CourseDifficulty> difficultyOrder = difficulties.entrySet().stream()
+                    .filter(entry -> {
+                        Course.CourseDifficulty diff = entry.getKey();
+
+                        // Toutes les difficultés sauf EXTRA
+                        if (diff != Course.CourseDifficulty.EXTRA) {
+                            return true;
+                        }
+
+                        // EXTRA → seulement si pas hidden
+                        return !entry.getValue().isHidden();
+                    })
+                    .map(Map.Entry::getKey)
+                    .toList();
 
             VBox courseBox = new VBox(10);
 

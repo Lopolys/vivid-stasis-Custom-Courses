@@ -1,3 +1,17 @@
+### v 0.3.2
+## Song update
+
+• Added the Final Rush Party songs to Musics : Beatrock (get it ?), Volition, Arachnid, Stellar Sky, bardess :0: of the future, :D (vivid/stasis edit), Ephemeral Sunrise and STARCRASHERS
+#hidden# Also added :D (vivid/stasis edit) to the Boundary Shatter music list (even if I lack the information of the charters name (I don't have 19k rating yet :( )).
+• Made some small CSS adjustments.
+• Made some optimization in preparation for future updates.
+
+And that's all. Not a big one indeed.
+
+
+#hidden# What are those little points for at the bottom of Soundscan Origins details screen ???
+## ________________________________________________________________________________
+
 ### v 0.3.1
 ## Fixes
 

@@ -203,6 +203,14 @@ Region, .corner{
     -fx-alignment: center;
 }
 
+.extraHintDot{
+    -fx-text-fill: #AC354F;
+}
+
+.unlocked{
+    -fx-text-fill: #7F0E2C;
+}
+
 /* Save Score CSS */
 
 #saveScrollPane {

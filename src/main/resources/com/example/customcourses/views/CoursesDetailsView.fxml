@@ -3,13 +3,16 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
 
-<ScrollPane fx:id="detailsScrollPane" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.customcourses.controllers.CoursesDetailsController" fitToWidth="true" fitToHeight="true">
-    <VBox fx:id="courseDetailsBox" spacing="15">
-        <GridPane fx:id="detailsCourseGrid">
-            <!-- Rempli dynamiquement -->
-        </GridPane>
-        <HBox alignment="CENTER">
-            <Button fx:id="detailsBackButton" text="Back to Courses" onAction="#onBack"/>
-        </HBox>
-    </VBox>
-</ScrollPane>
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.customcourses.controllers.CoursesDetailsController">
+    <ScrollPane fx:id="detailsScrollPane" fitToWidth="true" fitToHeight="true">
+        <VBox fx:id="courseDetailsBox" spacing="15">
+            <GridPane fx:id="detailsCourseGrid">
+                <!-- Rempli dynamiquement -->
+            </GridPane>
+            <HBox alignment="CENTER">
+                <Button fx:id="detailsBackButton" text="Back to Courses" onAction="#onBack"/>
+            </HBox>
+        </VBox>
+    </ScrollPane>
+    <HBox styleClass="detailsBoxIndicator" fx:id="unlockBoxIndicator"/>
+</VBox>

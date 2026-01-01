@@ -65,14 +65,17 @@ public class CoursesManager {
     }
 
     public void loadCourses(List<Music> allMusics) {
+        ExtraUnlockManager.load();
         loadFromJSON(COURSES_JSON, allMusics);
     }
 
     public void loadLegacyCourses(List<Music> allMusics) {
+        ExtraUnlockManager.load();
         loadFromJSON(LEGACY_JSON, allMusics);
     }
 
     public void loadHiddenCourses(List<Music> allMusics) {
+        ExtraUnlockManager.load();
         loadFromJSON(HIDDEN_JSON, allMusics);
     }
 

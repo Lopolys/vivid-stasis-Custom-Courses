@@ -2,7 +2,7 @@
 <launch4jConfig>
   <dontWrapJar>false</dontWrapJar>
   <headerType>gui</headerType>
-  <jar>D:\Programmes\CustomCourses\target\CustomCourses-1.0-SNAPSHOT.jar</jar>
+  <jar>D:\Programmes\vivid-stasis-Custom-Courses\target\CustomCourses-1.0-SNAPSHOT.jar</jar>
   <outfile>D:\Applications\vivid stasis Custom Courses\vivid stasis Custom Courses.exe</outfile>
   <errTitle></errTitle>
   <cmdLine></cmdLine>

@@ -10,7 +10,7 @@ public class DataInitializer {
         String os = System.getProperty("os.name").toLowerCase();
         Path dataDir;
 
-        /* Utilisé pour les versions application
+        // Utilisé pour les versions application
         if (os.contains("win")) {
             String appData = System.getenv("LOCALAPPDATA");
             dataDir = Paths.get(appData, "vividcustomcourses", "json");
@@ -20,9 +20,9 @@ public class DataInitializer {
         } else {
             String userHome = System.getProperty("user.home");
             dataDir = Paths.get(userHome, ".vividcustomcourses", "json");
-        }*/
+        }
 
-        // Utilisé pour les versions test
+        /* Utilisé pour les versions test
         if (os.contains("win")) {
             String appData = System.getenv("LOCALAPPDATA");
             dataDir = Paths.get(appData, "vividcustomcourses_TEST", "json");
@@ -32,7 +32,7 @@ public class DataInitializer {
         } else {
             String userHome = System.getProperty("user.home");
             dataDir = Paths.get(userHome, ".vividcustomcourses_TEST", "json");
-        }
+        }*/
 
         Files.createDirectories(dataDir);
         return dataDir;

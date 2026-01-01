@@ -197,6 +197,14 @@ Region, .corner{
     -fx-border-style: solid;
 }
 
+.extraHintDot{
+    -fx-text-fill: #2E9EA7;
+}
+
+.unlocked{
+    -fx-text-fill: #0F6F8E;
+}
+
 /* Save Score CSS */
 
 #saveScrollPane {

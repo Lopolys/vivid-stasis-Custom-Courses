@@ -1,6 +1,7 @@
 package com.example.customcourses.models;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,6 +47,7 @@ public class Course {
         private List<Course.MusicDifficulty> difficultyLevels;
         private int bestScore;
         private String bestRank;
+        private boolean hidden;
 
         public void resolveMusics(List<Music> allMusics) {
             this.musics = new ArrayList<>();
@@ -99,6 +101,10 @@ public class Course {
         public void setBestRank(String bestRank) {
             this.bestRank = bestRank;
         }
+
+        public boolean isHidden() {
+            return this.hidden;
+        }
     }
 
     public String getName() {
@@ -116,4 +122,15 @@ public class Course {
     public void setDifficulties(Map<CourseDifficulty, CourseDifficultySection> difficulties) {
         this.difficulties = difficulties;
     }
+
+    public boolean hasExtra() {
+        return difficulties.containsKey(CourseDifficulty.EXTRA);
+    }
+
+    @JsonIgnore
+    public boolean isExtraHidden() {
+        CourseDifficultySection extra = difficulties.get(CourseDifficulty.EXTRA);
+        return extra != null && extra.isHidden();
+    }
+
 }

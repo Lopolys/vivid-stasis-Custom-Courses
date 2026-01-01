@@ -31,6 +31,13 @@
         "difficultyLevels": ["EC", "FN", "EC", "FN"],
         "bestScore": 0,
         "bestRank": "E"
+      },
+      "EXTRA": {
+        "musicTitles": ["Trip Coffee", "ULTIMATE", "Rafflesia", "NULCTRL EX"],
+        "difficultyLevels": ["FN", "EC", "FN", "SH"],
+        "bestScore": 0,
+        "bestRank": "E",
+        "hidden": true
       }
     }
   },
